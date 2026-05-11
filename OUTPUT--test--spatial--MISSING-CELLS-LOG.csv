@@ -1,0 +1,5546 @@
+Row,Column
+418,Area type
+419,Area type
+420,Area type
+421,Area type
+422,Area type
+423,Area type
+424,Area type
+425,Area type
+426,Area type
+427,Area type
+428,Area type
+429,Area type
+430,Area type
+431,Area type
+432,Area type
+433,Area type
+434,Area type
+435,Area type
+436,Area type
+437,Area type
+438,Area type
+439,Area type
+440,Area type
+441,Area type
+442,Area type
+443,Area type
+444,Area type
+445,Area type
+446,Area type
+447,Area type
+448,Area type
+449,Area type
+450,Area type
+451,Area type
+452,Area type
+453,Area type
+454,Area type
+455,Area type
+456,Area type
+457,Area type
+458,Area type
+459,Area type
+460,Area type
+461,Area type
+462,Area type
+463,Area type
+464,Area type
+465,Area type
+466,Area type
+467,Area type
+468,Area type
+469,Area type
+470,Area type
+471,Area type
+472,Area type
+473,Area type
+474,Area type
+475,Area type
+476,Area type
+477,Area type
+478,Area type
+479,Area type
+480,Area type
+481,Area type
+482,Area type
+483,Area type
+484,Area type
+485,Area type
+486,Area type
+487,Area type
+488,Area type
+489,Area type
+793,Area type
+794,Area type
+795,Area type
+796,Area type
+797,Area type
+798,Area type
+799,Area type
+800,Area type
+801,Area type
+802,Area type
+803,Area type
+804,Area type
+805,Area type
+980,Area type
+981,Area type
+982,Area type
+983,Area type
+984,Area type
+985,Area type
+986,Area type
+987,Area type
+988,Area type
+989,Area type
+990,Area type
+991,Area type
+992,Area type
+993,Area type
+994,Area type
+995,Area type
+996,Area type
+997,Area type
+998,Area type
+999,Area type
+1000,Area type
+1001,Area type
+1002,Area type
+1003,Area type
+1004,Area type
+1005,Area type
+1006,Area type
+1007,Area type
+1008,Area type
+1009,Area type
+1010,Area type
+1011,Area type
+1012,Area type
+1013,Area type
+1014,Area type
+1015,Area type
+1016,Area type
+1017,Area type
+1018,Area type
+1019,Area type
+1020,Area type
+1021,Area type
+1022,Area type
+1023,Area type
+1024,Area type
+1025,Area type
+1026,Area type
+1027,Area type
+1028,Area type
+1029,Area type
+1030,Area type
+1031,Area type
+1032,Area type
+1033,Area type
+1034,Area type
+1035,Area type
+1036,Area type
+1037,Area type
+1038,Area type
+1039,Area type
+1040,Area type
+1041,Area type
+1042,Area type
+1043,Area type
+1044,Area type
+1045,Area type
+1046,Area type
+1047,Area type
+1048,Area type
+1049,Area type
+1050,Area type
+1051,Area type
+1052,Area type
+1266,Area type
+1267,Area type
+1268,Area type
+1269,Area type
+1270,Area type
+1271,Area type
+1272,Area type
+1273,Area type
+1274,Area type
+1275,Area type
+1276,Area type
+1277,Area type
+1278,Area type
+1279,Area type
+1280,Area type
+1722,Area type
+1723,Area type
+1724,Area type
+1725,Area type
+1726,Area type
+1727,Area type
+1728,Area type
+1729,Area type
+1730,Area type
+1731,Area type
+1732,Area type
+1733,Area type
+1734,Area type
+1735,Area type
+1736,Area type
+1737,Area type
+1738,Area type
+1739,Area type
+1740,Area type
+1774,Area type
+1775,Area type
+1776,Area type
+1777,Area type
+1778,Area type
+1779,Area type
+1780,Area type
+1781,Area type
+1782,Area type
+1783,Area type
+1784,Area type
+1785,Area type
+1786,Area type
+1787,Area type
+1788,Area type
+1789,Area type
+1790,Area type
+1791,Area type
+1792,Area type
+1969,Area type
+1970,Area type
+1971,Area type
+1972,Area type
+1973,Area type
+1974,Area type
+1975,Area type
+1976,Area type
+1977,Area type
+1978,Area type
+1979,Area type
+1980,Area type
+1981,Area type
+1982,Area type
+1983,Area type
+1984,Area type
+1985,Area type
+1986,Area type
+1986,Intersecting road volume
+1986,Number of lanes
+1986,Vehicle flow (AADT)
+1987,Area type
+1988,Area type
+1989,Area type
+1990,Area type
+1991,Area type
+1992,Area type
+1993,Area type
+1994,Area type
+1995,Area type
+1996,Area type
+1997,Area type
+1998,Area type
+1999,Area type
+2000,Area type
+2001,Area type
+2002,Area type
+2003,Area type
+2004,Area type
+2005,Area type
+2006,Area type
+2007,Area type
+2322,Area type
+2323,Area type
+2324,Area type
+2325,Area type
+2326,Area type
+2327,Area type
+2328,Area type
+2329,Area type
+2330,Area type
+2331,Area type
+2332,Area type
+2333,Area type
+2334,Area type
+2359,Area type
+2360,Area type
+2361,Area type
+2362,Area type
+2363,Area type
+2364,Area type
+2365,Area type
+2366,Area type
+2367,Area type
+2368,Area type
+2369,Area type
+2370,Area type
+2371,Area type
+2372,Area type
+2373,Area type
+2374,Area type
+2375,Area type
+2376,Area type
+2377,Area type
+2378,Area type
+2379,Area type
+2380,Area type
+2381,Area type
+2382,Area type
+2383,Area type
+2384,Area type
+2385,Area type
+2386,Area type
+2387,Area type
+2388,Area type
+2389,Area type
+2390,Area type
+2391,Area type
+2392,Area type
+2393,Area type
+2394,Area type
+2395,Area type
+2396,Area type
+2397,Area type
+2398,Area type
+2399,Area type
+2400,Area type
+2401,Area type
+2402,Area type
+2403,Area type
+2404,Area type
+2405,Area type
+2406,Area type
+2407,Area type
+2408,Area type
+2409,Area type
+2410,Area type
+2411,Area type
+2412,Area type
+2496,Area type
+2497,Area type
+2498,Area type
+2499,Area type
+2500,Area type
+2501,Area type
+2502,Area type
+2503,Area type
+2504,Area type
+2505,Area type
+2506,Area type
+2507,Area type
+2508,Area type
+2762,Number of lanes
+2915,Carriageway
+2915,Upgrade cost
+2915,Motorcycle observed flow
+2915,Bicycle observed flow
+2915,Pedestrian observed flow across the road
+2915,Pedestrian observed flow along the road driver-side
+2915,Pedestrian observed flow along the road passenger-side
+2915,Land use - driver-side
+2915,Land use - passenger-side
+2915,Median type
+2915,Centreline rumble strips
+2915,Roadside severity - driver-side distance
+2915,Roadside severity - driver-side object
+2915,Roadside severity - passenger-side distance
+2915,Roadside severity - passenger-side object
+2915,Shoulder rumble strips
+2915,Paved shoulder - driver-side
+2915,Paved shoulder - passenger-side
+2915,Intersection type
+2915,Intersection channelisation
+2915,Intersection quality
+2915,Property access points
+2915,Curvature
+2915,Quality of curve
+2915,Grade
+2915,Road condition
+2915,Skid resistance / grip
+2915,Delineation
+2915,Street lighting
+2915,Pedestrian crossing facilities - inspected road
+2915,Pedestrian crossing quality
+2915,Pedestrian crossing facilities - intersecting road
+2915,Pedestrian fencing
+2915,Speed management / traffic calming
+2915,Vehicle parking
+2915,Sidewalk - driver-side
+2915,Sidewalk - passenger-side
+2915,Service road
+2915,Facilities for motorised two wheelers
+2915,Facilities for bicycles
+2915,Roadworks
+2915,Sight distance
+2915,Pedestrian peak hour flow across the road
+2915,Pedestrian peak hour flow along the road driver-side
+2915,Pedestrian peak hour flow along the road passenger-side
+2915,Bicycle peak hour flow
+2915,School zone warning
+2915,School zone crossing supervisor
+2916,Carriageway
+2916,Upgrade cost
+2916,Motorcycle observed flow
+2916,Bicycle observed flow
+2916,Pedestrian observed flow across the road
+2916,Pedestrian observed flow along the road driver-side
+2916,Pedestrian observed flow along the road passenger-side
+2916,Land use - driver-side
+2916,Land use - passenger-side
+2916,Median type
+2916,Centreline rumble strips
+2916,Roadside severity - driver-side distance
+2916,Roadside severity - driver-side object
+2916,Roadside severity - passenger-side distance
+2916,Roadside severity - passenger-side object
+2916,Shoulder rumble strips
+2916,Paved shoulder - driver-side
+2916,Paved shoulder - passenger-side
+2916,Intersection type
+2916,Intersection channelisation
+2916,Intersection quality
+2916,Property access points
+2916,Curvature
+2916,Quality of curve
+2916,Grade
+2916,Road condition
+2916,Skid resistance / grip
+2916,Delineation
+2916,Street lighting
+2916,Pedestrian crossing facilities - inspected road
+2916,Pedestrian crossing quality
+2916,Pedestrian crossing facilities - intersecting road
+2916,Pedestrian fencing
+2916,Speed management / traffic calming
+2916,Vehicle parking
+2916,Sidewalk - driver-side
+2916,Sidewalk - passenger-side
+2916,Service road
+2916,Facilities for motorised two wheelers
+2916,Facilities for bicycles
+2916,Roadworks
+2916,Sight distance
+2916,Pedestrian peak hour flow across the road
+2916,Pedestrian peak hour flow along the road driver-side
+2916,Pedestrian peak hour flow along the road passenger-side
+2916,Bicycle peak hour flow
+2916,School zone warning
+2916,School zone crossing supervisor
+2917,Carriageway
+2917,Upgrade cost
+2917,Motorcycle observed flow
+2917,Bicycle observed flow
+2917,Pedestrian observed flow across the road
+2917,Pedestrian observed flow along the road driver-side
+2917,Pedestrian observed flow along the road passenger-side
+2917,Land use - driver-side
+2917,Land use - passenger-side
+2917,Median type
+2917,Centreline rumble strips
+2917,Roadside severity - driver-side distance
+2917,Roadside severity - driver-side object
+2917,Roadside severity - passenger-side distance
+2917,Roadside severity - passenger-side object
+2917,Shoulder rumble strips
+2917,Paved shoulder - driver-side
+2917,Paved shoulder - passenger-side
+2917,Intersection type
+2917,Intersection channelisation
+2917,Intersection quality
+2917,Property access points
+2917,Curvature
+2917,Quality of curve
+2917,Grade
+2917,Road condition
+2917,Skid resistance / grip
+2917,Delineation
+2917,Street lighting
+2917,Pedestrian crossing facilities - inspected road
+2917,Pedestrian crossing quality
+2917,Pedestrian crossing facilities - intersecting road
+2917,Pedestrian fencing
+2917,Speed management / traffic calming
+2917,Vehicle parking
+2917,Sidewalk - driver-side
+2917,Sidewalk - passenger-side
+2917,Service road
+2917,Facilities for motorised two wheelers
+2917,Facilities for bicycles
+2917,Roadworks
+2917,Sight distance
+2917,Pedestrian peak hour flow across the road
+2917,Pedestrian peak hour flow along the road driver-side
+2917,Pedestrian peak hour flow along the road passenger-side
+2917,Bicycle peak hour flow
+2917,School zone warning
+2917,School zone crossing supervisor
+2918,Carriageway
+2918,Upgrade cost
+2918,Motorcycle observed flow
+2918,Bicycle observed flow
+2918,Pedestrian observed flow across the road
+2918,Pedestrian observed flow along the road driver-side
+2918,Pedestrian observed flow along the road passenger-side
+2918,Land use - driver-side
+2918,Land use - passenger-side
+2918,Median type
+2918,Centreline rumble strips
+2918,Roadside severity - driver-side distance
+2918,Roadside severity - driver-side object
+2918,Roadside severity - passenger-side distance
+2918,Roadside severity - passenger-side object
+2918,Shoulder rumble strips
+2918,Paved shoulder - driver-side
+2918,Paved shoulder - passenger-side
+2918,Intersection type
+2918,Intersection channelisation
+2918,Intersection quality
+2918,Property access points
+2918,Curvature
+2918,Quality of curve
+2918,Grade
+2918,Road condition
+2918,Skid resistance / grip
+2918,Delineation
+2918,Street lighting
+2918,Pedestrian crossing facilities - inspected road
+2918,Pedestrian crossing quality
+2918,Pedestrian crossing facilities - intersecting road
+2918,Pedestrian fencing
+2918,Speed management / traffic calming
+2918,Vehicle parking
+2918,Sidewalk - driver-side
+2918,Sidewalk - passenger-side
+2918,Service road
+2918,Facilities for motorised two wheelers
+2918,Facilities for bicycles
+2918,Roadworks
+2918,Sight distance
+2918,Pedestrian peak hour flow across the road
+2918,Pedestrian peak hour flow along the road driver-side
+2918,Pedestrian peak hour flow along the road passenger-side
+2918,Bicycle peak hour flow
+2918,School zone warning
+2918,School zone crossing supervisor
+2919,Carriageway
+2919,Upgrade cost
+2919,Motorcycle observed flow
+2919,Bicycle observed flow
+2919,Pedestrian observed flow across the road
+2919,Pedestrian observed flow along the road driver-side
+2919,Pedestrian observed flow along the road passenger-side
+2919,Land use - driver-side
+2919,Land use - passenger-side
+2919,Median type
+2919,Centreline rumble strips
+2919,Roadside severity - driver-side distance
+2919,Roadside severity - driver-side object
+2919,Roadside severity - passenger-side distance
+2919,Roadside severity - passenger-side object
+2919,Shoulder rumble strips
+2919,Paved shoulder - driver-side
+2919,Paved shoulder - passenger-side
+2919,Intersection type
+2919,Intersection channelisation
+2919,Intersection quality
+2919,Property access points
+2919,Curvature
+2919,Quality of curve
+2919,Grade
+2919,Road condition
+2919,Skid resistance / grip
+2919,Delineation
+2919,Street lighting
+2919,Pedestrian crossing facilities - inspected road
+2919,Pedestrian crossing quality
+2919,Pedestrian crossing facilities - intersecting road
+2919,Pedestrian fencing
+2919,Speed management / traffic calming
+2919,Vehicle parking
+2919,Sidewalk - driver-side
+2919,Sidewalk - passenger-side
+2919,Service road
+2919,Facilities for motorised two wheelers
+2919,Facilities for bicycles
+2919,Roadworks
+2919,Sight distance
+2919,Pedestrian peak hour flow across the road
+2919,Pedestrian peak hour flow along the road driver-side
+2919,Pedestrian peak hour flow along the road passenger-side
+2919,Bicycle peak hour flow
+2919,School zone warning
+2919,School zone crossing supervisor
+2920,Carriageway
+2920,Upgrade cost
+2920,Motorcycle observed flow
+2920,Bicycle observed flow
+2920,Pedestrian observed flow across the road
+2920,Pedestrian observed flow along the road driver-side
+2920,Pedestrian observed flow along the road passenger-side
+2920,Land use - driver-side
+2920,Land use - passenger-side
+2920,Median type
+2920,Centreline rumble strips
+2920,Roadside severity - driver-side distance
+2920,Roadside severity - driver-side object
+2920,Roadside severity - passenger-side distance
+2920,Roadside severity - passenger-side object
+2920,Shoulder rumble strips
+2920,Paved shoulder - driver-side
+2920,Paved shoulder - passenger-side
+2920,Intersection type
+2920,Intersection channelisation
+2920,Intersection quality
+2920,Property access points
+2920,Curvature
+2920,Quality of curve
+2920,Grade
+2920,Road condition
+2920,Skid resistance / grip
+2920,Delineation
+2920,Street lighting
+2920,Pedestrian crossing facilities - inspected road
+2920,Pedestrian crossing quality
+2920,Pedestrian crossing facilities - intersecting road
+2920,Pedestrian fencing
+2920,Speed management / traffic calming
+2920,Vehicle parking
+2920,Sidewalk - driver-side
+2920,Sidewalk - passenger-side
+2920,Service road
+2920,Facilities for motorised two wheelers
+2920,Facilities for bicycles
+2920,Roadworks
+2920,Sight distance
+2920,Pedestrian peak hour flow across the road
+2920,Pedestrian peak hour flow along the road driver-side
+2920,Pedestrian peak hour flow along the road passenger-side
+2920,Bicycle peak hour flow
+2920,School zone warning
+2920,School zone crossing supervisor
+2921,Carriageway
+2921,Upgrade cost
+2921,Motorcycle observed flow
+2921,Bicycle observed flow
+2921,Pedestrian observed flow across the road
+2921,Pedestrian observed flow along the road driver-side
+2921,Pedestrian observed flow along the road passenger-side
+2921,Land use - driver-side
+2921,Land use - passenger-side
+2921,Median type
+2921,Centreline rumble strips
+2921,Roadside severity - driver-side distance
+2921,Roadside severity - driver-side object
+2921,Roadside severity - passenger-side distance
+2921,Roadside severity - passenger-side object
+2921,Shoulder rumble strips
+2921,Paved shoulder - driver-side
+2921,Paved shoulder - passenger-side
+2921,Intersection type
+2921,Intersection channelisation
+2921,Intersection quality
+2921,Property access points
+2921,Curvature
+2921,Quality of curve
+2921,Grade
+2921,Road condition
+2921,Skid resistance / grip
+2921,Delineation
+2921,Street lighting
+2921,Pedestrian crossing facilities - inspected road
+2921,Pedestrian crossing quality
+2921,Pedestrian crossing facilities - intersecting road
+2921,Pedestrian fencing
+2921,Speed management / traffic calming
+2921,Vehicle parking
+2921,Sidewalk - driver-side
+2921,Sidewalk - passenger-side
+2921,Service road
+2921,Facilities for motorised two wheelers
+2921,Facilities for bicycles
+2921,Roadworks
+2921,Sight distance
+2921,Pedestrian peak hour flow across the road
+2921,Pedestrian peak hour flow along the road driver-side
+2921,Pedestrian peak hour flow along the road passenger-side
+2921,Bicycle peak hour flow
+2921,School zone warning
+2921,School zone crossing supervisor
+2922,Carriageway
+2922,Upgrade cost
+2922,Motorcycle observed flow
+2922,Bicycle observed flow
+2922,Pedestrian observed flow across the road
+2922,Pedestrian observed flow along the road driver-side
+2922,Pedestrian observed flow along the road passenger-side
+2922,Land use - driver-side
+2922,Land use - passenger-side
+2922,Median type
+2922,Centreline rumble strips
+2922,Roadside severity - driver-side distance
+2922,Roadside severity - driver-side object
+2922,Roadside severity - passenger-side distance
+2922,Roadside severity - passenger-side object
+2922,Shoulder rumble strips
+2922,Paved shoulder - driver-side
+2922,Paved shoulder - passenger-side
+2922,Intersection type
+2922,Intersection channelisation
+2922,Intersection quality
+2922,Property access points
+2922,Curvature
+2922,Quality of curve
+2922,Grade
+2922,Road condition
+2922,Skid resistance / grip
+2922,Delineation
+2922,Street lighting
+2922,Pedestrian crossing facilities - inspected road
+2922,Pedestrian crossing quality
+2922,Pedestrian crossing facilities - intersecting road
+2922,Pedestrian fencing
+2922,Speed management / traffic calming
+2922,Vehicle parking
+2922,Sidewalk - driver-side
+2922,Sidewalk - passenger-side
+2922,Service road
+2922,Facilities for motorised two wheelers
+2922,Facilities for bicycles
+2922,Roadworks
+2922,Sight distance
+2922,Pedestrian peak hour flow across the road
+2922,Pedestrian peak hour flow along the road driver-side
+2922,Pedestrian peak hour flow along the road passenger-side
+2922,Bicycle peak hour flow
+2922,School zone warning
+2922,School zone crossing supervisor
+2923,Carriageway
+2923,Upgrade cost
+2923,Motorcycle observed flow
+2923,Bicycle observed flow
+2923,Pedestrian observed flow across the road
+2923,Pedestrian observed flow along the road driver-side
+2923,Pedestrian observed flow along the road passenger-side
+2923,Land use - driver-side
+2923,Land use - passenger-side
+2923,Median type
+2923,Centreline rumble strips
+2923,Roadside severity - driver-side distance
+2923,Roadside severity - driver-side object
+2923,Roadside severity - passenger-side distance
+2923,Roadside severity - passenger-side object
+2923,Shoulder rumble strips
+2923,Paved shoulder - driver-side
+2923,Paved shoulder - passenger-side
+2923,Intersection type
+2923,Intersection channelisation
+2923,Intersection quality
+2923,Property access points
+2923,Curvature
+2923,Quality of curve
+2923,Grade
+2923,Road condition
+2923,Skid resistance / grip
+2923,Delineation
+2923,Street lighting
+2923,Pedestrian crossing facilities - inspected road
+2923,Pedestrian crossing quality
+2923,Pedestrian crossing facilities - intersecting road
+2923,Pedestrian fencing
+2923,Speed management / traffic calming
+2923,Vehicle parking
+2923,Sidewalk - driver-side
+2923,Sidewalk - passenger-side
+2923,Service road
+2923,Facilities for motorised two wheelers
+2923,Facilities for bicycles
+2923,Roadworks
+2923,Sight distance
+2923,Pedestrian peak hour flow across the road
+2923,Pedestrian peak hour flow along the road driver-side
+2923,Pedestrian peak hour flow along the road passenger-side
+2923,Bicycle peak hour flow
+2923,School zone warning
+2923,School zone crossing supervisor
+2924,Carriageway
+2924,Upgrade cost
+2924,Motorcycle observed flow
+2924,Bicycle observed flow
+2924,Pedestrian observed flow across the road
+2924,Pedestrian observed flow along the road driver-side
+2924,Pedestrian observed flow along the road passenger-side
+2924,Land use - driver-side
+2924,Land use - passenger-side
+2924,Median type
+2924,Centreline rumble strips
+2924,Roadside severity - driver-side distance
+2924,Roadside severity - driver-side object
+2924,Roadside severity - passenger-side distance
+2924,Roadside severity - passenger-side object
+2924,Shoulder rumble strips
+2924,Paved shoulder - driver-side
+2924,Paved shoulder - passenger-side
+2924,Intersection type
+2924,Intersection channelisation
+2924,Intersection quality
+2924,Property access points
+2924,Curvature
+2924,Quality of curve
+2924,Grade
+2924,Road condition
+2924,Skid resistance / grip
+2924,Delineation
+2924,Street lighting
+2924,Pedestrian crossing facilities - inspected road
+2924,Pedestrian crossing quality
+2924,Pedestrian crossing facilities - intersecting road
+2924,Pedestrian fencing
+2924,Speed management / traffic calming
+2924,Vehicle parking
+2924,Sidewalk - driver-side
+2924,Sidewalk - passenger-side
+2924,Service road
+2924,Facilities for motorised two wheelers
+2924,Facilities for bicycles
+2924,Roadworks
+2924,Sight distance
+2924,Pedestrian peak hour flow across the road
+2924,Pedestrian peak hour flow along the road driver-side
+2924,Pedestrian peak hour flow along the road passenger-side
+2924,Bicycle peak hour flow
+2924,School zone warning
+2924,School zone crossing supervisor
+2925,Carriageway
+2925,Upgrade cost
+2925,Motorcycle observed flow
+2925,Bicycle observed flow
+2925,Pedestrian observed flow across the road
+2925,Pedestrian observed flow along the road driver-side
+2925,Pedestrian observed flow along the road passenger-side
+2925,Land use - driver-side
+2925,Land use - passenger-side
+2925,Median type
+2925,Centreline rumble strips
+2925,Roadside severity - driver-side distance
+2925,Roadside severity - driver-side object
+2925,Roadside severity - passenger-side distance
+2925,Roadside severity - passenger-side object
+2925,Shoulder rumble strips
+2925,Paved shoulder - driver-side
+2925,Paved shoulder - passenger-side
+2925,Intersection type
+2925,Intersection channelisation
+2925,Intersection quality
+2925,Property access points
+2925,Curvature
+2925,Quality of curve
+2925,Grade
+2925,Road condition
+2925,Skid resistance / grip
+2925,Delineation
+2925,Street lighting
+2925,Pedestrian crossing facilities - inspected road
+2925,Pedestrian crossing quality
+2925,Pedestrian crossing facilities - intersecting road
+2925,Pedestrian fencing
+2925,Speed management / traffic calming
+2925,Vehicle parking
+2925,Sidewalk - driver-side
+2925,Sidewalk - passenger-side
+2925,Service road
+2925,Facilities for motorised two wheelers
+2925,Facilities for bicycles
+2925,Roadworks
+2925,Sight distance
+2925,Pedestrian peak hour flow across the road
+2925,Pedestrian peak hour flow along the road driver-side
+2925,Pedestrian peak hour flow along the road passenger-side
+2925,Bicycle peak hour flow
+2925,School zone warning
+2925,School zone crossing supervisor
+2926,Carriageway
+2926,Upgrade cost
+2926,Motorcycle observed flow
+2926,Bicycle observed flow
+2926,Pedestrian observed flow across the road
+2926,Pedestrian observed flow along the road driver-side
+2926,Pedestrian observed flow along the road passenger-side
+2926,Land use - driver-side
+2926,Land use - passenger-side
+2926,Median type
+2926,Centreline rumble strips
+2926,Roadside severity - driver-side distance
+2926,Roadside severity - driver-side object
+2926,Roadside severity - passenger-side distance
+2926,Roadside severity - passenger-side object
+2926,Shoulder rumble strips
+2926,Paved shoulder - driver-side
+2926,Paved shoulder - passenger-side
+2926,Intersection type
+2926,Intersection channelisation
+2926,Intersection quality
+2926,Property access points
+2926,Curvature
+2926,Quality of curve
+2926,Grade
+2926,Road condition
+2926,Skid resistance / grip
+2926,Delineation
+2926,Street lighting
+2926,Pedestrian crossing facilities - inspected road
+2926,Pedestrian crossing quality
+2926,Pedestrian crossing facilities - intersecting road
+2926,Pedestrian fencing
+2926,Speed management / traffic calming
+2926,Vehicle parking
+2926,Sidewalk - driver-side
+2926,Sidewalk - passenger-side
+2926,Service road
+2926,Facilities for motorised two wheelers
+2926,Facilities for bicycles
+2926,Roadworks
+2926,Sight distance
+2926,Pedestrian peak hour flow across the road
+2926,Pedestrian peak hour flow along the road driver-side
+2926,Pedestrian peak hour flow along the road passenger-side
+2926,Bicycle peak hour flow
+2926,School zone warning
+2926,School zone crossing supervisor
+2927,Carriageway
+2927,Upgrade cost
+2927,Motorcycle observed flow
+2927,Bicycle observed flow
+2927,Pedestrian observed flow across the road
+2927,Pedestrian observed flow along the road driver-side
+2927,Pedestrian observed flow along the road passenger-side
+2927,Land use - driver-side
+2927,Land use - passenger-side
+2927,Median type
+2927,Centreline rumble strips
+2927,Roadside severity - driver-side distance
+2927,Roadside severity - driver-side object
+2927,Roadside severity - passenger-side distance
+2927,Roadside severity - passenger-side object
+2927,Shoulder rumble strips
+2927,Paved shoulder - driver-side
+2927,Paved shoulder - passenger-side
+2927,Intersection type
+2927,Intersection channelisation
+2927,Intersection quality
+2927,Property access points
+2927,Curvature
+2927,Quality of curve
+2927,Grade
+2927,Road condition
+2927,Skid resistance / grip
+2927,Delineation
+2927,Street lighting
+2927,Pedestrian crossing facilities - inspected road
+2927,Pedestrian crossing quality
+2927,Pedestrian crossing facilities - intersecting road
+2927,Pedestrian fencing
+2927,Speed management / traffic calming
+2927,Vehicle parking
+2927,Sidewalk - driver-side
+2927,Sidewalk - passenger-side
+2927,Service road
+2927,Facilities for motorised two wheelers
+2927,Facilities for bicycles
+2927,Roadworks
+2927,Sight distance
+2927,Pedestrian peak hour flow across the road
+2927,Pedestrian peak hour flow along the road driver-side
+2927,Pedestrian peak hour flow along the road passenger-side
+2927,Bicycle peak hour flow
+2927,School zone warning
+2927,School zone crossing supervisor
+2928,Carriageway
+2928,Upgrade cost
+2928,Motorcycle observed flow
+2928,Bicycle observed flow
+2928,Pedestrian observed flow across the road
+2928,Pedestrian observed flow along the road driver-side
+2928,Pedestrian observed flow along the road passenger-side
+2928,Land use - driver-side
+2928,Land use - passenger-side
+2928,Median type
+2928,Centreline rumble strips
+2928,Roadside severity - driver-side distance
+2928,Roadside severity - driver-side object
+2928,Roadside severity - passenger-side distance
+2928,Roadside severity - passenger-side object
+2928,Shoulder rumble strips
+2928,Paved shoulder - driver-side
+2928,Paved shoulder - passenger-side
+2928,Intersection type
+2928,Intersection channelisation
+2928,Intersection quality
+2928,Property access points
+2928,Curvature
+2928,Quality of curve
+2928,Grade
+2928,Road condition
+2928,Skid resistance / grip
+2928,Delineation
+2928,Street lighting
+2928,Pedestrian crossing facilities - inspected road
+2928,Pedestrian crossing quality
+2928,Pedestrian crossing facilities - intersecting road
+2928,Pedestrian fencing
+2928,Speed management / traffic calming
+2928,Vehicle parking
+2928,Sidewalk - driver-side
+2928,Sidewalk - passenger-side
+2928,Service road
+2928,Facilities for motorised two wheelers
+2928,Facilities for bicycles
+2928,Roadworks
+2928,Sight distance
+2928,Pedestrian peak hour flow across the road
+2928,Pedestrian peak hour flow along the road driver-side
+2928,Pedestrian peak hour flow along the road passenger-side
+2928,Bicycle peak hour flow
+2928,School zone warning
+2928,School zone crossing supervisor
+2929,Carriageway
+2929,Upgrade cost
+2929,Motorcycle observed flow
+2929,Bicycle observed flow
+2929,Pedestrian observed flow across the road
+2929,Pedestrian observed flow along the road driver-side
+2929,Pedestrian observed flow along the road passenger-side
+2929,Land use - driver-side
+2929,Land use - passenger-side
+2929,Median type
+2929,Centreline rumble strips
+2929,Roadside severity - driver-side distance
+2929,Roadside severity - driver-side object
+2929,Roadside severity - passenger-side distance
+2929,Roadside severity - passenger-side object
+2929,Shoulder rumble strips
+2929,Paved shoulder - driver-side
+2929,Paved shoulder - passenger-side
+2929,Intersection type
+2929,Intersection channelisation
+2929,Intersection quality
+2929,Property access points
+2929,Curvature
+2929,Quality of curve
+2929,Grade
+2929,Road condition
+2929,Skid resistance / grip
+2929,Delineation
+2929,Street lighting
+2929,Pedestrian crossing facilities - inspected road
+2929,Pedestrian crossing quality
+2929,Pedestrian crossing facilities - intersecting road
+2929,Pedestrian fencing
+2929,Speed management / traffic calming
+2929,Vehicle parking
+2929,Sidewalk - driver-side
+2929,Sidewalk - passenger-side
+2929,Service road
+2929,Facilities for motorised two wheelers
+2929,Facilities for bicycles
+2929,Roadworks
+2929,Sight distance
+2929,Pedestrian peak hour flow across the road
+2929,Pedestrian peak hour flow along the road driver-side
+2929,Pedestrian peak hour flow along the road passenger-side
+2929,Bicycle peak hour flow
+2929,School zone warning
+2929,School zone crossing supervisor
+2930,Carriageway
+2930,Upgrade cost
+2930,Motorcycle observed flow
+2930,Bicycle observed flow
+2930,Pedestrian observed flow across the road
+2930,Pedestrian observed flow along the road driver-side
+2930,Pedestrian observed flow along the road passenger-side
+2930,Land use - driver-side
+2930,Land use - passenger-side
+2930,Median type
+2930,Centreline rumble strips
+2930,Roadside severity - driver-side distance
+2930,Roadside severity - driver-side object
+2930,Roadside severity - passenger-side distance
+2930,Roadside severity - passenger-side object
+2930,Shoulder rumble strips
+2930,Paved shoulder - driver-side
+2930,Paved shoulder - passenger-side
+2930,Intersection type
+2930,Intersection channelisation
+2930,Intersection quality
+2930,Property access points
+2930,Curvature
+2930,Quality of curve
+2930,Grade
+2930,Road condition
+2930,Skid resistance / grip
+2930,Delineation
+2930,Street lighting
+2930,Pedestrian crossing facilities - inspected road
+2930,Pedestrian crossing quality
+2930,Pedestrian crossing facilities - intersecting road
+2930,Pedestrian fencing
+2930,Speed management / traffic calming
+2930,Vehicle parking
+2930,Sidewalk - driver-side
+2930,Sidewalk - passenger-side
+2930,Service road
+2930,Facilities for motorised two wheelers
+2930,Facilities for bicycles
+2930,Roadworks
+2930,Sight distance
+2930,Pedestrian peak hour flow across the road
+2930,Pedestrian peak hour flow along the road driver-side
+2930,Pedestrian peak hour flow along the road passenger-side
+2930,Bicycle peak hour flow
+2930,School zone warning
+2930,School zone crossing supervisor
+2931,Carriageway
+2931,Upgrade cost
+2931,Motorcycle observed flow
+2931,Bicycle observed flow
+2931,Pedestrian observed flow across the road
+2931,Pedestrian observed flow along the road driver-side
+2931,Pedestrian observed flow along the road passenger-side
+2931,Land use - driver-side
+2931,Land use - passenger-side
+2931,Median type
+2931,Centreline rumble strips
+2931,Roadside severity - driver-side distance
+2931,Roadside severity - driver-side object
+2931,Roadside severity - passenger-side distance
+2931,Roadside severity - passenger-side object
+2931,Shoulder rumble strips
+2931,Paved shoulder - driver-side
+2931,Paved shoulder - passenger-side
+2931,Intersection type
+2931,Intersection channelisation
+2931,Intersection quality
+2931,Property access points
+2931,Curvature
+2931,Quality of curve
+2931,Grade
+2931,Road condition
+2931,Skid resistance / grip
+2931,Delineation
+2931,Street lighting
+2931,Pedestrian crossing facilities - inspected road
+2931,Pedestrian crossing quality
+2931,Pedestrian crossing facilities - intersecting road
+2931,Pedestrian fencing
+2931,Speed management / traffic calming
+2931,Vehicle parking
+2931,Sidewalk - driver-side
+2931,Sidewalk - passenger-side
+2931,Service road
+2931,Facilities for motorised two wheelers
+2931,Facilities for bicycles
+2931,Roadworks
+2931,Sight distance
+2931,Pedestrian peak hour flow across the road
+2931,Pedestrian peak hour flow along the road driver-side
+2931,Pedestrian peak hour flow along the road passenger-side
+2931,Bicycle peak hour flow
+2931,School zone warning
+2931,School zone crossing supervisor
+2932,Carriageway
+2932,Upgrade cost
+2932,Motorcycle observed flow
+2932,Bicycle observed flow
+2932,Pedestrian observed flow across the road
+2932,Pedestrian observed flow along the road driver-side
+2932,Pedestrian observed flow along the road passenger-side
+2932,Land use - driver-side
+2932,Land use - passenger-side
+2932,Median type
+2932,Centreline rumble strips
+2932,Roadside severity - driver-side distance
+2932,Roadside severity - driver-side object
+2932,Roadside severity - passenger-side distance
+2932,Roadside severity - passenger-side object
+2932,Shoulder rumble strips
+2932,Paved shoulder - driver-side
+2932,Paved shoulder - passenger-side
+2932,Intersection type
+2932,Intersection channelisation
+2932,Intersection quality
+2932,Property access points
+2932,Curvature
+2932,Quality of curve
+2932,Grade
+2932,Road condition
+2932,Skid resistance / grip
+2932,Delineation
+2932,Street lighting
+2932,Pedestrian crossing facilities - inspected road
+2932,Pedestrian crossing quality
+2932,Pedestrian crossing facilities - intersecting road
+2932,Pedestrian fencing
+2932,Speed management / traffic calming
+2932,Vehicle parking
+2932,Sidewalk - driver-side
+2932,Sidewalk - passenger-side
+2932,Service road
+2932,Facilities for motorised two wheelers
+2932,Facilities for bicycles
+2932,Roadworks
+2932,Sight distance
+2932,Pedestrian peak hour flow across the road
+2932,Pedestrian peak hour flow along the road driver-side
+2932,Pedestrian peak hour flow along the road passenger-side
+2932,Bicycle peak hour flow
+2932,School zone warning
+2932,School zone crossing supervisor
+2934,Area type
+2935,Area type
+2935,Intersecting road volume
+2935,Number of lanes
+2935,Vehicle flow (AADT)
+2964,Area type
+2964,Intersecting road volume
+2964,Number of lanes
+2964,Vehicle flow (AADT)
+2965,Area type
+2965,Intersecting road volume
+2965,Number of lanes
+2965,Vehicle flow (AADT)
+2966,Area type
+2966,Intersecting road volume
+2966,Number of lanes
+2966,Vehicle flow (AADT)
+2967,Area type
+2967,Intersecting road volume
+2967,Number of lanes
+2967,Vehicle flow (AADT)
+2968,Area type
+2968,Intersecting road volume
+2968,Number of lanes
+2968,Vehicle flow (AADT)
+2969,Area type
+2969,Intersecting road volume
+2969,Number of lanes
+2969,Vehicle flow (AADT)
+2970,Area type
+2970,Intersecting road volume
+2970,Number of lanes
+2970,Vehicle flow (AADT)
+2971,Area type
+2971,Intersecting road volume
+2971,Number of lanes
+2971,Vehicle flow (AADT)
+2972,Area type
+2972,Intersecting road volume
+2972,Number of lanes
+2972,Vehicle flow (AADT)
+2973,Area type
+2973,Intersecting road volume
+2973,Number of lanes
+2973,Vehicle flow (AADT)
+3370,Area type
+3371,Area type
+3372,Area type
+3373,Area type
+3374,Area type
+3375,Area type
+3376,Area type
+3377,Area type
+3378,Area type
+3379,Area type
+3380,Area type
+3381,Area type
+3382,Area type
+3383,Area type
+3384,Area type
+3385,Area type
+3386,Area type
+3387,Area type
+3388,Area type
+3389,Area type
+3390,Area type
+3391,Area type
+3392,Area type
+3393,Area type
+3394,Area type
+3395,Area type
+3396,Area type
+3397,Area type
+3398,Area type
+3399,Area type
+3400,Area type
+3401,Area type
+3402,Area type
+3403,Area type
+3404,Area type
+3405,Area type
+3406,Area type
+3407,Area type
+3408,Area type
+3409,Area type
+3410,Area type
+3411,Area type
+3412,Area type
+3413,Area type
+3414,Area type
+3415,Area type
+3416,Area type
+3417,Area type
+3418,Area type
+3419,Area type
+3420,Area type
+3421,Area type
+3422,Area type
+3423,Area type
+3424,Area type
+3425,Area type
+3426,Area type
+3427,Area type
+3428,Area type
+3429,Area type
+3430,Area type
+3431,Area type
+3432,Area type
+3433,Area type
+3434,Area type
+3435,Area type
+3436,Area type
+3437,Area type
+3438,Area type
+3439,Area type
+3440,Area type
+3441,Area type
+3442,Area type
+3443,Area type
+3444,Area type
+3445,Area type
+3446,Area type
+3447,Area type
+3448,Area type
+3449,Area type
+3450,Area type
+3451,Area type
+3452,Area type
+3453,Area type
+3454,Area type
+3845,Area type
+3846,Area type
+3847,Area type
+3848,Area type
+3849,Area type
+3850,Area type
+3851,Area type
+3852,Area type
+3853,Area type
+3854,Area type
+3855,Area type
+3856,Area type
+3857,Area type
+3858,Area type
+3859,Area type
+3860,Area type
+3861,Area type
+3862,Area type
+3863,Area type
+3864,Area type
+3865,Area type
+3866,Area type
+3867,Area type
+3868,Area type
+3869,Area type
+3870,Area type
+3870,Intersecting road volume
+3870,Number of lanes
+3870,Vehicle flow (AADT)
+3871,Area type
+3871,Intersecting road volume
+3871,Number of lanes
+3871,Vehicle flow (AADT)
+3872,Carriageway
+3872,Upgrade cost
+3872,Motorcycle observed flow
+3872,Bicycle observed flow
+3872,Pedestrian observed flow across the road
+3872,Pedestrian observed flow along the road driver-side
+3872,Pedestrian observed flow along the road passenger-side
+3872,Land use - driver-side
+3872,Land use - passenger-side
+3872,Area type
+3872,Median type
+3872,Centreline rumble strips
+3872,Roadside severity - driver-side distance
+3872,Roadside severity - driver-side object
+3872,Roadside severity - passenger-side distance
+3872,Roadside severity - passenger-side object
+3872,Shoulder rumble strips
+3872,Paved shoulder - driver-side
+3872,Paved shoulder - passenger-side
+3872,Intersection type
+3872,Intersection channelisation
+3872,Intersecting road volume
+3872,Intersection quality
+3872,Property access points
+3872,Number of lanes
+3872,Curvature
+3872,Quality of curve
+3872,Grade
+3872,Road condition
+3872,Skid resistance / grip
+3872,Delineation
+3872,Street lighting
+3872,Pedestrian crossing facilities - inspected road
+3872,Pedestrian crossing quality
+3872,Pedestrian crossing facilities - intersecting road
+3872,Pedestrian fencing
+3872,Speed management / traffic calming
+3872,Vehicle parking
+3872,Sidewalk - driver-side
+3872,Sidewalk - passenger-side
+3872,Service road
+3872,Facilities for motorised two wheelers
+3872,Facilities for bicycles
+3872,Roadworks
+3872,Sight distance
+3872,Vehicle flow (AADT)
+3872,Pedestrian peak hour flow across the road
+3872,Pedestrian peak hour flow along the road driver-side
+3872,Pedestrian peak hour flow along the road passenger-side
+3872,Bicycle peak hour flow
+3872,School zone warning
+3872,School zone crossing supervisor
+3873,Carriageway
+3873,Upgrade cost
+3873,Motorcycle observed flow
+3873,Bicycle observed flow
+3873,Pedestrian observed flow across the road
+3873,Pedestrian observed flow along the road driver-side
+3873,Pedestrian observed flow along the road passenger-side
+3873,Land use - driver-side
+3873,Land use - passenger-side
+3873,Area type
+3873,Median type
+3873,Centreline rumble strips
+3873,Roadside severity - driver-side distance
+3873,Roadside severity - driver-side object
+3873,Roadside severity - passenger-side distance
+3873,Roadside severity - passenger-side object
+3873,Shoulder rumble strips
+3873,Paved shoulder - driver-side
+3873,Paved shoulder - passenger-side
+3873,Intersection type
+3873,Intersection channelisation
+3873,Intersecting road volume
+3873,Intersection quality
+3873,Property access points
+3873,Number of lanes
+3873,Curvature
+3873,Quality of curve
+3873,Grade
+3873,Road condition
+3873,Skid resistance / grip
+3873,Delineation
+3873,Street lighting
+3873,Pedestrian crossing facilities - inspected road
+3873,Pedestrian crossing quality
+3873,Pedestrian crossing facilities - intersecting road
+3873,Pedestrian fencing
+3873,Speed management / traffic calming
+3873,Vehicle parking
+3873,Sidewalk - driver-side
+3873,Sidewalk - passenger-side
+3873,Service road
+3873,Facilities for motorised two wheelers
+3873,Facilities for bicycles
+3873,Roadworks
+3873,Sight distance
+3873,Vehicle flow (AADT)
+3873,Pedestrian peak hour flow across the road
+3873,Pedestrian peak hour flow along the road driver-side
+3873,Pedestrian peak hour flow along the road passenger-side
+3873,Bicycle peak hour flow
+3873,School zone warning
+3873,School zone crossing supervisor
+3874,Carriageway
+3874,Upgrade cost
+3874,Motorcycle observed flow
+3874,Bicycle observed flow
+3874,Pedestrian observed flow across the road
+3874,Pedestrian observed flow along the road driver-side
+3874,Pedestrian observed flow along the road passenger-side
+3874,Land use - driver-side
+3874,Land use - passenger-side
+3874,Area type
+3874,Median type
+3874,Centreline rumble strips
+3874,Roadside severity - driver-side distance
+3874,Roadside severity - driver-side object
+3874,Roadside severity - passenger-side distance
+3874,Roadside severity - passenger-side object
+3874,Shoulder rumble strips
+3874,Paved shoulder - driver-side
+3874,Paved shoulder - passenger-side
+3874,Intersection type
+3874,Intersection channelisation
+3874,Intersecting road volume
+3874,Intersection quality
+3874,Property access points
+3874,Number of lanes
+3874,Curvature
+3874,Quality of curve
+3874,Grade
+3874,Road condition
+3874,Skid resistance / grip
+3874,Delineation
+3874,Street lighting
+3874,Pedestrian crossing facilities - inspected road
+3874,Pedestrian crossing quality
+3874,Pedestrian crossing facilities - intersecting road
+3874,Pedestrian fencing
+3874,Speed management / traffic calming
+3874,Vehicle parking
+3874,Sidewalk - driver-side
+3874,Sidewalk - passenger-side
+3874,Service road
+3874,Facilities for motorised two wheelers
+3874,Facilities for bicycles
+3874,Roadworks
+3874,Sight distance
+3874,Vehicle flow (AADT)
+3874,Pedestrian peak hour flow across the road
+3874,Pedestrian peak hour flow along the road driver-side
+3874,Pedestrian peak hour flow along the road passenger-side
+3874,Bicycle peak hour flow
+3874,School zone warning
+3874,School zone crossing supervisor
+3875,Carriageway
+3875,Upgrade cost
+3875,Motorcycle observed flow
+3875,Bicycle observed flow
+3875,Pedestrian observed flow across the road
+3875,Pedestrian observed flow along the road driver-side
+3875,Pedestrian observed flow along the road passenger-side
+3875,Land use - driver-side
+3875,Land use - passenger-side
+3875,Area type
+3875,Median type
+3875,Centreline rumble strips
+3875,Roadside severity - driver-side distance
+3875,Roadside severity - driver-side object
+3875,Roadside severity - passenger-side distance
+3875,Roadside severity - passenger-side object
+3875,Shoulder rumble strips
+3875,Paved shoulder - driver-side
+3875,Paved shoulder - passenger-side
+3875,Intersection type
+3875,Intersection channelisation
+3875,Intersecting road volume
+3875,Intersection quality
+3875,Property access points
+3875,Number of lanes
+3875,Curvature
+3875,Quality of curve
+3875,Grade
+3875,Road condition
+3875,Skid resistance / grip
+3875,Delineation
+3875,Street lighting
+3875,Pedestrian crossing facilities - inspected road
+3875,Pedestrian crossing quality
+3875,Pedestrian crossing facilities - intersecting road
+3875,Pedestrian fencing
+3875,Speed management / traffic calming
+3875,Vehicle parking
+3875,Sidewalk - driver-side
+3875,Sidewalk - passenger-side
+3875,Service road
+3875,Facilities for motorised two wheelers
+3875,Facilities for bicycles
+3875,Roadworks
+3875,Sight distance
+3875,Vehicle flow (AADT)
+3875,Pedestrian peak hour flow across the road
+3875,Pedestrian peak hour flow along the road driver-side
+3875,Pedestrian peak hour flow along the road passenger-side
+3875,Bicycle peak hour flow
+3875,School zone warning
+3875,School zone crossing supervisor
+3876,Carriageway
+3876,Upgrade cost
+3876,Motorcycle observed flow
+3876,Bicycle observed flow
+3876,Pedestrian observed flow across the road
+3876,Pedestrian observed flow along the road driver-side
+3876,Pedestrian observed flow along the road passenger-side
+3876,Land use - driver-side
+3876,Land use - passenger-side
+3876,Area type
+3876,Median type
+3876,Centreline rumble strips
+3876,Roadside severity - driver-side distance
+3876,Roadside severity - driver-side object
+3876,Roadside severity - passenger-side distance
+3876,Roadside severity - passenger-side object
+3876,Shoulder rumble strips
+3876,Paved shoulder - driver-side
+3876,Paved shoulder - passenger-side
+3876,Intersection type
+3876,Intersection channelisation
+3876,Intersecting road volume
+3876,Intersection quality
+3876,Property access points
+3876,Number of lanes
+3876,Curvature
+3876,Quality of curve
+3876,Grade
+3876,Road condition
+3876,Skid resistance / grip
+3876,Delineation
+3876,Street lighting
+3876,Pedestrian crossing facilities - inspected road
+3876,Pedestrian crossing quality
+3876,Pedestrian crossing facilities - intersecting road
+3876,Pedestrian fencing
+3876,Speed management / traffic calming
+3876,Vehicle parking
+3876,Sidewalk - driver-side
+3876,Sidewalk - passenger-side
+3876,Service road
+3876,Facilities for motorised two wheelers
+3876,Facilities for bicycles
+3876,Roadworks
+3876,Sight distance
+3876,Vehicle flow (AADT)
+3876,Pedestrian peak hour flow across the road
+3876,Pedestrian peak hour flow along the road driver-side
+3876,Pedestrian peak hour flow along the road passenger-side
+3876,Bicycle peak hour flow
+3876,School zone warning
+3876,School zone crossing supervisor
+3877,Carriageway
+3877,Upgrade cost
+3877,Motorcycle observed flow
+3877,Bicycle observed flow
+3877,Pedestrian observed flow across the road
+3877,Pedestrian observed flow along the road driver-side
+3877,Pedestrian observed flow along the road passenger-side
+3877,Land use - driver-side
+3877,Land use - passenger-side
+3877,Area type
+3877,Median type
+3877,Centreline rumble strips
+3877,Roadside severity - driver-side distance
+3877,Roadside severity - driver-side object
+3877,Roadside severity - passenger-side distance
+3877,Roadside severity - passenger-side object
+3877,Shoulder rumble strips
+3877,Paved shoulder - driver-side
+3877,Paved shoulder - passenger-side
+3877,Intersection type
+3877,Intersection channelisation
+3877,Intersecting road volume
+3877,Intersection quality
+3877,Property access points
+3877,Number of lanes
+3877,Curvature
+3877,Quality of curve
+3877,Grade
+3877,Road condition
+3877,Skid resistance / grip
+3877,Delineation
+3877,Street lighting
+3877,Pedestrian crossing facilities - inspected road
+3877,Pedestrian crossing quality
+3877,Pedestrian crossing facilities - intersecting road
+3877,Pedestrian fencing
+3877,Speed management / traffic calming
+3877,Vehicle parking
+3877,Sidewalk - driver-side
+3877,Sidewalk - passenger-side
+3877,Service road
+3877,Facilities for motorised two wheelers
+3877,Facilities for bicycles
+3877,Roadworks
+3877,Sight distance
+3877,Vehicle flow (AADT)
+3877,Pedestrian peak hour flow across the road
+3877,Pedestrian peak hour flow along the road driver-side
+3877,Pedestrian peak hour flow along the road passenger-side
+3877,Bicycle peak hour flow
+3877,School zone warning
+3877,School zone crossing supervisor
+3878,Carriageway
+3878,Upgrade cost
+3878,Motorcycle observed flow
+3878,Bicycle observed flow
+3878,Pedestrian observed flow across the road
+3878,Pedestrian observed flow along the road driver-side
+3878,Pedestrian observed flow along the road passenger-side
+3878,Land use - driver-side
+3878,Land use - passenger-side
+3878,Area type
+3878,Median type
+3878,Centreline rumble strips
+3878,Roadside severity - driver-side distance
+3878,Roadside severity - driver-side object
+3878,Roadside severity - passenger-side distance
+3878,Roadside severity - passenger-side object
+3878,Shoulder rumble strips
+3878,Paved shoulder - driver-side
+3878,Paved shoulder - passenger-side
+3878,Intersection type
+3878,Intersection channelisation
+3878,Intersecting road volume
+3878,Intersection quality
+3878,Property access points
+3878,Number of lanes
+3878,Curvature
+3878,Quality of curve
+3878,Grade
+3878,Road condition
+3878,Skid resistance / grip
+3878,Delineation
+3878,Street lighting
+3878,Pedestrian crossing facilities - inspected road
+3878,Pedestrian crossing quality
+3878,Pedestrian crossing facilities - intersecting road
+3878,Pedestrian fencing
+3878,Speed management / traffic calming
+3878,Vehicle parking
+3878,Sidewalk - driver-side
+3878,Sidewalk - passenger-side
+3878,Service road
+3878,Facilities for motorised two wheelers
+3878,Facilities for bicycles
+3878,Roadworks
+3878,Sight distance
+3878,Vehicle flow (AADT)
+3878,Pedestrian peak hour flow across the road
+3878,Pedestrian peak hour flow along the road driver-side
+3878,Pedestrian peak hour flow along the road passenger-side
+3878,Bicycle peak hour flow
+3878,School zone warning
+3878,School zone crossing supervisor
+3879,Carriageway
+3879,Upgrade cost
+3879,Motorcycle observed flow
+3879,Bicycle observed flow
+3879,Pedestrian observed flow across the road
+3879,Pedestrian observed flow along the road driver-side
+3879,Pedestrian observed flow along the road passenger-side
+3879,Land use - driver-side
+3879,Land use - passenger-side
+3879,Area type
+3879,Median type
+3879,Centreline rumble strips
+3879,Roadside severity - driver-side distance
+3879,Roadside severity - driver-side object
+3879,Roadside severity - passenger-side distance
+3879,Roadside severity - passenger-side object
+3879,Shoulder rumble strips
+3879,Paved shoulder - driver-side
+3879,Paved shoulder - passenger-side
+3879,Intersection type
+3879,Intersection channelisation
+3879,Intersecting road volume
+3879,Intersection quality
+3879,Property access points
+3879,Number of lanes
+3879,Curvature
+3879,Quality of curve
+3879,Grade
+3879,Road condition
+3879,Skid resistance / grip
+3879,Delineation
+3879,Street lighting
+3879,Pedestrian crossing facilities - inspected road
+3879,Pedestrian crossing quality
+3879,Pedestrian crossing facilities - intersecting road
+3879,Pedestrian fencing
+3879,Speed management / traffic calming
+3879,Vehicle parking
+3879,Sidewalk - driver-side
+3879,Sidewalk - passenger-side
+3879,Service road
+3879,Facilities for motorised two wheelers
+3879,Facilities for bicycles
+3879,Roadworks
+3879,Sight distance
+3879,Vehicle flow (AADT)
+3879,Pedestrian peak hour flow across the road
+3879,Pedestrian peak hour flow along the road driver-side
+3879,Pedestrian peak hour flow along the road passenger-side
+3879,Bicycle peak hour flow
+3879,School zone warning
+3879,School zone crossing supervisor
+3880,Carriageway
+3880,Upgrade cost
+3880,Motorcycle observed flow
+3880,Bicycle observed flow
+3880,Pedestrian observed flow across the road
+3880,Pedestrian observed flow along the road driver-side
+3880,Pedestrian observed flow along the road passenger-side
+3880,Land use - driver-side
+3880,Land use - passenger-side
+3880,Area type
+3880,Median type
+3880,Centreline rumble strips
+3880,Roadside severity - driver-side distance
+3880,Roadside severity - driver-side object
+3880,Roadside severity - passenger-side distance
+3880,Roadside severity - passenger-side object
+3880,Shoulder rumble strips
+3880,Paved shoulder - driver-side
+3880,Paved shoulder - passenger-side
+3880,Intersection type
+3880,Intersection channelisation
+3880,Intersecting road volume
+3880,Intersection quality
+3880,Property access points
+3880,Number of lanes
+3880,Curvature
+3880,Quality of curve
+3880,Grade
+3880,Road condition
+3880,Skid resistance / grip
+3880,Delineation
+3880,Street lighting
+3880,Pedestrian crossing facilities - inspected road
+3880,Pedestrian crossing quality
+3880,Pedestrian crossing facilities - intersecting road
+3880,Pedestrian fencing
+3880,Speed management / traffic calming
+3880,Vehicle parking
+3880,Sidewalk - driver-side
+3880,Sidewalk - passenger-side
+3880,Service road
+3880,Facilities for motorised two wheelers
+3880,Facilities for bicycles
+3880,Roadworks
+3880,Sight distance
+3880,Vehicle flow (AADT)
+3880,Pedestrian peak hour flow across the road
+3880,Pedestrian peak hour flow along the road driver-side
+3880,Pedestrian peak hour flow along the road passenger-side
+3880,Bicycle peak hour flow
+3880,School zone warning
+3880,School zone crossing supervisor
+3881,Carriageway
+3881,Upgrade cost
+3881,Motorcycle observed flow
+3881,Bicycle observed flow
+3881,Pedestrian observed flow across the road
+3881,Pedestrian observed flow along the road driver-side
+3881,Pedestrian observed flow along the road passenger-side
+3881,Land use - driver-side
+3881,Land use - passenger-side
+3881,Area type
+3881,Median type
+3881,Centreline rumble strips
+3881,Roadside severity - driver-side distance
+3881,Roadside severity - driver-side object
+3881,Roadside severity - passenger-side distance
+3881,Roadside severity - passenger-side object
+3881,Shoulder rumble strips
+3881,Paved shoulder - driver-side
+3881,Paved shoulder - passenger-side
+3881,Intersection type
+3881,Intersection channelisation
+3881,Intersecting road volume
+3881,Intersection quality
+3881,Property access points
+3881,Number of lanes
+3881,Curvature
+3881,Quality of curve
+3881,Grade
+3881,Road condition
+3881,Skid resistance / grip
+3881,Delineation
+3881,Street lighting
+3881,Pedestrian crossing facilities - inspected road
+3881,Pedestrian crossing quality
+3881,Pedestrian crossing facilities - intersecting road
+3881,Pedestrian fencing
+3881,Speed management / traffic calming
+3881,Vehicle parking
+3881,Sidewalk - driver-side
+3881,Sidewalk - passenger-side
+3881,Service road
+3881,Facilities for motorised two wheelers
+3881,Facilities for bicycles
+3881,Roadworks
+3881,Sight distance
+3881,Vehicle flow (AADT)
+3881,Pedestrian peak hour flow across the road
+3881,Pedestrian peak hour flow along the road driver-side
+3881,Pedestrian peak hour flow along the road passenger-side
+3881,Bicycle peak hour flow
+3881,School zone warning
+3881,School zone crossing supervisor
+3882,Carriageway
+3882,Upgrade cost
+3882,Motorcycle observed flow
+3882,Bicycle observed flow
+3882,Pedestrian observed flow across the road
+3882,Pedestrian observed flow along the road driver-side
+3882,Pedestrian observed flow along the road passenger-side
+3882,Land use - driver-side
+3882,Land use - passenger-side
+3882,Area type
+3882,Median type
+3882,Centreline rumble strips
+3882,Roadside severity - driver-side distance
+3882,Roadside severity - driver-side object
+3882,Roadside severity - passenger-side distance
+3882,Roadside severity - passenger-side object
+3882,Shoulder rumble strips
+3882,Paved shoulder - driver-side
+3882,Paved shoulder - passenger-side
+3882,Intersection type
+3882,Intersection channelisation
+3882,Intersecting road volume
+3882,Intersection quality
+3882,Property access points
+3882,Number of lanes
+3882,Curvature
+3882,Quality of curve
+3882,Grade
+3882,Road condition
+3882,Skid resistance / grip
+3882,Delineation
+3882,Street lighting
+3882,Pedestrian crossing facilities - inspected road
+3882,Pedestrian crossing quality
+3882,Pedestrian crossing facilities - intersecting road
+3882,Pedestrian fencing
+3882,Speed management / traffic calming
+3882,Vehicle parking
+3882,Sidewalk - driver-side
+3882,Sidewalk - passenger-side
+3882,Service road
+3882,Facilities for motorised two wheelers
+3882,Facilities for bicycles
+3882,Roadworks
+3882,Sight distance
+3882,Vehicle flow (AADT)
+3882,Pedestrian peak hour flow across the road
+3882,Pedestrian peak hour flow along the road driver-side
+3882,Pedestrian peak hour flow along the road passenger-side
+3882,Bicycle peak hour flow
+3882,School zone warning
+3882,School zone crossing supervisor
+3883,Carriageway
+3883,Upgrade cost
+3883,Motorcycle observed flow
+3883,Bicycle observed flow
+3883,Pedestrian observed flow across the road
+3883,Pedestrian observed flow along the road driver-side
+3883,Pedestrian observed flow along the road passenger-side
+3883,Land use - driver-side
+3883,Land use - passenger-side
+3883,Area type
+3883,Median type
+3883,Centreline rumble strips
+3883,Roadside severity - driver-side distance
+3883,Roadside severity - driver-side object
+3883,Roadside severity - passenger-side distance
+3883,Roadside severity - passenger-side object
+3883,Shoulder rumble strips
+3883,Paved shoulder - driver-side
+3883,Paved shoulder - passenger-side
+3883,Intersection type
+3883,Intersection channelisation
+3883,Intersecting road volume
+3883,Intersection quality
+3883,Property access points
+3883,Number of lanes
+3883,Curvature
+3883,Quality of curve
+3883,Grade
+3883,Road condition
+3883,Skid resistance / grip
+3883,Delineation
+3883,Street lighting
+3883,Pedestrian crossing facilities - inspected road
+3883,Pedestrian crossing quality
+3883,Pedestrian crossing facilities - intersecting road
+3883,Pedestrian fencing
+3883,Speed management / traffic calming
+3883,Vehicle parking
+3883,Sidewalk - driver-side
+3883,Sidewalk - passenger-side
+3883,Service road
+3883,Facilities for motorised two wheelers
+3883,Facilities for bicycles
+3883,Roadworks
+3883,Sight distance
+3883,Vehicle flow (AADT)
+3883,Pedestrian peak hour flow across the road
+3883,Pedestrian peak hour flow along the road driver-side
+3883,Pedestrian peak hour flow along the road passenger-side
+3883,Bicycle peak hour flow
+3883,School zone warning
+3883,School zone crossing supervisor
+3884,Carriageway
+3884,Upgrade cost
+3884,Motorcycle observed flow
+3884,Bicycle observed flow
+3884,Pedestrian observed flow across the road
+3884,Pedestrian observed flow along the road driver-side
+3884,Pedestrian observed flow along the road passenger-side
+3884,Land use - driver-side
+3884,Land use - passenger-side
+3884,Area type
+3884,Median type
+3884,Centreline rumble strips
+3884,Roadside severity - driver-side distance
+3884,Roadside severity - driver-side object
+3884,Roadside severity - passenger-side distance
+3884,Roadside severity - passenger-side object
+3884,Shoulder rumble strips
+3884,Paved shoulder - driver-side
+3884,Paved shoulder - passenger-side
+3884,Intersection type
+3884,Intersection channelisation
+3884,Intersecting road volume
+3884,Intersection quality
+3884,Property access points
+3884,Number of lanes
+3884,Curvature
+3884,Quality of curve
+3884,Grade
+3884,Road condition
+3884,Skid resistance / grip
+3884,Delineation
+3884,Street lighting
+3884,Pedestrian crossing facilities - inspected road
+3884,Pedestrian crossing quality
+3884,Pedestrian crossing facilities - intersecting road
+3884,Pedestrian fencing
+3884,Speed management / traffic calming
+3884,Vehicle parking
+3884,Sidewalk - driver-side
+3884,Sidewalk - passenger-side
+3884,Service road
+3884,Facilities for motorised two wheelers
+3884,Facilities for bicycles
+3884,Roadworks
+3884,Sight distance
+3884,Vehicle flow (AADT)
+3884,Pedestrian peak hour flow across the road
+3884,Pedestrian peak hour flow along the road driver-side
+3884,Pedestrian peak hour flow along the road passenger-side
+3884,Bicycle peak hour flow
+3884,School zone warning
+3884,School zone crossing supervisor
+3885,Carriageway
+3885,Upgrade cost
+3885,Motorcycle observed flow
+3885,Bicycle observed flow
+3885,Pedestrian observed flow across the road
+3885,Pedestrian observed flow along the road driver-side
+3885,Pedestrian observed flow along the road passenger-side
+3885,Land use - driver-side
+3885,Land use - passenger-side
+3885,Area type
+3885,Median type
+3885,Centreline rumble strips
+3885,Roadside severity - driver-side distance
+3885,Roadside severity - driver-side object
+3885,Roadside severity - passenger-side distance
+3885,Roadside severity - passenger-side object
+3885,Shoulder rumble strips
+3885,Paved shoulder - driver-side
+3885,Paved shoulder - passenger-side
+3885,Intersection type
+3885,Intersection channelisation
+3885,Intersecting road volume
+3885,Intersection quality
+3885,Property access points
+3885,Number of lanes
+3885,Curvature
+3885,Quality of curve
+3885,Grade
+3885,Road condition
+3885,Skid resistance / grip
+3885,Delineation
+3885,Street lighting
+3885,Pedestrian crossing facilities - inspected road
+3885,Pedestrian crossing quality
+3885,Pedestrian crossing facilities - intersecting road
+3885,Pedestrian fencing
+3885,Speed management / traffic calming
+3885,Vehicle parking
+3885,Sidewalk - driver-side
+3885,Sidewalk - passenger-side
+3885,Service road
+3885,Facilities for motorised two wheelers
+3885,Facilities for bicycles
+3885,Roadworks
+3885,Sight distance
+3885,Vehicle flow (AADT)
+3885,Pedestrian peak hour flow across the road
+3885,Pedestrian peak hour flow along the road driver-side
+3885,Pedestrian peak hour flow along the road passenger-side
+3885,Bicycle peak hour flow
+3885,School zone warning
+3885,School zone crossing supervisor
+3886,Carriageway
+3886,Upgrade cost
+3886,Motorcycle observed flow
+3886,Bicycle observed flow
+3886,Pedestrian observed flow across the road
+3886,Pedestrian observed flow along the road driver-side
+3886,Pedestrian observed flow along the road passenger-side
+3886,Land use - driver-side
+3886,Land use - passenger-side
+3886,Area type
+3886,Median type
+3886,Centreline rumble strips
+3886,Roadside severity - driver-side distance
+3886,Roadside severity - driver-side object
+3886,Roadside severity - passenger-side distance
+3886,Roadside severity - passenger-side object
+3886,Shoulder rumble strips
+3886,Paved shoulder - driver-side
+3886,Paved shoulder - passenger-side
+3886,Intersection type
+3886,Intersection channelisation
+3886,Intersecting road volume
+3886,Intersection quality
+3886,Property access points
+3886,Number of lanes
+3886,Curvature
+3886,Quality of curve
+3886,Grade
+3886,Road condition
+3886,Skid resistance / grip
+3886,Delineation
+3886,Street lighting
+3886,Pedestrian crossing facilities - inspected road
+3886,Pedestrian crossing quality
+3886,Pedestrian crossing facilities - intersecting road
+3886,Pedestrian fencing
+3886,Speed management / traffic calming
+3886,Vehicle parking
+3886,Sidewalk - driver-side
+3886,Sidewalk - passenger-side
+3886,Service road
+3886,Facilities for motorised two wheelers
+3886,Facilities for bicycles
+3886,Roadworks
+3886,Sight distance
+3886,Vehicle flow (AADT)
+3886,Pedestrian peak hour flow across the road
+3886,Pedestrian peak hour flow along the road driver-side
+3886,Pedestrian peak hour flow along the road passenger-side
+3886,Bicycle peak hour flow
+3886,School zone warning
+3886,School zone crossing supervisor
+3887,Carriageway
+3887,Upgrade cost
+3887,Motorcycle observed flow
+3887,Bicycle observed flow
+3887,Pedestrian observed flow across the road
+3887,Pedestrian observed flow along the road driver-side
+3887,Pedestrian observed flow along the road passenger-side
+3887,Land use - driver-side
+3887,Land use - passenger-side
+3887,Area type
+3887,Median type
+3887,Centreline rumble strips
+3887,Roadside severity - driver-side distance
+3887,Roadside severity - driver-side object
+3887,Roadside severity - passenger-side distance
+3887,Roadside severity - passenger-side object
+3887,Shoulder rumble strips
+3887,Paved shoulder - driver-side
+3887,Paved shoulder - passenger-side
+3887,Intersection type
+3887,Intersection channelisation
+3887,Intersecting road volume
+3887,Intersection quality
+3887,Property access points
+3887,Number of lanes
+3887,Curvature
+3887,Quality of curve
+3887,Grade
+3887,Road condition
+3887,Skid resistance / grip
+3887,Delineation
+3887,Street lighting
+3887,Pedestrian crossing facilities - inspected road
+3887,Pedestrian crossing quality
+3887,Pedestrian crossing facilities - intersecting road
+3887,Pedestrian fencing
+3887,Speed management / traffic calming
+3887,Vehicle parking
+3887,Sidewalk - driver-side
+3887,Sidewalk - passenger-side
+3887,Service road
+3887,Facilities for motorised two wheelers
+3887,Facilities for bicycles
+3887,Roadworks
+3887,Sight distance
+3887,Vehicle flow (AADT)
+3887,Pedestrian peak hour flow across the road
+3887,Pedestrian peak hour flow along the road driver-side
+3887,Pedestrian peak hour flow along the road passenger-side
+3887,Bicycle peak hour flow
+3887,School zone warning
+3887,School zone crossing supervisor
+3888,Carriageway
+3888,Upgrade cost
+3888,Motorcycle observed flow
+3888,Bicycle observed flow
+3888,Pedestrian observed flow across the road
+3888,Pedestrian observed flow along the road driver-side
+3888,Pedestrian observed flow along the road passenger-side
+3888,Land use - driver-side
+3888,Land use - passenger-side
+3888,Area type
+3888,Median type
+3888,Centreline rumble strips
+3888,Roadside severity - driver-side distance
+3888,Roadside severity - driver-side object
+3888,Roadside severity - passenger-side distance
+3888,Roadside severity - passenger-side object
+3888,Shoulder rumble strips
+3888,Paved shoulder - driver-side
+3888,Paved shoulder - passenger-side
+3888,Intersection type
+3888,Intersection channelisation
+3888,Intersecting road volume
+3888,Intersection quality
+3888,Property access points
+3888,Number of lanes
+3888,Curvature
+3888,Quality of curve
+3888,Grade
+3888,Road condition
+3888,Skid resistance / grip
+3888,Delineation
+3888,Street lighting
+3888,Pedestrian crossing facilities - inspected road
+3888,Pedestrian crossing quality
+3888,Pedestrian crossing facilities - intersecting road
+3888,Pedestrian fencing
+3888,Speed management / traffic calming
+3888,Vehicle parking
+3888,Sidewalk - driver-side
+3888,Sidewalk - passenger-side
+3888,Service road
+3888,Facilities for motorised two wheelers
+3888,Facilities for bicycles
+3888,Roadworks
+3888,Sight distance
+3888,Vehicle flow (AADT)
+3888,Pedestrian peak hour flow across the road
+3888,Pedestrian peak hour flow along the road driver-side
+3888,Pedestrian peak hour flow along the road passenger-side
+3888,Bicycle peak hour flow
+3888,School zone warning
+3888,School zone crossing supervisor
+3889,Carriageway
+3889,Upgrade cost
+3889,Motorcycle observed flow
+3889,Bicycle observed flow
+3889,Pedestrian observed flow across the road
+3889,Pedestrian observed flow along the road driver-side
+3889,Pedestrian observed flow along the road passenger-side
+3889,Land use - driver-side
+3889,Land use - passenger-side
+3889,Area type
+3889,Median type
+3889,Centreline rumble strips
+3889,Roadside severity - driver-side distance
+3889,Roadside severity - driver-side object
+3889,Roadside severity - passenger-side distance
+3889,Roadside severity - passenger-side object
+3889,Shoulder rumble strips
+3889,Paved shoulder - driver-side
+3889,Paved shoulder - passenger-side
+3889,Intersection type
+3889,Intersection channelisation
+3889,Intersecting road volume
+3889,Intersection quality
+3889,Property access points
+3889,Number of lanes
+3889,Curvature
+3889,Quality of curve
+3889,Grade
+3889,Road condition
+3889,Skid resistance / grip
+3889,Delineation
+3889,Street lighting
+3889,Pedestrian crossing facilities - inspected road
+3889,Pedestrian crossing quality
+3889,Pedestrian crossing facilities - intersecting road
+3889,Pedestrian fencing
+3889,Speed management / traffic calming
+3889,Vehicle parking
+3889,Sidewalk - driver-side
+3889,Sidewalk - passenger-side
+3889,Service road
+3889,Facilities for motorised two wheelers
+3889,Facilities for bicycles
+3889,Roadworks
+3889,Sight distance
+3889,Vehicle flow (AADT)
+3889,Pedestrian peak hour flow across the road
+3889,Pedestrian peak hour flow along the road driver-side
+3889,Pedestrian peak hour flow along the road passenger-side
+3889,Bicycle peak hour flow
+3889,School zone warning
+3889,School zone crossing supervisor
+3890,Carriageway
+3890,Upgrade cost
+3890,Motorcycle observed flow
+3890,Bicycle observed flow
+3890,Pedestrian observed flow across the road
+3890,Pedestrian observed flow along the road driver-side
+3890,Pedestrian observed flow along the road passenger-side
+3890,Land use - driver-side
+3890,Land use - passenger-side
+3890,Area type
+3890,Median type
+3890,Centreline rumble strips
+3890,Roadside severity - driver-side distance
+3890,Roadside severity - driver-side object
+3890,Roadside severity - passenger-side distance
+3890,Roadside severity - passenger-side object
+3890,Shoulder rumble strips
+3890,Paved shoulder - driver-side
+3890,Paved shoulder - passenger-side
+3890,Intersection type
+3890,Intersection channelisation
+3890,Intersecting road volume
+3890,Intersection quality
+3890,Property access points
+3890,Number of lanes
+3890,Curvature
+3890,Quality of curve
+3890,Grade
+3890,Road condition
+3890,Skid resistance / grip
+3890,Delineation
+3890,Street lighting
+3890,Pedestrian crossing facilities - inspected road
+3890,Pedestrian crossing quality
+3890,Pedestrian crossing facilities - intersecting road
+3890,Pedestrian fencing
+3890,Speed management / traffic calming
+3890,Vehicle parking
+3890,Sidewalk - driver-side
+3890,Sidewalk - passenger-side
+3890,Service road
+3890,Facilities for motorised two wheelers
+3890,Facilities for bicycles
+3890,Roadworks
+3890,Sight distance
+3890,Vehicle flow (AADT)
+3890,Pedestrian peak hour flow across the road
+3890,Pedestrian peak hour flow along the road driver-side
+3890,Pedestrian peak hour flow along the road passenger-side
+3890,Bicycle peak hour flow
+3890,School zone warning
+3890,School zone crossing supervisor
+3891,Carriageway
+3891,Upgrade cost
+3891,Motorcycle observed flow
+3891,Bicycle observed flow
+3891,Pedestrian observed flow across the road
+3891,Pedestrian observed flow along the road driver-side
+3891,Pedestrian observed flow along the road passenger-side
+3891,Land use - driver-side
+3891,Land use - passenger-side
+3891,Area type
+3891,Median type
+3891,Centreline rumble strips
+3891,Roadside severity - driver-side distance
+3891,Roadside severity - driver-side object
+3891,Roadside severity - passenger-side distance
+3891,Roadside severity - passenger-side object
+3891,Shoulder rumble strips
+3891,Paved shoulder - driver-side
+3891,Paved shoulder - passenger-side
+3891,Intersection type
+3891,Intersection channelisation
+3891,Intersecting road volume
+3891,Intersection quality
+3891,Property access points
+3891,Number of lanes
+3891,Curvature
+3891,Quality of curve
+3891,Grade
+3891,Road condition
+3891,Skid resistance / grip
+3891,Delineation
+3891,Street lighting
+3891,Pedestrian crossing facilities - inspected road
+3891,Pedestrian crossing quality
+3891,Pedestrian crossing facilities - intersecting road
+3891,Pedestrian fencing
+3891,Speed management / traffic calming
+3891,Vehicle parking
+3891,Sidewalk - driver-side
+3891,Sidewalk - passenger-side
+3891,Service road
+3891,Facilities for motorised two wheelers
+3891,Facilities for bicycles
+3891,Roadworks
+3891,Sight distance
+3891,Vehicle flow (AADT)
+3891,Pedestrian peak hour flow across the road
+3891,Pedestrian peak hour flow along the road driver-side
+3891,Pedestrian peak hour flow along the road passenger-side
+3891,Bicycle peak hour flow
+3891,School zone warning
+3891,School zone crossing supervisor
+3892,Carriageway
+3892,Upgrade cost
+3892,Motorcycle observed flow
+3892,Bicycle observed flow
+3892,Pedestrian observed flow across the road
+3892,Pedestrian observed flow along the road driver-side
+3892,Pedestrian observed flow along the road passenger-side
+3892,Land use - driver-side
+3892,Land use - passenger-side
+3892,Area type
+3892,Median type
+3892,Centreline rumble strips
+3892,Roadside severity - driver-side distance
+3892,Roadside severity - driver-side object
+3892,Roadside severity - passenger-side distance
+3892,Roadside severity - passenger-side object
+3892,Shoulder rumble strips
+3892,Paved shoulder - driver-side
+3892,Paved shoulder - passenger-side
+3892,Intersection type
+3892,Intersection channelisation
+3892,Intersecting road volume
+3892,Intersection quality
+3892,Property access points
+3892,Number of lanes
+3892,Curvature
+3892,Quality of curve
+3892,Grade
+3892,Road condition
+3892,Skid resistance / grip
+3892,Delineation
+3892,Street lighting
+3892,Pedestrian crossing facilities - inspected road
+3892,Pedestrian crossing quality
+3892,Pedestrian crossing facilities - intersecting road
+3892,Pedestrian fencing
+3892,Speed management / traffic calming
+3892,Vehicle parking
+3892,Sidewalk - driver-side
+3892,Sidewalk - passenger-side
+3892,Service road
+3892,Facilities for motorised two wheelers
+3892,Facilities for bicycles
+3892,Roadworks
+3892,Sight distance
+3892,Vehicle flow (AADT)
+3892,Pedestrian peak hour flow across the road
+3892,Pedestrian peak hour flow along the road driver-side
+3892,Pedestrian peak hour flow along the road passenger-side
+3892,Bicycle peak hour flow
+3892,School zone warning
+3892,School zone crossing supervisor
+3893,Carriageway
+3893,Upgrade cost
+3893,Motorcycle observed flow
+3893,Bicycle observed flow
+3893,Pedestrian observed flow across the road
+3893,Pedestrian observed flow along the road driver-side
+3893,Pedestrian observed flow along the road passenger-side
+3893,Land use - driver-side
+3893,Land use - passenger-side
+3893,Area type
+3893,Median type
+3893,Centreline rumble strips
+3893,Roadside severity - driver-side distance
+3893,Roadside severity - driver-side object
+3893,Roadside severity - passenger-side distance
+3893,Roadside severity - passenger-side object
+3893,Shoulder rumble strips
+3893,Paved shoulder - driver-side
+3893,Paved shoulder - passenger-side
+3893,Intersection type
+3893,Intersection channelisation
+3893,Intersecting road volume
+3893,Intersection quality
+3893,Property access points
+3893,Number of lanes
+3893,Curvature
+3893,Quality of curve
+3893,Grade
+3893,Road condition
+3893,Skid resistance / grip
+3893,Delineation
+3893,Street lighting
+3893,Pedestrian crossing facilities - inspected road
+3893,Pedestrian crossing quality
+3893,Pedestrian crossing facilities - intersecting road
+3893,Pedestrian fencing
+3893,Speed management / traffic calming
+3893,Vehicle parking
+3893,Sidewalk - driver-side
+3893,Sidewalk - passenger-side
+3893,Service road
+3893,Facilities for motorised two wheelers
+3893,Facilities for bicycles
+3893,Roadworks
+3893,Sight distance
+3893,Vehicle flow (AADT)
+3893,Pedestrian peak hour flow across the road
+3893,Pedestrian peak hour flow along the road driver-side
+3893,Pedestrian peak hour flow along the road passenger-side
+3893,Bicycle peak hour flow
+3893,School zone warning
+3893,School zone crossing supervisor
+3894,Carriageway
+3894,Upgrade cost
+3894,Motorcycle observed flow
+3894,Bicycle observed flow
+3894,Pedestrian observed flow across the road
+3894,Pedestrian observed flow along the road driver-side
+3894,Pedestrian observed flow along the road passenger-side
+3894,Land use - driver-side
+3894,Land use - passenger-side
+3894,Area type
+3894,Median type
+3894,Centreline rumble strips
+3894,Roadside severity - driver-side distance
+3894,Roadside severity - driver-side object
+3894,Roadside severity - passenger-side distance
+3894,Roadside severity - passenger-side object
+3894,Shoulder rumble strips
+3894,Paved shoulder - driver-side
+3894,Paved shoulder - passenger-side
+3894,Intersection type
+3894,Intersection channelisation
+3894,Intersecting road volume
+3894,Intersection quality
+3894,Property access points
+3894,Number of lanes
+3894,Curvature
+3894,Quality of curve
+3894,Grade
+3894,Road condition
+3894,Skid resistance / grip
+3894,Delineation
+3894,Street lighting
+3894,Pedestrian crossing facilities - inspected road
+3894,Pedestrian crossing quality
+3894,Pedestrian crossing facilities - intersecting road
+3894,Pedestrian fencing
+3894,Speed management / traffic calming
+3894,Vehicle parking
+3894,Sidewalk - driver-side
+3894,Sidewalk - passenger-side
+3894,Service road
+3894,Facilities for motorised two wheelers
+3894,Facilities for bicycles
+3894,Roadworks
+3894,Sight distance
+3894,Vehicle flow (AADT)
+3894,Pedestrian peak hour flow across the road
+3894,Pedestrian peak hour flow along the road driver-side
+3894,Pedestrian peak hour flow along the road passenger-side
+3894,Bicycle peak hour flow
+3894,School zone warning
+3894,School zone crossing supervisor
+3895,Carriageway
+3895,Upgrade cost
+3895,Motorcycle observed flow
+3895,Bicycle observed flow
+3895,Pedestrian observed flow across the road
+3895,Pedestrian observed flow along the road driver-side
+3895,Pedestrian observed flow along the road passenger-side
+3895,Land use - driver-side
+3895,Land use - passenger-side
+3895,Area type
+3895,Median type
+3895,Centreline rumble strips
+3895,Roadside severity - driver-side distance
+3895,Roadside severity - driver-side object
+3895,Roadside severity - passenger-side distance
+3895,Roadside severity - passenger-side object
+3895,Shoulder rumble strips
+3895,Paved shoulder - driver-side
+3895,Paved shoulder - passenger-side
+3895,Intersection type
+3895,Intersection channelisation
+3895,Intersecting road volume
+3895,Intersection quality
+3895,Property access points
+3895,Number of lanes
+3895,Curvature
+3895,Quality of curve
+3895,Grade
+3895,Road condition
+3895,Skid resistance / grip
+3895,Delineation
+3895,Street lighting
+3895,Pedestrian crossing facilities - inspected road
+3895,Pedestrian crossing quality
+3895,Pedestrian crossing facilities - intersecting road
+3895,Pedestrian fencing
+3895,Speed management / traffic calming
+3895,Vehicle parking
+3895,Sidewalk - driver-side
+3895,Sidewalk - passenger-side
+3895,Service road
+3895,Facilities for motorised two wheelers
+3895,Facilities for bicycles
+3895,Roadworks
+3895,Sight distance
+3895,Vehicle flow (AADT)
+3895,Pedestrian peak hour flow across the road
+3895,Pedestrian peak hour flow along the road driver-side
+3895,Pedestrian peak hour flow along the road passenger-side
+3895,Bicycle peak hour flow
+3895,School zone warning
+3895,School zone crossing supervisor
+3896,Carriageway
+3896,Upgrade cost
+3896,Motorcycle observed flow
+3896,Bicycle observed flow
+3896,Pedestrian observed flow across the road
+3896,Pedestrian observed flow along the road driver-side
+3896,Pedestrian observed flow along the road passenger-side
+3896,Land use - driver-side
+3896,Land use - passenger-side
+3896,Area type
+3896,Median type
+3896,Centreline rumble strips
+3896,Roadside severity - driver-side distance
+3896,Roadside severity - driver-side object
+3896,Roadside severity - passenger-side distance
+3896,Roadside severity - passenger-side object
+3896,Shoulder rumble strips
+3896,Paved shoulder - driver-side
+3896,Paved shoulder - passenger-side
+3896,Intersection type
+3896,Intersection channelisation
+3896,Intersecting road volume
+3896,Intersection quality
+3896,Property access points
+3896,Number of lanes
+3896,Curvature
+3896,Quality of curve
+3896,Grade
+3896,Road condition
+3896,Skid resistance / grip
+3896,Delineation
+3896,Street lighting
+3896,Pedestrian crossing facilities - inspected road
+3896,Pedestrian crossing quality
+3896,Pedestrian crossing facilities - intersecting road
+3896,Pedestrian fencing
+3896,Speed management / traffic calming
+3896,Vehicle parking
+3896,Sidewalk - driver-side
+3896,Sidewalk - passenger-side
+3896,Service road
+3896,Facilities for motorised two wheelers
+3896,Facilities for bicycles
+3896,Roadworks
+3896,Sight distance
+3896,Vehicle flow (AADT)
+3896,Pedestrian peak hour flow across the road
+3896,Pedestrian peak hour flow along the road driver-side
+3896,Pedestrian peak hour flow along the road passenger-side
+3896,Bicycle peak hour flow
+3896,School zone warning
+3896,School zone crossing supervisor
+3897,Carriageway
+3897,Upgrade cost
+3897,Motorcycle observed flow
+3897,Bicycle observed flow
+3897,Pedestrian observed flow across the road
+3897,Pedestrian observed flow along the road driver-side
+3897,Pedestrian observed flow along the road passenger-side
+3897,Land use - driver-side
+3897,Land use - passenger-side
+3897,Area type
+3897,Median type
+3897,Centreline rumble strips
+3897,Roadside severity - driver-side distance
+3897,Roadside severity - driver-side object
+3897,Roadside severity - passenger-side distance
+3897,Roadside severity - passenger-side object
+3897,Shoulder rumble strips
+3897,Paved shoulder - driver-side
+3897,Paved shoulder - passenger-side
+3897,Intersection type
+3897,Intersection channelisation
+3897,Intersecting road volume
+3897,Intersection quality
+3897,Property access points
+3897,Number of lanes
+3897,Curvature
+3897,Quality of curve
+3897,Grade
+3897,Road condition
+3897,Skid resistance / grip
+3897,Delineation
+3897,Street lighting
+3897,Pedestrian crossing facilities - inspected road
+3897,Pedestrian crossing quality
+3897,Pedestrian crossing facilities - intersecting road
+3897,Pedestrian fencing
+3897,Speed management / traffic calming
+3897,Vehicle parking
+3897,Sidewalk - driver-side
+3897,Sidewalk - passenger-side
+3897,Service road
+3897,Facilities for motorised two wheelers
+3897,Facilities for bicycles
+3897,Roadworks
+3897,Sight distance
+3897,Vehicle flow (AADT)
+3897,Pedestrian peak hour flow across the road
+3897,Pedestrian peak hour flow along the road driver-side
+3897,Pedestrian peak hour flow along the road passenger-side
+3897,Bicycle peak hour flow
+3897,School zone warning
+3897,School zone crossing supervisor
+3898,Carriageway
+3898,Upgrade cost
+3898,Motorcycle observed flow
+3898,Bicycle observed flow
+3898,Pedestrian observed flow across the road
+3898,Pedestrian observed flow along the road driver-side
+3898,Pedestrian observed flow along the road passenger-side
+3898,Land use - driver-side
+3898,Land use - passenger-side
+3898,Area type
+3898,Median type
+3898,Centreline rumble strips
+3898,Roadside severity - driver-side distance
+3898,Roadside severity - driver-side object
+3898,Roadside severity - passenger-side distance
+3898,Roadside severity - passenger-side object
+3898,Shoulder rumble strips
+3898,Paved shoulder - driver-side
+3898,Paved shoulder - passenger-side
+3898,Intersection type
+3898,Intersection channelisation
+3898,Intersecting road volume
+3898,Intersection quality
+3898,Property access points
+3898,Number of lanes
+3898,Curvature
+3898,Quality of curve
+3898,Grade
+3898,Road condition
+3898,Skid resistance / grip
+3898,Delineation
+3898,Street lighting
+3898,Pedestrian crossing facilities - inspected road
+3898,Pedestrian crossing quality
+3898,Pedestrian crossing facilities - intersecting road
+3898,Pedestrian fencing
+3898,Speed management / traffic calming
+3898,Vehicle parking
+3898,Sidewalk - driver-side
+3898,Sidewalk - passenger-side
+3898,Service road
+3898,Facilities for motorised two wheelers
+3898,Facilities for bicycles
+3898,Roadworks
+3898,Sight distance
+3898,Vehicle flow (AADT)
+3898,Pedestrian peak hour flow across the road
+3898,Pedestrian peak hour flow along the road driver-side
+3898,Pedestrian peak hour flow along the road passenger-side
+3898,Bicycle peak hour flow
+3898,School zone warning
+3898,School zone crossing supervisor
+3899,Carriageway
+3899,Upgrade cost
+3899,Motorcycle observed flow
+3899,Bicycle observed flow
+3899,Pedestrian observed flow across the road
+3899,Pedestrian observed flow along the road driver-side
+3899,Pedestrian observed flow along the road passenger-side
+3899,Land use - driver-side
+3899,Land use - passenger-side
+3899,Area type
+3899,Median type
+3899,Centreline rumble strips
+3899,Roadside severity - driver-side distance
+3899,Roadside severity - driver-side object
+3899,Roadside severity - passenger-side distance
+3899,Roadside severity - passenger-side object
+3899,Shoulder rumble strips
+3899,Paved shoulder - driver-side
+3899,Paved shoulder - passenger-side
+3899,Intersection type
+3899,Intersection channelisation
+3899,Intersecting road volume
+3899,Intersection quality
+3899,Property access points
+3899,Number of lanes
+3899,Curvature
+3899,Quality of curve
+3899,Grade
+3899,Road condition
+3899,Skid resistance / grip
+3899,Delineation
+3899,Street lighting
+3899,Pedestrian crossing facilities - inspected road
+3899,Pedestrian crossing quality
+3899,Pedestrian crossing facilities - intersecting road
+3899,Pedestrian fencing
+3899,Speed management / traffic calming
+3899,Vehicle parking
+3899,Sidewalk - driver-side
+3899,Sidewalk - passenger-side
+3899,Service road
+3899,Facilities for motorised two wheelers
+3899,Facilities for bicycles
+3899,Roadworks
+3899,Sight distance
+3899,Vehicle flow (AADT)
+3899,Pedestrian peak hour flow across the road
+3899,Pedestrian peak hour flow along the road driver-side
+3899,Pedestrian peak hour flow along the road passenger-side
+3899,Bicycle peak hour flow
+3899,School zone warning
+3899,School zone crossing supervisor
+3900,Carriageway
+3900,Upgrade cost
+3900,Motorcycle observed flow
+3900,Bicycle observed flow
+3900,Pedestrian observed flow across the road
+3900,Pedestrian observed flow along the road driver-side
+3900,Pedestrian observed flow along the road passenger-side
+3900,Land use - driver-side
+3900,Land use - passenger-side
+3900,Area type
+3900,Median type
+3900,Centreline rumble strips
+3900,Roadside severity - driver-side distance
+3900,Roadside severity - driver-side object
+3900,Roadside severity - passenger-side distance
+3900,Roadside severity - passenger-side object
+3900,Shoulder rumble strips
+3900,Paved shoulder - driver-side
+3900,Paved shoulder - passenger-side
+3900,Intersection type
+3900,Intersection channelisation
+3900,Intersecting road volume
+3900,Intersection quality
+3900,Property access points
+3900,Number of lanes
+3900,Curvature
+3900,Quality of curve
+3900,Grade
+3900,Road condition
+3900,Skid resistance / grip
+3900,Delineation
+3900,Street lighting
+3900,Pedestrian crossing facilities - inspected road
+3900,Pedestrian crossing quality
+3900,Pedestrian crossing facilities - intersecting road
+3900,Pedestrian fencing
+3900,Speed management / traffic calming
+3900,Vehicle parking
+3900,Sidewalk - driver-side
+3900,Sidewalk - passenger-side
+3900,Service road
+3900,Facilities for motorised two wheelers
+3900,Facilities for bicycles
+3900,Roadworks
+3900,Sight distance
+3900,Vehicle flow (AADT)
+3900,Pedestrian peak hour flow across the road
+3900,Pedestrian peak hour flow along the road driver-side
+3900,Pedestrian peak hour flow along the road passenger-side
+3900,Bicycle peak hour flow
+3900,School zone warning
+3900,School zone crossing supervisor
+3901,Carriageway
+3901,Upgrade cost
+3901,Motorcycle observed flow
+3901,Bicycle observed flow
+3901,Pedestrian observed flow across the road
+3901,Pedestrian observed flow along the road driver-side
+3901,Pedestrian observed flow along the road passenger-side
+3901,Land use - driver-side
+3901,Land use - passenger-side
+3901,Area type
+3901,Median type
+3901,Centreline rumble strips
+3901,Roadside severity - driver-side distance
+3901,Roadside severity - driver-side object
+3901,Roadside severity - passenger-side distance
+3901,Roadside severity - passenger-side object
+3901,Shoulder rumble strips
+3901,Paved shoulder - driver-side
+3901,Paved shoulder - passenger-side
+3901,Intersection type
+3901,Intersection channelisation
+3901,Intersecting road volume
+3901,Intersection quality
+3901,Property access points
+3901,Number of lanes
+3901,Curvature
+3901,Quality of curve
+3901,Grade
+3901,Road condition
+3901,Skid resistance / grip
+3901,Delineation
+3901,Street lighting
+3901,Pedestrian crossing facilities - inspected road
+3901,Pedestrian crossing quality
+3901,Pedestrian crossing facilities - intersecting road
+3901,Pedestrian fencing
+3901,Speed management / traffic calming
+3901,Vehicle parking
+3901,Sidewalk - driver-side
+3901,Sidewalk - passenger-side
+3901,Service road
+3901,Facilities for motorised two wheelers
+3901,Facilities for bicycles
+3901,Roadworks
+3901,Sight distance
+3901,Vehicle flow (AADT)
+3901,Pedestrian peak hour flow across the road
+3901,Pedestrian peak hour flow along the road driver-side
+3901,Pedestrian peak hour flow along the road passenger-side
+3901,Bicycle peak hour flow
+3901,School zone warning
+3901,School zone crossing supervisor
+3902,Carriageway
+3902,Upgrade cost
+3902,Motorcycle observed flow
+3902,Bicycle observed flow
+3902,Pedestrian observed flow across the road
+3902,Pedestrian observed flow along the road driver-side
+3902,Pedestrian observed flow along the road passenger-side
+3902,Land use - driver-side
+3902,Land use - passenger-side
+3902,Area type
+3902,Median type
+3902,Centreline rumble strips
+3902,Roadside severity - driver-side distance
+3902,Roadside severity - driver-side object
+3902,Roadside severity - passenger-side distance
+3902,Roadside severity - passenger-side object
+3902,Shoulder rumble strips
+3902,Paved shoulder - driver-side
+3902,Paved shoulder - passenger-side
+3902,Intersection type
+3902,Intersection channelisation
+3902,Intersecting road volume
+3902,Intersection quality
+3902,Property access points
+3902,Number of lanes
+3902,Curvature
+3902,Quality of curve
+3902,Grade
+3902,Road condition
+3902,Skid resistance / grip
+3902,Delineation
+3902,Street lighting
+3902,Pedestrian crossing facilities - inspected road
+3902,Pedestrian crossing quality
+3902,Pedestrian crossing facilities - intersecting road
+3902,Pedestrian fencing
+3902,Speed management / traffic calming
+3902,Vehicle parking
+3902,Sidewalk - driver-side
+3902,Sidewalk - passenger-side
+3902,Service road
+3902,Facilities for motorised two wheelers
+3902,Facilities for bicycles
+3902,Roadworks
+3902,Sight distance
+3902,Vehicle flow (AADT)
+3902,Pedestrian peak hour flow across the road
+3902,Pedestrian peak hour flow along the road driver-side
+3902,Pedestrian peak hour flow along the road passenger-side
+3902,Bicycle peak hour flow
+3902,School zone warning
+3902,School zone crossing supervisor
+3903,Carriageway
+3903,Upgrade cost
+3903,Motorcycle observed flow
+3903,Bicycle observed flow
+3903,Pedestrian observed flow across the road
+3903,Pedestrian observed flow along the road driver-side
+3903,Pedestrian observed flow along the road passenger-side
+3903,Land use - driver-side
+3903,Land use - passenger-side
+3903,Area type
+3903,Median type
+3903,Centreline rumble strips
+3903,Roadside severity - driver-side distance
+3903,Roadside severity - driver-side object
+3903,Roadside severity - passenger-side distance
+3903,Roadside severity - passenger-side object
+3903,Shoulder rumble strips
+3903,Paved shoulder - driver-side
+3903,Paved shoulder - passenger-side
+3903,Intersection type
+3903,Intersection channelisation
+3903,Intersecting road volume
+3903,Intersection quality
+3903,Property access points
+3903,Number of lanes
+3903,Curvature
+3903,Quality of curve
+3903,Grade
+3903,Road condition
+3903,Skid resistance / grip
+3903,Delineation
+3903,Street lighting
+3903,Pedestrian crossing facilities - inspected road
+3903,Pedestrian crossing quality
+3903,Pedestrian crossing facilities - intersecting road
+3903,Pedestrian fencing
+3903,Speed management / traffic calming
+3903,Vehicle parking
+3903,Sidewalk - driver-side
+3903,Sidewalk - passenger-side
+3903,Service road
+3903,Facilities for motorised two wheelers
+3903,Facilities for bicycles
+3903,Roadworks
+3903,Sight distance
+3903,Vehicle flow (AADT)
+3903,Pedestrian peak hour flow across the road
+3903,Pedestrian peak hour flow along the road driver-side
+3903,Pedestrian peak hour flow along the road passenger-side
+3903,Bicycle peak hour flow
+3903,School zone warning
+3903,School zone crossing supervisor
+3904,Carriageway
+3904,Upgrade cost
+3904,Motorcycle observed flow
+3904,Bicycle observed flow
+3904,Pedestrian observed flow across the road
+3904,Pedestrian observed flow along the road driver-side
+3904,Pedestrian observed flow along the road passenger-side
+3904,Land use - driver-side
+3904,Land use - passenger-side
+3904,Area type
+3904,Median type
+3904,Centreline rumble strips
+3904,Roadside severity - driver-side distance
+3904,Roadside severity - driver-side object
+3904,Roadside severity - passenger-side distance
+3904,Roadside severity - passenger-side object
+3904,Shoulder rumble strips
+3904,Paved shoulder - driver-side
+3904,Paved shoulder - passenger-side
+3904,Intersection type
+3904,Intersection channelisation
+3904,Intersecting road volume
+3904,Intersection quality
+3904,Property access points
+3904,Number of lanes
+3904,Curvature
+3904,Quality of curve
+3904,Grade
+3904,Road condition
+3904,Skid resistance / grip
+3904,Delineation
+3904,Street lighting
+3904,Pedestrian crossing facilities - inspected road
+3904,Pedestrian crossing quality
+3904,Pedestrian crossing facilities - intersecting road
+3904,Pedestrian fencing
+3904,Speed management / traffic calming
+3904,Vehicle parking
+3904,Sidewalk - driver-side
+3904,Sidewalk - passenger-side
+3904,Service road
+3904,Facilities for motorised two wheelers
+3904,Facilities for bicycles
+3904,Roadworks
+3904,Sight distance
+3904,Vehicle flow (AADT)
+3904,Pedestrian peak hour flow across the road
+3904,Pedestrian peak hour flow along the road driver-side
+3904,Pedestrian peak hour flow along the road passenger-side
+3904,Bicycle peak hour flow
+3904,School zone warning
+3904,School zone crossing supervisor
+3905,Carriageway
+3905,Upgrade cost
+3905,Motorcycle observed flow
+3905,Bicycle observed flow
+3905,Pedestrian observed flow across the road
+3905,Pedestrian observed flow along the road driver-side
+3905,Pedestrian observed flow along the road passenger-side
+3905,Land use - driver-side
+3905,Land use - passenger-side
+3905,Area type
+3905,Median type
+3905,Centreline rumble strips
+3905,Roadside severity - driver-side distance
+3905,Roadside severity - driver-side object
+3905,Roadside severity - passenger-side distance
+3905,Roadside severity - passenger-side object
+3905,Shoulder rumble strips
+3905,Paved shoulder - driver-side
+3905,Paved shoulder - passenger-side
+3905,Intersection type
+3905,Intersection channelisation
+3905,Intersecting road volume
+3905,Intersection quality
+3905,Property access points
+3905,Number of lanes
+3905,Curvature
+3905,Quality of curve
+3905,Grade
+3905,Road condition
+3905,Skid resistance / grip
+3905,Delineation
+3905,Street lighting
+3905,Pedestrian crossing facilities - inspected road
+3905,Pedestrian crossing quality
+3905,Pedestrian crossing facilities - intersecting road
+3905,Pedestrian fencing
+3905,Speed management / traffic calming
+3905,Vehicle parking
+3905,Sidewalk - driver-side
+3905,Sidewalk - passenger-side
+3905,Service road
+3905,Facilities for motorised two wheelers
+3905,Facilities for bicycles
+3905,Roadworks
+3905,Sight distance
+3905,Vehicle flow (AADT)
+3905,Pedestrian peak hour flow across the road
+3905,Pedestrian peak hour flow along the road driver-side
+3905,Pedestrian peak hour flow along the road passenger-side
+3905,Bicycle peak hour flow
+3905,School zone warning
+3905,School zone crossing supervisor
+3906,Carriageway
+3906,Upgrade cost
+3906,Motorcycle observed flow
+3906,Bicycle observed flow
+3906,Pedestrian observed flow across the road
+3906,Pedestrian observed flow along the road driver-side
+3906,Pedestrian observed flow along the road passenger-side
+3906,Land use - driver-side
+3906,Land use - passenger-side
+3906,Area type
+3906,Median type
+3906,Centreline rumble strips
+3906,Roadside severity - driver-side distance
+3906,Roadside severity - driver-side object
+3906,Roadside severity - passenger-side distance
+3906,Roadside severity - passenger-side object
+3906,Shoulder rumble strips
+3906,Paved shoulder - driver-side
+3906,Paved shoulder - passenger-side
+3906,Intersection type
+3906,Intersection channelisation
+3906,Intersecting road volume
+3906,Intersection quality
+3906,Property access points
+3906,Number of lanes
+3906,Curvature
+3906,Quality of curve
+3906,Grade
+3906,Road condition
+3906,Skid resistance / grip
+3906,Delineation
+3906,Street lighting
+3906,Pedestrian crossing facilities - inspected road
+3906,Pedestrian crossing quality
+3906,Pedestrian crossing facilities - intersecting road
+3906,Pedestrian fencing
+3906,Speed management / traffic calming
+3906,Vehicle parking
+3906,Sidewalk - driver-side
+3906,Sidewalk - passenger-side
+3906,Service road
+3906,Facilities for motorised two wheelers
+3906,Facilities for bicycles
+3906,Roadworks
+3906,Sight distance
+3906,Vehicle flow (AADT)
+3906,Pedestrian peak hour flow across the road
+3906,Pedestrian peak hour flow along the road driver-side
+3906,Pedestrian peak hour flow along the road passenger-side
+3906,Bicycle peak hour flow
+3906,School zone warning
+3906,School zone crossing supervisor
+3907,Carriageway
+3907,Upgrade cost
+3907,Motorcycle observed flow
+3907,Bicycle observed flow
+3907,Pedestrian observed flow across the road
+3907,Pedestrian observed flow along the road driver-side
+3907,Pedestrian observed flow along the road passenger-side
+3907,Land use - driver-side
+3907,Land use - passenger-side
+3907,Area type
+3907,Median type
+3907,Centreline rumble strips
+3907,Roadside severity - driver-side distance
+3907,Roadside severity - driver-side object
+3907,Roadside severity - passenger-side distance
+3907,Roadside severity - passenger-side object
+3907,Shoulder rumble strips
+3907,Paved shoulder - driver-side
+3907,Paved shoulder - passenger-side
+3907,Intersection type
+3907,Intersection channelisation
+3907,Intersecting road volume
+3907,Intersection quality
+3907,Property access points
+3907,Number of lanes
+3907,Curvature
+3907,Quality of curve
+3907,Grade
+3907,Road condition
+3907,Skid resistance / grip
+3907,Delineation
+3907,Street lighting
+3907,Pedestrian crossing facilities - inspected road
+3907,Pedestrian crossing quality
+3907,Pedestrian crossing facilities - intersecting road
+3907,Pedestrian fencing
+3907,Speed management / traffic calming
+3907,Vehicle parking
+3907,Sidewalk - driver-side
+3907,Sidewalk - passenger-side
+3907,Service road
+3907,Facilities for motorised two wheelers
+3907,Facilities for bicycles
+3907,Roadworks
+3907,Sight distance
+3907,Vehicle flow (AADT)
+3907,Pedestrian peak hour flow across the road
+3907,Pedestrian peak hour flow along the road driver-side
+3907,Pedestrian peak hour flow along the road passenger-side
+3907,Bicycle peak hour flow
+3907,School zone warning
+3907,School zone crossing supervisor
+3908,Carriageway
+3908,Upgrade cost
+3908,Motorcycle observed flow
+3908,Bicycle observed flow
+3908,Pedestrian observed flow across the road
+3908,Pedestrian observed flow along the road driver-side
+3908,Pedestrian observed flow along the road passenger-side
+3908,Land use - driver-side
+3908,Land use - passenger-side
+3908,Area type
+3908,Median type
+3908,Centreline rumble strips
+3908,Roadside severity - driver-side distance
+3908,Roadside severity - driver-side object
+3908,Roadside severity - passenger-side distance
+3908,Roadside severity - passenger-side object
+3908,Shoulder rumble strips
+3908,Paved shoulder - driver-side
+3908,Paved shoulder - passenger-side
+3908,Intersection type
+3908,Intersection channelisation
+3908,Intersecting road volume
+3908,Intersection quality
+3908,Property access points
+3908,Number of lanes
+3908,Curvature
+3908,Quality of curve
+3908,Grade
+3908,Road condition
+3908,Skid resistance / grip
+3908,Delineation
+3908,Street lighting
+3908,Pedestrian crossing facilities - inspected road
+3908,Pedestrian crossing quality
+3908,Pedestrian crossing facilities - intersecting road
+3908,Pedestrian fencing
+3908,Speed management / traffic calming
+3908,Vehicle parking
+3908,Sidewalk - driver-side
+3908,Sidewalk - passenger-side
+3908,Service road
+3908,Facilities for motorised two wheelers
+3908,Facilities for bicycles
+3908,Roadworks
+3908,Sight distance
+3908,Vehicle flow (AADT)
+3908,Pedestrian peak hour flow across the road
+3908,Pedestrian peak hour flow along the road driver-side
+3908,Pedestrian peak hour flow along the road passenger-side
+3908,Bicycle peak hour flow
+3908,School zone warning
+3908,School zone crossing supervisor
+3909,Carriageway
+3909,Upgrade cost
+3909,Motorcycle observed flow
+3909,Bicycle observed flow
+3909,Pedestrian observed flow across the road
+3909,Pedestrian observed flow along the road driver-side
+3909,Pedestrian observed flow along the road passenger-side
+3909,Land use - driver-side
+3909,Land use - passenger-side
+3909,Area type
+3909,Median type
+3909,Centreline rumble strips
+3909,Roadside severity - driver-side distance
+3909,Roadside severity - driver-side object
+3909,Roadside severity - passenger-side distance
+3909,Roadside severity - passenger-side object
+3909,Shoulder rumble strips
+3909,Paved shoulder - driver-side
+3909,Paved shoulder - passenger-side
+3909,Intersection type
+3909,Intersection channelisation
+3909,Intersecting road volume
+3909,Intersection quality
+3909,Property access points
+3909,Number of lanes
+3909,Curvature
+3909,Quality of curve
+3909,Grade
+3909,Road condition
+3909,Skid resistance / grip
+3909,Delineation
+3909,Street lighting
+3909,Pedestrian crossing facilities - inspected road
+3909,Pedestrian crossing quality
+3909,Pedestrian crossing facilities - intersecting road
+3909,Pedestrian fencing
+3909,Speed management / traffic calming
+3909,Vehicle parking
+3909,Sidewalk - driver-side
+3909,Sidewalk - passenger-side
+3909,Service road
+3909,Facilities for motorised two wheelers
+3909,Facilities for bicycles
+3909,Roadworks
+3909,Sight distance
+3909,Vehicle flow (AADT)
+3909,Pedestrian peak hour flow across the road
+3909,Pedestrian peak hour flow along the road driver-side
+3909,Pedestrian peak hour flow along the road passenger-side
+3909,Bicycle peak hour flow
+3909,School zone warning
+3909,School zone crossing supervisor
+3910,Carriageway
+3910,Upgrade cost
+3910,Motorcycle observed flow
+3910,Bicycle observed flow
+3910,Pedestrian observed flow across the road
+3910,Pedestrian observed flow along the road driver-side
+3910,Pedestrian observed flow along the road passenger-side
+3910,Land use - driver-side
+3910,Land use - passenger-side
+3910,Area type
+3910,Median type
+3910,Centreline rumble strips
+3910,Roadside severity - driver-side distance
+3910,Roadside severity - driver-side object
+3910,Roadside severity - passenger-side distance
+3910,Roadside severity - passenger-side object
+3910,Shoulder rumble strips
+3910,Paved shoulder - driver-side
+3910,Paved shoulder - passenger-side
+3910,Intersection type
+3910,Intersection channelisation
+3910,Intersecting road volume
+3910,Intersection quality
+3910,Property access points
+3910,Number of lanes
+3910,Curvature
+3910,Quality of curve
+3910,Grade
+3910,Road condition
+3910,Skid resistance / grip
+3910,Delineation
+3910,Street lighting
+3910,Pedestrian crossing facilities - inspected road
+3910,Pedestrian crossing quality
+3910,Pedestrian crossing facilities - intersecting road
+3910,Pedestrian fencing
+3910,Speed management / traffic calming
+3910,Vehicle parking
+3910,Sidewalk - driver-side
+3910,Sidewalk - passenger-side
+3910,Service road
+3910,Facilities for motorised two wheelers
+3910,Facilities for bicycles
+3910,Roadworks
+3910,Sight distance
+3910,Vehicle flow (AADT)
+3910,Pedestrian peak hour flow across the road
+3910,Pedestrian peak hour flow along the road driver-side
+3910,Pedestrian peak hour flow along the road passenger-side
+3910,Bicycle peak hour flow
+3910,School zone warning
+3910,School zone crossing supervisor
+3911,Carriageway
+3911,Upgrade cost
+3911,Motorcycle observed flow
+3911,Bicycle observed flow
+3911,Pedestrian observed flow across the road
+3911,Pedestrian observed flow along the road driver-side
+3911,Pedestrian observed flow along the road passenger-side
+3911,Land use - driver-side
+3911,Land use - passenger-side
+3911,Area type
+3911,Median type
+3911,Centreline rumble strips
+3911,Roadside severity - driver-side distance
+3911,Roadside severity - driver-side object
+3911,Roadside severity - passenger-side distance
+3911,Roadside severity - passenger-side object
+3911,Shoulder rumble strips
+3911,Paved shoulder - driver-side
+3911,Paved shoulder - passenger-side
+3911,Intersection type
+3911,Intersection channelisation
+3911,Intersecting road volume
+3911,Intersection quality
+3911,Property access points
+3911,Number of lanes
+3911,Curvature
+3911,Quality of curve
+3911,Grade
+3911,Road condition
+3911,Skid resistance / grip
+3911,Delineation
+3911,Street lighting
+3911,Pedestrian crossing facilities - inspected road
+3911,Pedestrian crossing quality
+3911,Pedestrian crossing facilities - intersecting road
+3911,Pedestrian fencing
+3911,Speed management / traffic calming
+3911,Vehicle parking
+3911,Sidewalk - driver-side
+3911,Sidewalk - passenger-side
+3911,Service road
+3911,Facilities for motorised two wheelers
+3911,Facilities for bicycles
+3911,Roadworks
+3911,Sight distance
+3911,Vehicle flow (AADT)
+3911,Pedestrian peak hour flow across the road
+3911,Pedestrian peak hour flow along the road driver-side
+3911,Pedestrian peak hour flow along the road passenger-side
+3911,Bicycle peak hour flow
+3911,School zone warning
+3911,School zone crossing supervisor
+3912,Carriageway
+3912,Upgrade cost
+3912,Motorcycle observed flow
+3912,Bicycle observed flow
+3912,Pedestrian observed flow across the road
+3912,Pedestrian observed flow along the road driver-side
+3912,Pedestrian observed flow along the road passenger-side
+3912,Land use - driver-side
+3912,Land use - passenger-side
+3912,Area type
+3912,Median type
+3912,Centreline rumble strips
+3912,Roadside severity - driver-side distance
+3912,Roadside severity - driver-side object
+3912,Roadside severity - passenger-side distance
+3912,Roadside severity - passenger-side object
+3912,Shoulder rumble strips
+3912,Paved shoulder - driver-side
+3912,Paved shoulder - passenger-side
+3912,Intersection type
+3912,Intersection channelisation
+3912,Intersecting road volume
+3912,Intersection quality
+3912,Property access points
+3912,Number of lanes
+3912,Curvature
+3912,Quality of curve
+3912,Grade
+3912,Road condition
+3912,Skid resistance / grip
+3912,Delineation
+3912,Street lighting
+3912,Pedestrian crossing facilities - inspected road
+3912,Pedestrian crossing quality
+3912,Pedestrian crossing facilities - intersecting road
+3912,Pedestrian fencing
+3912,Speed management / traffic calming
+3912,Vehicle parking
+3912,Sidewalk - driver-side
+3912,Sidewalk - passenger-side
+3912,Service road
+3912,Facilities for motorised two wheelers
+3912,Facilities for bicycles
+3912,Roadworks
+3912,Sight distance
+3912,Vehicle flow (AADT)
+3912,Pedestrian peak hour flow across the road
+3912,Pedestrian peak hour flow along the road driver-side
+3912,Pedestrian peak hour flow along the road passenger-side
+3912,Bicycle peak hour flow
+3912,School zone warning
+3912,School zone crossing supervisor
+3913,Carriageway
+3913,Upgrade cost
+3913,Motorcycle observed flow
+3913,Bicycle observed flow
+3913,Pedestrian observed flow across the road
+3913,Pedestrian observed flow along the road driver-side
+3913,Pedestrian observed flow along the road passenger-side
+3913,Land use - driver-side
+3913,Land use - passenger-side
+3913,Area type
+3913,Median type
+3913,Centreline rumble strips
+3913,Roadside severity - driver-side distance
+3913,Roadside severity - driver-side object
+3913,Roadside severity - passenger-side distance
+3913,Roadside severity - passenger-side object
+3913,Shoulder rumble strips
+3913,Paved shoulder - driver-side
+3913,Paved shoulder - passenger-side
+3913,Intersection type
+3913,Intersection channelisation
+3913,Intersecting road volume
+3913,Intersection quality
+3913,Property access points
+3913,Number of lanes
+3913,Curvature
+3913,Quality of curve
+3913,Grade
+3913,Road condition
+3913,Skid resistance / grip
+3913,Delineation
+3913,Street lighting
+3913,Pedestrian crossing facilities - inspected road
+3913,Pedestrian crossing quality
+3913,Pedestrian crossing facilities - intersecting road
+3913,Pedestrian fencing
+3913,Speed management / traffic calming
+3913,Vehicle parking
+3913,Sidewalk - driver-side
+3913,Sidewalk - passenger-side
+3913,Service road
+3913,Facilities for motorised two wheelers
+3913,Facilities for bicycles
+3913,Roadworks
+3913,Sight distance
+3913,Vehicle flow (AADT)
+3913,Pedestrian peak hour flow across the road
+3913,Pedestrian peak hour flow along the road driver-side
+3913,Pedestrian peak hour flow along the road passenger-side
+3913,Bicycle peak hour flow
+3913,School zone warning
+3913,School zone crossing supervisor
+3914,Carriageway
+3914,Upgrade cost
+3914,Motorcycle observed flow
+3914,Bicycle observed flow
+3914,Pedestrian observed flow across the road
+3914,Pedestrian observed flow along the road driver-side
+3914,Pedestrian observed flow along the road passenger-side
+3914,Land use - driver-side
+3914,Land use - passenger-side
+3914,Area type
+3914,Median type
+3914,Centreline rumble strips
+3914,Roadside severity - driver-side distance
+3914,Roadside severity - driver-side object
+3914,Roadside severity - passenger-side distance
+3914,Roadside severity - passenger-side object
+3914,Shoulder rumble strips
+3914,Paved shoulder - driver-side
+3914,Paved shoulder - passenger-side
+3914,Intersection type
+3914,Intersection channelisation
+3914,Intersecting road volume
+3914,Intersection quality
+3914,Property access points
+3914,Number of lanes
+3914,Curvature
+3914,Quality of curve
+3914,Grade
+3914,Road condition
+3914,Skid resistance / grip
+3914,Delineation
+3914,Street lighting
+3914,Pedestrian crossing facilities - inspected road
+3914,Pedestrian crossing quality
+3914,Pedestrian crossing facilities - intersecting road
+3914,Pedestrian fencing
+3914,Speed management / traffic calming
+3914,Vehicle parking
+3914,Sidewalk - driver-side
+3914,Sidewalk - passenger-side
+3914,Service road
+3914,Facilities for motorised two wheelers
+3914,Facilities for bicycles
+3914,Roadworks
+3914,Sight distance
+3914,Vehicle flow (AADT)
+3914,Pedestrian peak hour flow across the road
+3914,Pedestrian peak hour flow along the road driver-side
+3914,Pedestrian peak hour flow along the road passenger-side
+3914,Bicycle peak hour flow
+3914,School zone warning
+3914,School zone crossing supervisor
+3915,Carriageway
+3915,Upgrade cost
+3915,Motorcycle observed flow
+3915,Bicycle observed flow
+3915,Pedestrian observed flow across the road
+3915,Pedestrian observed flow along the road driver-side
+3915,Pedestrian observed flow along the road passenger-side
+3915,Land use - driver-side
+3915,Land use - passenger-side
+3915,Area type
+3915,Median type
+3915,Centreline rumble strips
+3915,Roadside severity - driver-side distance
+3915,Roadside severity - driver-side object
+3915,Roadside severity - passenger-side distance
+3915,Roadside severity - passenger-side object
+3915,Shoulder rumble strips
+3915,Paved shoulder - driver-side
+3915,Paved shoulder - passenger-side
+3915,Intersection type
+3915,Intersection channelisation
+3915,Intersecting road volume
+3915,Intersection quality
+3915,Property access points
+3915,Number of lanes
+3915,Curvature
+3915,Quality of curve
+3915,Grade
+3915,Road condition
+3915,Skid resistance / grip
+3915,Delineation
+3915,Street lighting
+3915,Pedestrian crossing facilities - inspected road
+3915,Pedestrian crossing quality
+3915,Pedestrian crossing facilities - intersecting road
+3915,Pedestrian fencing
+3915,Speed management / traffic calming
+3915,Vehicle parking
+3915,Sidewalk - driver-side
+3915,Sidewalk - passenger-side
+3915,Service road
+3915,Facilities for motorised two wheelers
+3915,Facilities for bicycles
+3915,Roadworks
+3915,Sight distance
+3915,Vehicle flow (AADT)
+3915,Pedestrian peak hour flow across the road
+3915,Pedestrian peak hour flow along the road driver-side
+3915,Pedestrian peak hour flow along the road passenger-side
+3915,Bicycle peak hour flow
+3915,School zone warning
+3915,School zone crossing supervisor
+3916,Carriageway
+3916,Upgrade cost
+3916,Motorcycle observed flow
+3916,Bicycle observed flow
+3916,Pedestrian observed flow across the road
+3916,Pedestrian observed flow along the road driver-side
+3916,Pedestrian observed flow along the road passenger-side
+3916,Land use - driver-side
+3916,Land use - passenger-side
+3916,Area type
+3916,Median type
+3916,Centreline rumble strips
+3916,Roadside severity - driver-side distance
+3916,Roadside severity - driver-side object
+3916,Roadside severity - passenger-side distance
+3916,Roadside severity - passenger-side object
+3916,Shoulder rumble strips
+3916,Paved shoulder - driver-side
+3916,Paved shoulder - passenger-side
+3916,Intersection type
+3916,Intersection channelisation
+3916,Intersecting road volume
+3916,Intersection quality
+3916,Property access points
+3916,Number of lanes
+3916,Curvature
+3916,Quality of curve
+3916,Grade
+3916,Road condition
+3916,Skid resistance / grip
+3916,Delineation
+3916,Street lighting
+3916,Pedestrian crossing facilities - inspected road
+3916,Pedestrian crossing quality
+3916,Pedestrian crossing facilities - intersecting road
+3916,Pedestrian fencing
+3916,Speed management / traffic calming
+3916,Vehicle parking
+3916,Sidewalk - driver-side
+3916,Sidewalk - passenger-side
+3916,Service road
+3916,Facilities for motorised two wheelers
+3916,Facilities for bicycles
+3916,Roadworks
+3916,Sight distance
+3916,Vehicle flow (AADT)
+3916,Pedestrian peak hour flow across the road
+3916,Pedestrian peak hour flow along the road driver-side
+3916,Pedestrian peak hour flow along the road passenger-side
+3916,Bicycle peak hour flow
+3916,School zone warning
+3916,School zone crossing supervisor
+3917,Carriageway
+3917,Upgrade cost
+3917,Motorcycle observed flow
+3917,Bicycle observed flow
+3917,Pedestrian observed flow across the road
+3917,Pedestrian observed flow along the road driver-side
+3917,Pedestrian observed flow along the road passenger-side
+3917,Land use - driver-side
+3917,Land use - passenger-side
+3917,Area type
+3917,Median type
+3917,Centreline rumble strips
+3917,Roadside severity - driver-side distance
+3917,Roadside severity - driver-side object
+3917,Roadside severity - passenger-side distance
+3917,Roadside severity - passenger-side object
+3917,Shoulder rumble strips
+3917,Paved shoulder - driver-side
+3917,Paved shoulder - passenger-side
+3917,Intersection type
+3917,Intersection channelisation
+3917,Intersecting road volume
+3917,Intersection quality
+3917,Property access points
+3917,Number of lanes
+3917,Curvature
+3917,Quality of curve
+3917,Grade
+3917,Road condition
+3917,Skid resistance / grip
+3917,Delineation
+3917,Street lighting
+3917,Pedestrian crossing facilities - inspected road
+3917,Pedestrian crossing quality
+3917,Pedestrian crossing facilities - intersecting road
+3917,Pedestrian fencing
+3917,Speed management / traffic calming
+3917,Vehicle parking
+3917,Sidewalk - driver-side
+3917,Sidewalk - passenger-side
+3917,Service road
+3917,Facilities for motorised two wheelers
+3917,Facilities for bicycles
+3917,Roadworks
+3917,Sight distance
+3917,Vehicle flow (AADT)
+3917,Pedestrian peak hour flow across the road
+3917,Pedestrian peak hour flow along the road driver-side
+3917,Pedestrian peak hour flow along the road passenger-side
+3917,Bicycle peak hour flow
+3917,School zone warning
+3917,School zone crossing supervisor
+3918,Carriageway
+3918,Upgrade cost
+3918,Motorcycle observed flow
+3918,Bicycle observed flow
+3918,Pedestrian observed flow across the road
+3918,Pedestrian observed flow along the road driver-side
+3918,Pedestrian observed flow along the road passenger-side
+3918,Land use - driver-side
+3918,Land use - passenger-side
+3918,Area type
+3918,Median type
+3918,Centreline rumble strips
+3918,Roadside severity - driver-side distance
+3918,Roadside severity - driver-side object
+3918,Roadside severity - passenger-side distance
+3918,Roadside severity - passenger-side object
+3918,Shoulder rumble strips
+3918,Paved shoulder - driver-side
+3918,Paved shoulder - passenger-side
+3918,Intersection type
+3918,Intersection channelisation
+3918,Intersecting road volume
+3918,Intersection quality
+3918,Property access points
+3918,Number of lanes
+3918,Curvature
+3918,Quality of curve
+3918,Grade
+3918,Road condition
+3918,Skid resistance / grip
+3918,Delineation
+3918,Street lighting
+3918,Pedestrian crossing facilities - inspected road
+3918,Pedestrian crossing quality
+3918,Pedestrian crossing facilities - intersecting road
+3918,Pedestrian fencing
+3918,Speed management / traffic calming
+3918,Vehicle parking
+3918,Sidewalk - driver-side
+3918,Sidewalk - passenger-side
+3918,Service road
+3918,Facilities for motorised two wheelers
+3918,Facilities for bicycles
+3918,Roadworks
+3918,Sight distance
+3918,Vehicle flow (AADT)
+3918,Pedestrian peak hour flow across the road
+3918,Pedestrian peak hour flow along the road driver-side
+3918,Pedestrian peak hour flow along the road passenger-side
+3918,Bicycle peak hour flow
+3918,School zone warning
+3918,School zone crossing supervisor
+3919,Carriageway
+3919,Upgrade cost
+3919,Motorcycle observed flow
+3919,Bicycle observed flow
+3919,Pedestrian observed flow across the road
+3919,Pedestrian observed flow along the road driver-side
+3919,Pedestrian observed flow along the road passenger-side
+3919,Land use - driver-side
+3919,Land use - passenger-side
+3919,Area type
+3919,Median type
+3919,Centreline rumble strips
+3919,Roadside severity - driver-side distance
+3919,Roadside severity - driver-side object
+3919,Roadside severity - passenger-side distance
+3919,Roadside severity - passenger-side object
+3919,Shoulder rumble strips
+3919,Paved shoulder - driver-side
+3919,Paved shoulder - passenger-side
+3919,Intersection type
+3919,Intersection channelisation
+3919,Intersecting road volume
+3919,Intersection quality
+3919,Property access points
+3919,Number of lanes
+3919,Curvature
+3919,Quality of curve
+3919,Grade
+3919,Road condition
+3919,Skid resistance / grip
+3919,Delineation
+3919,Street lighting
+3919,Pedestrian crossing facilities - inspected road
+3919,Pedestrian crossing quality
+3919,Pedestrian crossing facilities - intersecting road
+3919,Pedestrian fencing
+3919,Speed management / traffic calming
+3919,Vehicle parking
+3919,Sidewalk - driver-side
+3919,Sidewalk - passenger-side
+3919,Service road
+3919,Facilities for motorised two wheelers
+3919,Facilities for bicycles
+3919,Roadworks
+3919,Sight distance
+3919,Vehicle flow (AADT)
+3919,Pedestrian peak hour flow across the road
+3919,Pedestrian peak hour flow along the road driver-side
+3919,Pedestrian peak hour flow along the road passenger-side
+3919,Bicycle peak hour flow
+3919,School zone warning
+3919,School zone crossing supervisor
+3920,Carriageway
+3920,Upgrade cost
+3920,Motorcycle observed flow
+3920,Bicycle observed flow
+3920,Pedestrian observed flow across the road
+3920,Pedestrian observed flow along the road driver-side
+3920,Pedestrian observed flow along the road passenger-side
+3920,Land use - driver-side
+3920,Land use - passenger-side
+3920,Area type
+3920,Median type
+3920,Centreline rumble strips
+3920,Roadside severity - driver-side distance
+3920,Roadside severity - driver-side object
+3920,Roadside severity - passenger-side distance
+3920,Roadside severity - passenger-side object
+3920,Shoulder rumble strips
+3920,Paved shoulder - driver-side
+3920,Paved shoulder - passenger-side
+3920,Intersection type
+3920,Intersection channelisation
+3920,Intersecting road volume
+3920,Intersection quality
+3920,Property access points
+3920,Number of lanes
+3920,Curvature
+3920,Quality of curve
+3920,Grade
+3920,Road condition
+3920,Skid resistance / grip
+3920,Delineation
+3920,Street lighting
+3920,Pedestrian crossing facilities - inspected road
+3920,Pedestrian crossing quality
+3920,Pedestrian crossing facilities - intersecting road
+3920,Pedestrian fencing
+3920,Speed management / traffic calming
+3920,Vehicle parking
+3920,Sidewalk - driver-side
+3920,Sidewalk - passenger-side
+3920,Service road
+3920,Facilities for motorised two wheelers
+3920,Facilities for bicycles
+3920,Roadworks
+3920,Sight distance
+3920,Vehicle flow (AADT)
+3920,Pedestrian peak hour flow across the road
+3920,Pedestrian peak hour flow along the road driver-side
+3920,Pedestrian peak hour flow along the road passenger-side
+3920,Bicycle peak hour flow
+3920,School zone warning
+3920,School zone crossing supervisor
+3921,Carriageway
+3921,Upgrade cost
+3921,Motorcycle observed flow
+3921,Bicycle observed flow
+3921,Pedestrian observed flow across the road
+3921,Pedestrian observed flow along the road driver-side
+3921,Pedestrian observed flow along the road passenger-side
+3921,Land use - driver-side
+3921,Land use - passenger-side
+3921,Area type
+3921,Median type
+3921,Centreline rumble strips
+3921,Roadside severity - driver-side distance
+3921,Roadside severity - driver-side object
+3921,Roadside severity - passenger-side distance
+3921,Roadside severity - passenger-side object
+3921,Shoulder rumble strips
+3921,Paved shoulder - driver-side
+3921,Paved shoulder - passenger-side
+3921,Intersection type
+3921,Intersection channelisation
+3921,Intersecting road volume
+3921,Intersection quality
+3921,Property access points
+3921,Number of lanes
+3921,Curvature
+3921,Quality of curve
+3921,Grade
+3921,Road condition
+3921,Skid resistance / grip
+3921,Delineation
+3921,Street lighting
+3921,Pedestrian crossing facilities - inspected road
+3921,Pedestrian crossing quality
+3921,Pedestrian crossing facilities - intersecting road
+3921,Pedestrian fencing
+3921,Speed management / traffic calming
+3921,Vehicle parking
+3921,Sidewalk - driver-side
+3921,Sidewalk - passenger-side
+3921,Service road
+3921,Facilities for motorised two wheelers
+3921,Facilities for bicycles
+3921,Roadworks
+3921,Sight distance
+3921,Vehicle flow (AADT)
+3921,Pedestrian peak hour flow across the road
+3921,Pedestrian peak hour flow along the road driver-side
+3921,Pedestrian peak hour flow along the road passenger-side
+3921,Bicycle peak hour flow
+3921,School zone warning
+3921,School zone crossing supervisor
+3922,Carriageway
+3922,Upgrade cost
+3922,Motorcycle observed flow
+3922,Bicycle observed flow
+3922,Pedestrian observed flow across the road
+3922,Pedestrian observed flow along the road driver-side
+3922,Pedestrian observed flow along the road passenger-side
+3922,Land use - driver-side
+3922,Land use - passenger-side
+3922,Area type
+3922,Median type
+3922,Centreline rumble strips
+3922,Roadside severity - driver-side distance
+3922,Roadside severity - driver-side object
+3922,Roadside severity - passenger-side distance
+3922,Roadside severity - passenger-side object
+3922,Shoulder rumble strips
+3922,Paved shoulder - driver-side
+3922,Paved shoulder - passenger-side
+3922,Intersection type
+3922,Intersection channelisation
+3922,Intersecting road volume
+3922,Intersection quality
+3922,Property access points
+3922,Number of lanes
+3922,Curvature
+3922,Quality of curve
+3922,Grade
+3922,Road condition
+3922,Skid resistance / grip
+3922,Delineation
+3922,Street lighting
+3922,Pedestrian crossing facilities - inspected road
+3922,Pedestrian crossing quality
+3922,Pedestrian crossing facilities - intersecting road
+3922,Pedestrian fencing
+3922,Speed management / traffic calming
+3922,Vehicle parking
+3922,Sidewalk - driver-side
+3922,Sidewalk - passenger-side
+3922,Service road
+3922,Facilities for motorised two wheelers
+3922,Facilities for bicycles
+3922,Roadworks
+3922,Sight distance
+3922,Vehicle flow (AADT)
+3922,Pedestrian peak hour flow across the road
+3922,Pedestrian peak hour flow along the road driver-side
+3922,Pedestrian peak hour flow along the road passenger-side
+3922,Bicycle peak hour flow
+3922,School zone warning
+3922,School zone crossing supervisor
+3923,Carriageway
+3923,Upgrade cost
+3923,Motorcycle observed flow
+3923,Bicycle observed flow
+3923,Pedestrian observed flow across the road
+3923,Pedestrian observed flow along the road driver-side
+3923,Pedestrian observed flow along the road passenger-side
+3923,Land use - driver-side
+3923,Land use - passenger-side
+3923,Area type
+3923,Median type
+3923,Centreline rumble strips
+3923,Roadside severity - driver-side distance
+3923,Roadside severity - driver-side object
+3923,Roadside severity - passenger-side distance
+3923,Roadside severity - passenger-side object
+3923,Shoulder rumble strips
+3923,Paved shoulder - driver-side
+3923,Paved shoulder - passenger-side
+3923,Intersection type
+3923,Intersection channelisation
+3923,Intersecting road volume
+3923,Intersection quality
+3923,Property access points
+3923,Number of lanes
+3923,Curvature
+3923,Quality of curve
+3923,Grade
+3923,Road condition
+3923,Skid resistance / grip
+3923,Delineation
+3923,Street lighting
+3923,Pedestrian crossing facilities - inspected road
+3923,Pedestrian crossing quality
+3923,Pedestrian crossing facilities - intersecting road
+3923,Pedestrian fencing
+3923,Speed management / traffic calming
+3923,Vehicle parking
+3923,Sidewalk - driver-side
+3923,Sidewalk - passenger-side
+3923,Service road
+3923,Facilities for motorised two wheelers
+3923,Facilities for bicycles
+3923,Roadworks
+3923,Sight distance
+3923,Vehicle flow (AADT)
+3923,Pedestrian peak hour flow across the road
+3923,Pedestrian peak hour flow along the road driver-side
+3923,Pedestrian peak hour flow along the road passenger-side
+3923,Bicycle peak hour flow
+3923,School zone warning
+3923,School zone crossing supervisor
+3924,Carriageway
+3924,Upgrade cost
+3924,Motorcycle observed flow
+3924,Bicycle observed flow
+3924,Pedestrian observed flow across the road
+3924,Pedestrian observed flow along the road driver-side
+3924,Pedestrian observed flow along the road passenger-side
+3924,Land use - driver-side
+3924,Land use - passenger-side
+3924,Area type
+3924,Median type
+3924,Centreline rumble strips
+3924,Roadside severity - driver-side distance
+3924,Roadside severity - driver-side object
+3924,Roadside severity - passenger-side distance
+3924,Roadside severity - passenger-side object
+3924,Shoulder rumble strips
+3924,Paved shoulder - driver-side
+3924,Paved shoulder - passenger-side
+3924,Intersection type
+3924,Intersection channelisation
+3924,Intersecting road volume
+3924,Intersection quality
+3924,Property access points
+3924,Number of lanes
+3924,Curvature
+3924,Quality of curve
+3924,Grade
+3924,Road condition
+3924,Skid resistance / grip
+3924,Delineation
+3924,Street lighting
+3924,Pedestrian crossing facilities - inspected road
+3924,Pedestrian crossing quality
+3924,Pedestrian crossing facilities - intersecting road
+3924,Pedestrian fencing
+3924,Speed management / traffic calming
+3924,Vehicle parking
+3924,Sidewalk - driver-side
+3924,Sidewalk - passenger-side
+3924,Service road
+3924,Facilities for motorised two wheelers
+3924,Facilities for bicycles
+3924,Roadworks
+3924,Sight distance
+3924,Vehicle flow (AADT)
+3924,Pedestrian peak hour flow across the road
+3924,Pedestrian peak hour flow along the road driver-side
+3924,Pedestrian peak hour flow along the road passenger-side
+3924,Bicycle peak hour flow
+3924,School zone warning
+3924,School zone crossing supervisor
+3925,Carriageway
+3925,Upgrade cost
+3925,Motorcycle observed flow
+3925,Bicycle observed flow
+3925,Pedestrian observed flow across the road
+3925,Pedestrian observed flow along the road driver-side
+3925,Pedestrian observed flow along the road passenger-side
+3925,Land use - driver-side
+3925,Land use - passenger-side
+3925,Area type
+3925,Median type
+3925,Centreline rumble strips
+3925,Roadside severity - driver-side distance
+3925,Roadside severity - driver-side object
+3925,Roadside severity - passenger-side distance
+3925,Roadside severity - passenger-side object
+3925,Shoulder rumble strips
+3925,Paved shoulder - driver-side
+3925,Paved shoulder - passenger-side
+3925,Intersection type
+3925,Intersection channelisation
+3925,Intersecting road volume
+3925,Intersection quality
+3925,Property access points
+3925,Number of lanes
+3925,Curvature
+3925,Quality of curve
+3925,Grade
+3925,Road condition
+3925,Skid resistance / grip
+3925,Delineation
+3925,Street lighting
+3925,Pedestrian crossing facilities - inspected road
+3925,Pedestrian crossing quality
+3925,Pedestrian crossing facilities - intersecting road
+3925,Pedestrian fencing
+3925,Speed management / traffic calming
+3925,Vehicle parking
+3925,Sidewalk - driver-side
+3925,Sidewalk - passenger-side
+3925,Service road
+3925,Facilities for motorised two wheelers
+3925,Facilities for bicycles
+3925,Roadworks
+3925,Sight distance
+3925,Vehicle flow (AADT)
+3925,Pedestrian peak hour flow across the road
+3925,Pedestrian peak hour flow along the road driver-side
+3925,Pedestrian peak hour flow along the road passenger-side
+3925,Bicycle peak hour flow
+3925,School zone warning
+3925,School zone crossing supervisor
+3926,Carriageway
+3926,Upgrade cost
+3926,Motorcycle observed flow
+3926,Bicycle observed flow
+3926,Pedestrian observed flow across the road
+3926,Pedestrian observed flow along the road driver-side
+3926,Pedestrian observed flow along the road passenger-side
+3926,Land use - driver-side
+3926,Land use - passenger-side
+3926,Area type
+3926,Median type
+3926,Centreline rumble strips
+3926,Roadside severity - driver-side distance
+3926,Roadside severity - driver-side object
+3926,Roadside severity - passenger-side distance
+3926,Roadside severity - passenger-side object
+3926,Shoulder rumble strips
+3926,Paved shoulder - driver-side
+3926,Paved shoulder - passenger-side
+3926,Intersection type
+3926,Intersection channelisation
+3926,Intersecting road volume
+3926,Intersection quality
+3926,Property access points
+3926,Number of lanes
+3926,Curvature
+3926,Quality of curve
+3926,Grade
+3926,Road condition
+3926,Skid resistance / grip
+3926,Delineation
+3926,Street lighting
+3926,Pedestrian crossing facilities - inspected road
+3926,Pedestrian crossing quality
+3926,Pedestrian crossing facilities - intersecting road
+3926,Pedestrian fencing
+3926,Speed management / traffic calming
+3926,Vehicle parking
+3926,Sidewalk - driver-side
+3926,Sidewalk - passenger-side
+3926,Service road
+3926,Facilities for motorised two wheelers
+3926,Facilities for bicycles
+3926,Roadworks
+3926,Sight distance
+3926,Vehicle flow (AADT)
+3926,Pedestrian peak hour flow across the road
+3926,Pedestrian peak hour flow along the road driver-side
+3926,Pedestrian peak hour flow along the road passenger-side
+3926,Bicycle peak hour flow
+3926,School zone warning
+3926,School zone crossing supervisor
+3927,Carriageway
+3927,Upgrade cost
+3927,Motorcycle observed flow
+3927,Bicycle observed flow
+3927,Pedestrian observed flow across the road
+3927,Pedestrian observed flow along the road driver-side
+3927,Pedestrian observed flow along the road passenger-side
+3927,Land use - driver-side
+3927,Land use - passenger-side
+3927,Area type
+3927,Median type
+3927,Centreline rumble strips
+3927,Roadside severity - driver-side distance
+3927,Roadside severity - driver-side object
+3927,Roadside severity - passenger-side distance
+3927,Roadside severity - passenger-side object
+3927,Shoulder rumble strips
+3927,Paved shoulder - driver-side
+3927,Paved shoulder - passenger-side
+3927,Intersection type
+3927,Intersection channelisation
+3927,Intersecting road volume
+3927,Intersection quality
+3927,Property access points
+3927,Number of lanes
+3927,Curvature
+3927,Quality of curve
+3927,Grade
+3927,Road condition
+3927,Skid resistance / grip
+3927,Delineation
+3927,Street lighting
+3927,Pedestrian crossing facilities - inspected road
+3927,Pedestrian crossing quality
+3927,Pedestrian crossing facilities - intersecting road
+3927,Pedestrian fencing
+3927,Speed management / traffic calming
+3927,Vehicle parking
+3927,Sidewalk - driver-side
+3927,Sidewalk - passenger-side
+3927,Service road
+3927,Facilities for motorised two wheelers
+3927,Facilities for bicycles
+3927,Roadworks
+3927,Sight distance
+3927,Vehicle flow (AADT)
+3927,Pedestrian peak hour flow across the road
+3927,Pedestrian peak hour flow along the road driver-side
+3927,Pedestrian peak hour flow along the road passenger-side
+3927,Bicycle peak hour flow
+3927,School zone warning
+3927,School zone crossing supervisor
+3928,Carriageway
+3928,Upgrade cost
+3928,Motorcycle observed flow
+3928,Bicycle observed flow
+3928,Pedestrian observed flow across the road
+3928,Pedestrian observed flow along the road driver-side
+3928,Pedestrian observed flow along the road passenger-side
+3928,Land use - driver-side
+3928,Land use - passenger-side
+3928,Area type
+3928,Median type
+3928,Centreline rumble strips
+3928,Roadside severity - driver-side distance
+3928,Roadside severity - driver-side object
+3928,Roadside severity - passenger-side distance
+3928,Roadside severity - passenger-side object
+3928,Shoulder rumble strips
+3928,Paved shoulder - driver-side
+3928,Paved shoulder - passenger-side
+3928,Intersection type
+3928,Intersection channelisation
+3928,Intersecting road volume
+3928,Intersection quality
+3928,Property access points
+3928,Number of lanes
+3928,Curvature
+3928,Quality of curve
+3928,Grade
+3928,Road condition
+3928,Skid resistance / grip
+3928,Delineation
+3928,Street lighting
+3928,Pedestrian crossing facilities - inspected road
+3928,Pedestrian crossing quality
+3928,Pedestrian crossing facilities - intersecting road
+3928,Pedestrian fencing
+3928,Speed management / traffic calming
+3928,Vehicle parking
+3928,Sidewalk - driver-side
+3928,Sidewalk - passenger-side
+3928,Service road
+3928,Facilities for motorised two wheelers
+3928,Facilities for bicycles
+3928,Roadworks
+3928,Sight distance
+3928,Vehicle flow (AADT)
+3928,Pedestrian peak hour flow across the road
+3928,Pedestrian peak hour flow along the road driver-side
+3928,Pedestrian peak hour flow along the road passenger-side
+3928,Bicycle peak hour flow
+3928,School zone warning
+3928,School zone crossing supervisor
+3929,Carriageway
+3929,Upgrade cost
+3929,Motorcycle observed flow
+3929,Bicycle observed flow
+3929,Pedestrian observed flow across the road
+3929,Pedestrian observed flow along the road driver-side
+3929,Pedestrian observed flow along the road passenger-side
+3929,Land use - driver-side
+3929,Land use - passenger-side
+3929,Area type
+3929,Median type
+3929,Centreline rumble strips
+3929,Roadside severity - driver-side distance
+3929,Roadside severity - driver-side object
+3929,Roadside severity - passenger-side distance
+3929,Roadside severity - passenger-side object
+3929,Shoulder rumble strips
+3929,Paved shoulder - driver-side
+3929,Paved shoulder - passenger-side
+3929,Intersection type
+3929,Intersection channelisation
+3929,Intersecting road volume
+3929,Intersection quality
+3929,Property access points
+3929,Number of lanes
+3929,Curvature
+3929,Quality of curve
+3929,Grade
+3929,Road condition
+3929,Skid resistance / grip
+3929,Delineation
+3929,Street lighting
+3929,Pedestrian crossing facilities - inspected road
+3929,Pedestrian crossing quality
+3929,Pedestrian crossing facilities - intersecting road
+3929,Pedestrian fencing
+3929,Speed management / traffic calming
+3929,Vehicle parking
+3929,Sidewalk - driver-side
+3929,Sidewalk - passenger-side
+3929,Service road
+3929,Facilities for motorised two wheelers
+3929,Facilities for bicycles
+3929,Roadworks
+3929,Sight distance
+3929,Vehicle flow (AADT)
+3929,Pedestrian peak hour flow across the road
+3929,Pedestrian peak hour flow along the road driver-side
+3929,Pedestrian peak hour flow along the road passenger-side
+3929,Bicycle peak hour flow
+3929,School zone warning
+3929,School zone crossing supervisor
+3930,Carriageway
+3930,Upgrade cost
+3930,Motorcycle observed flow
+3930,Bicycle observed flow
+3930,Pedestrian observed flow across the road
+3930,Pedestrian observed flow along the road driver-side
+3930,Pedestrian observed flow along the road passenger-side
+3930,Land use - driver-side
+3930,Land use - passenger-side
+3930,Area type
+3930,Median type
+3930,Centreline rumble strips
+3930,Roadside severity - driver-side distance
+3930,Roadside severity - driver-side object
+3930,Roadside severity - passenger-side distance
+3930,Roadside severity - passenger-side object
+3930,Shoulder rumble strips
+3930,Paved shoulder - driver-side
+3930,Paved shoulder - passenger-side
+3930,Intersection type
+3930,Intersection channelisation
+3930,Intersecting road volume
+3930,Intersection quality
+3930,Property access points
+3930,Number of lanes
+3930,Curvature
+3930,Quality of curve
+3930,Grade
+3930,Road condition
+3930,Skid resistance / grip
+3930,Delineation
+3930,Street lighting
+3930,Pedestrian crossing facilities - inspected road
+3930,Pedestrian crossing quality
+3930,Pedestrian crossing facilities - intersecting road
+3930,Pedestrian fencing
+3930,Speed management / traffic calming
+3930,Vehicle parking
+3930,Sidewalk - driver-side
+3930,Sidewalk - passenger-side
+3930,Service road
+3930,Facilities for motorised two wheelers
+3930,Facilities for bicycles
+3930,Roadworks
+3930,Sight distance
+3930,Vehicle flow (AADT)
+3930,Pedestrian peak hour flow across the road
+3930,Pedestrian peak hour flow along the road driver-side
+3930,Pedestrian peak hour flow along the road passenger-side
+3930,Bicycle peak hour flow
+3930,School zone warning
+3930,School zone crossing supervisor
+3931,Carriageway
+3931,Upgrade cost
+3931,Motorcycle observed flow
+3931,Bicycle observed flow
+3931,Pedestrian observed flow across the road
+3931,Pedestrian observed flow along the road driver-side
+3931,Pedestrian observed flow along the road passenger-side
+3931,Land use - driver-side
+3931,Land use - passenger-side
+3931,Area type
+3931,Median type
+3931,Centreline rumble strips
+3931,Roadside severity - driver-side distance
+3931,Roadside severity - driver-side object
+3931,Roadside severity - passenger-side distance
+3931,Roadside severity - passenger-side object
+3931,Shoulder rumble strips
+3931,Paved shoulder - driver-side
+3931,Paved shoulder - passenger-side
+3931,Intersection type
+3931,Intersection channelisation
+3931,Intersecting road volume
+3931,Intersection quality
+3931,Property access points
+3931,Number of lanes
+3931,Curvature
+3931,Quality of curve
+3931,Grade
+3931,Road condition
+3931,Skid resistance / grip
+3931,Delineation
+3931,Street lighting
+3931,Pedestrian crossing facilities - inspected road
+3931,Pedestrian crossing quality
+3931,Pedestrian crossing facilities - intersecting road
+3931,Pedestrian fencing
+3931,Speed management / traffic calming
+3931,Vehicle parking
+3931,Sidewalk - driver-side
+3931,Sidewalk - passenger-side
+3931,Service road
+3931,Facilities for motorised two wheelers
+3931,Facilities for bicycles
+3931,Roadworks
+3931,Sight distance
+3931,Vehicle flow (AADT)
+3931,Pedestrian peak hour flow across the road
+3931,Pedestrian peak hour flow along the road driver-side
+3931,Pedestrian peak hour flow along the road passenger-side
+3931,Bicycle peak hour flow
+3931,School zone warning
+3931,School zone crossing supervisor
+3932,Carriageway
+3932,Upgrade cost
+3932,Motorcycle observed flow
+3932,Bicycle observed flow
+3932,Pedestrian observed flow across the road
+3932,Pedestrian observed flow along the road driver-side
+3932,Pedestrian observed flow along the road passenger-side
+3932,Land use - driver-side
+3932,Land use - passenger-side
+3932,Area type
+3932,Median type
+3932,Centreline rumble strips
+3932,Roadside severity - driver-side distance
+3932,Roadside severity - driver-side object
+3932,Roadside severity - passenger-side distance
+3932,Roadside severity - passenger-side object
+3932,Shoulder rumble strips
+3932,Paved shoulder - driver-side
+3932,Paved shoulder - passenger-side
+3932,Intersection type
+3932,Intersection channelisation
+3932,Intersecting road volume
+3932,Intersection quality
+3932,Property access points
+3932,Number of lanes
+3932,Curvature
+3932,Quality of curve
+3932,Grade
+3932,Road condition
+3932,Skid resistance / grip
+3932,Delineation
+3932,Street lighting
+3932,Pedestrian crossing facilities - inspected road
+3932,Pedestrian crossing quality
+3932,Pedestrian crossing facilities - intersecting road
+3932,Pedestrian fencing
+3932,Speed management / traffic calming
+3932,Vehicle parking
+3932,Sidewalk - driver-side
+3932,Sidewalk - passenger-side
+3932,Service road
+3932,Facilities for motorised two wheelers
+3932,Facilities for bicycles
+3932,Roadworks
+3932,Sight distance
+3932,Vehicle flow (AADT)
+3932,Pedestrian peak hour flow across the road
+3932,Pedestrian peak hour flow along the road driver-side
+3932,Pedestrian peak hour flow along the road passenger-side
+3932,Bicycle peak hour flow
+3932,School zone warning
+3932,School zone crossing supervisor
+3933,Carriageway
+3933,Upgrade cost
+3933,Motorcycle observed flow
+3933,Bicycle observed flow
+3933,Pedestrian observed flow across the road
+3933,Pedestrian observed flow along the road driver-side
+3933,Pedestrian observed flow along the road passenger-side
+3933,Land use - driver-side
+3933,Land use - passenger-side
+3933,Area type
+3933,Median type
+3933,Centreline rumble strips
+3933,Roadside severity - driver-side distance
+3933,Roadside severity - driver-side object
+3933,Roadside severity - passenger-side distance
+3933,Roadside severity - passenger-side object
+3933,Shoulder rumble strips
+3933,Paved shoulder - driver-side
+3933,Paved shoulder - passenger-side
+3933,Intersection type
+3933,Intersection channelisation
+3933,Intersecting road volume
+3933,Intersection quality
+3933,Property access points
+3933,Number of lanes
+3933,Curvature
+3933,Quality of curve
+3933,Grade
+3933,Road condition
+3933,Skid resistance / grip
+3933,Delineation
+3933,Street lighting
+3933,Pedestrian crossing facilities - inspected road
+3933,Pedestrian crossing quality
+3933,Pedestrian crossing facilities - intersecting road
+3933,Pedestrian fencing
+3933,Speed management / traffic calming
+3933,Vehicle parking
+3933,Sidewalk - driver-side
+3933,Sidewalk - passenger-side
+3933,Service road
+3933,Facilities for motorised two wheelers
+3933,Facilities for bicycles
+3933,Roadworks
+3933,Sight distance
+3933,Vehicle flow (AADT)
+3933,Pedestrian peak hour flow across the road
+3933,Pedestrian peak hour flow along the road driver-side
+3933,Pedestrian peak hour flow along the road passenger-side
+3933,Bicycle peak hour flow
+3933,School zone warning
+3933,School zone crossing supervisor
+3934,Carriageway
+3934,Upgrade cost
+3934,Motorcycle observed flow
+3934,Bicycle observed flow
+3934,Pedestrian observed flow across the road
+3934,Pedestrian observed flow along the road driver-side
+3934,Pedestrian observed flow along the road passenger-side
+3934,Land use - driver-side
+3934,Land use - passenger-side
+3934,Area type
+3934,Median type
+3934,Centreline rumble strips
+3934,Roadside severity - driver-side distance
+3934,Roadside severity - driver-side object
+3934,Roadside severity - passenger-side distance
+3934,Roadside severity - passenger-side object
+3934,Shoulder rumble strips
+3934,Paved shoulder - driver-side
+3934,Paved shoulder - passenger-side
+3934,Intersection type
+3934,Intersection channelisation
+3934,Intersecting road volume
+3934,Intersection quality
+3934,Property access points
+3934,Number of lanes
+3934,Curvature
+3934,Quality of curve
+3934,Grade
+3934,Road condition
+3934,Skid resistance / grip
+3934,Delineation
+3934,Street lighting
+3934,Pedestrian crossing facilities - inspected road
+3934,Pedestrian crossing quality
+3934,Pedestrian crossing facilities - intersecting road
+3934,Pedestrian fencing
+3934,Speed management / traffic calming
+3934,Vehicle parking
+3934,Sidewalk - driver-side
+3934,Sidewalk - passenger-side
+3934,Service road
+3934,Facilities for motorised two wheelers
+3934,Facilities for bicycles
+3934,Roadworks
+3934,Sight distance
+3934,Vehicle flow (AADT)
+3934,Pedestrian peak hour flow across the road
+3934,Pedestrian peak hour flow along the road driver-side
+3934,Pedestrian peak hour flow along the road passenger-side
+3934,Bicycle peak hour flow
+3934,School zone warning
+3934,School zone crossing supervisor
+3935,Carriageway
+3935,Upgrade cost
+3935,Motorcycle observed flow
+3935,Bicycle observed flow
+3935,Pedestrian observed flow across the road
+3935,Pedestrian observed flow along the road driver-side
+3935,Pedestrian observed flow along the road passenger-side
+3935,Land use - driver-side
+3935,Land use - passenger-side
+3935,Area type
+3935,Median type
+3935,Centreline rumble strips
+3935,Roadside severity - driver-side distance
+3935,Roadside severity - driver-side object
+3935,Roadside severity - passenger-side distance
+3935,Roadside severity - passenger-side object
+3935,Shoulder rumble strips
+3935,Paved shoulder - driver-side
+3935,Paved shoulder - passenger-side
+3935,Intersection type
+3935,Intersection channelisation
+3935,Intersecting road volume
+3935,Intersection quality
+3935,Property access points
+3935,Number of lanes
+3935,Curvature
+3935,Quality of curve
+3935,Grade
+3935,Road condition
+3935,Skid resistance / grip
+3935,Delineation
+3935,Street lighting
+3935,Pedestrian crossing facilities - inspected road
+3935,Pedestrian crossing quality
+3935,Pedestrian crossing facilities - intersecting road
+3935,Pedestrian fencing
+3935,Speed management / traffic calming
+3935,Vehicle parking
+3935,Sidewalk - driver-side
+3935,Sidewalk - passenger-side
+3935,Service road
+3935,Facilities for motorised two wheelers
+3935,Facilities for bicycles
+3935,Roadworks
+3935,Sight distance
+3935,Vehicle flow (AADT)
+3935,Pedestrian peak hour flow across the road
+3935,Pedestrian peak hour flow along the road driver-side
+3935,Pedestrian peak hour flow along the road passenger-side
+3935,Bicycle peak hour flow
+3935,School zone warning
+3935,School zone crossing supervisor
+3936,Carriageway
+3936,Upgrade cost
+3936,Motorcycle observed flow
+3936,Bicycle observed flow
+3936,Pedestrian observed flow across the road
+3936,Pedestrian observed flow along the road driver-side
+3936,Pedestrian observed flow along the road passenger-side
+3936,Land use - driver-side
+3936,Land use - passenger-side
+3936,Area type
+3936,Median type
+3936,Centreline rumble strips
+3936,Roadside severity - driver-side distance
+3936,Roadside severity - driver-side object
+3936,Roadside severity - passenger-side distance
+3936,Roadside severity - passenger-side object
+3936,Shoulder rumble strips
+3936,Paved shoulder - driver-side
+3936,Paved shoulder - passenger-side
+3936,Intersection type
+3936,Intersection channelisation
+3936,Intersecting road volume
+3936,Intersection quality
+3936,Property access points
+3936,Number of lanes
+3936,Curvature
+3936,Quality of curve
+3936,Grade
+3936,Road condition
+3936,Skid resistance / grip
+3936,Delineation
+3936,Street lighting
+3936,Pedestrian crossing facilities - inspected road
+3936,Pedestrian crossing quality
+3936,Pedestrian crossing facilities - intersecting road
+3936,Pedestrian fencing
+3936,Speed management / traffic calming
+3936,Vehicle parking
+3936,Sidewalk - driver-side
+3936,Sidewalk - passenger-side
+3936,Service road
+3936,Facilities for motorised two wheelers
+3936,Facilities for bicycles
+3936,Roadworks
+3936,Sight distance
+3936,Vehicle flow (AADT)
+3936,Pedestrian peak hour flow across the road
+3936,Pedestrian peak hour flow along the road driver-side
+3936,Pedestrian peak hour flow along the road passenger-side
+3936,Bicycle peak hour flow
+3936,School zone warning
+3936,School zone crossing supervisor
+3937,Carriageway
+3937,Upgrade cost
+3937,Motorcycle observed flow
+3937,Bicycle observed flow
+3937,Pedestrian observed flow across the road
+3937,Pedestrian observed flow along the road driver-side
+3937,Pedestrian observed flow along the road passenger-side
+3937,Land use - driver-side
+3937,Land use - passenger-side
+3937,Area type
+3937,Median type
+3937,Centreline rumble strips
+3937,Roadside severity - driver-side distance
+3937,Roadside severity - driver-side object
+3937,Roadside severity - passenger-side distance
+3937,Roadside severity - passenger-side object
+3937,Shoulder rumble strips
+3937,Paved shoulder - driver-side
+3937,Paved shoulder - passenger-side
+3937,Intersection type
+3937,Intersection channelisation
+3937,Intersecting road volume
+3937,Intersection quality
+3937,Property access points
+3937,Number of lanes
+3937,Curvature
+3937,Quality of curve
+3937,Grade
+3937,Road condition
+3937,Skid resistance / grip
+3937,Delineation
+3937,Street lighting
+3937,Pedestrian crossing facilities - inspected road
+3937,Pedestrian crossing quality
+3937,Pedestrian crossing facilities - intersecting road
+3937,Pedestrian fencing
+3937,Speed management / traffic calming
+3937,Vehicle parking
+3937,Sidewalk - driver-side
+3937,Sidewalk - passenger-side
+3937,Service road
+3937,Facilities for motorised two wheelers
+3937,Facilities for bicycles
+3937,Roadworks
+3937,Sight distance
+3937,Vehicle flow (AADT)
+3937,Pedestrian peak hour flow across the road
+3937,Pedestrian peak hour flow along the road driver-side
+3937,Pedestrian peak hour flow along the road passenger-side
+3937,Bicycle peak hour flow
+3937,School zone warning
+3937,School zone crossing supervisor
+3938,Carriageway
+3938,Upgrade cost
+3938,Motorcycle observed flow
+3938,Bicycle observed flow
+3938,Pedestrian observed flow across the road
+3938,Pedestrian observed flow along the road driver-side
+3938,Pedestrian observed flow along the road passenger-side
+3938,Land use - driver-side
+3938,Land use - passenger-side
+3938,Area type
+3938,Median type
+3938,Centreline rumble strips
+3938,Roadside severity - driver-side distance
+3938,Roadside severity - driver-side object
+3938,Roadside severity - passenger-side distance
+3938,Roadside severity - passenger-side object
+3938,Shoulder rumble strips
+3938,Paved shoulder - driver-side
+3938,Paved shoulder - passenger-side
+3938,Intersection type
+3938,Intersection channelisation
+3938,Intersecting road volume
+3938,Intersection quality
+3938,Property access points
+3938,Number of lanes
+3938,Curvature
+3938,Quality of curve
+3938,Grade
+3938,Road condition
+3938,Skid resistance / grip
+3938,Delineation
+3938,Street lighting
+3938,Pedestrian crossing facilities - inspected road
+3938,Pedestrian crossing quality
+3938,Pedestrian crossing facilities - intersecting road
+3938,Pedestrian fencing
+3938,Speed management / traffic calming
+3938,Vehicle parking
+3938,Sidewalk - driver-side
+3938,Sidewalk - passenger-side
+3938,Service road
+3938,Facilities for motorised two wheelers
+3938,Facilities for bicycles
+3938,Roadworks
+3938,Sight distance
+3938,Vehicle flow (AADT)
+3938,Pedestrian peak hour flow across the road
+3938,Pedestrian peak hour flow along the road driver-side
+3938,Pedestrian peak hour flow along the road passenger-side
+3938,Bicycle peak hour flow
+3938,School zone warning
+3938,School zone crossing supervisor
+3939,Carriageway
+3939,Upgrade cost
+3939,Motorcycle observed flow
+3939,Bicycle observed flow
+3939,Pedestrian observed flow across the road
+3939,Pedestrian observed flow along the road driver-side
+3939,Pedestrian observed flow along the road passenger-side
+3939,Land use - driver-side
+3939,Land use - passenger-side
+3939,Area type
+3939,Median type
+3939,Centreline rumble strips
+3939,Roadside severity - driver-side distance
+3939,Roadside severity - driver-side object
+3939,Roadside severity - passenger-side distance
+3939,Roadside severity - passenger-side object
+3939,Shoulder rumble strips
+3939,Paved shoulder - driver-side
+3939,Paved shoulder - passenger-side
+3939,Intersection type
+3939,Intersection channelisation
+3939,Intersecting road volume
+3939,Intersection quality
+3939,Property access points
+3939,Number of lanes
+3939,Curvature
+3939,Quality of curve
+3939,Grade
+3939,Road condition
+3939,Skid resistance / grip
+3939,Delineation
+3939,Street lighting
+3939,Pedestrian crossing facilities - inspected road
+3939,Pedestrian crossing quality
+3939,Pedestrian crossing facilities - intersecting road
+3939,Pedestrian fencing
+3939,Speed management / traffic calming
+3939,Vehicle parking
+3939,Sidewalk - driver-side
+3939,Sidewalk - passenger-side
+3939,Service road
+3939,Facilities for motorised two wheelers
+3939,Facilities for bicycles
+3939,Roadworks
+3939,Sight distance
+3939,Vehicle flow (AADT)
+3939,Pedestrian peak hour flow across the road
+3939,Pedestrian peak hour flow along the road driver-side
+3939,Pedestrian peak hour flow along the road passenger-side
+3939,Bicycle peak hour flow
+3939,School zone warning
+3939,School zone crossing supervisor
+3940,Carriageway
+3940,Upgrade cost
+3940,Motorcycle observed flow
+3940,Bicycle observed flow
+3940,Pedestrian observed flow across the road
+3940,Pedestrian observed flow along the road driver-side
+3940,Pedestrian observed flow along the road passenger-side
+3940,Land use - driver-side
+3940,Land use - passenger-side
+3940,Area type
+3940,Median type
+3940,Centreline rumble strips
+3940,Roadside severity - driver-side distance
+3940,Roadside severity - driver-side object
+3940,Roadside severity - passenger-side distance
+3940,Roadside severity - passenger-side object
+3940,Shoulder rumble strips
+3940,Paved shoulder - driver-side
+3940,Paved shoulder - passenger-side
+3940,Intersection type
+3940,Intersection channelisation
+3940,Intersecting road volume
+3940,Intersection quality
+3940,Property access points
+3940,Number of lanes
+3940,Curvature
+3940,Quality of curve
+3940,Grade
+3940,Road condition
+3940,Skid resistance / grip
+3940,Delineation
+3940,Street lighting
+3940,Pedestrian crossing facilities - inspected road
+3940,Pedestrian crossing quality
+3940,Pedestrian crossing facilities - intersecting road
+3940,Pedestrian fencing
+3940,Speed management / traffic calming
+3940,Vehicle parking
+3940,Sidewalk - driver-side
+3940,Sidewalk - passenger-side
+3940,Service road
+3940,Facilities for motorised two wheelers
+3940,Facilities for bicycles
+3940,Roadworks
+3940,Sight distance
+3940,Vehicle flow (AADT)
+3940,Pedestrian peak hour flow across the road
+3940,Pedestrian peak hour flow along the road driver-side
+3940,Pedestrian peak hour flow along the road passenger-side
+3940,Bicycle peak hour flow
+3940,School zone warning
+3940,School zone crossing supervisor
+3941,Carriageway
+3941,Upgrade cost
+3941,Motorcycle observed flow
+3941,Bicycle observed flow
+3941,Pedestrian observed flow across the road
+3941,Pedestrian observed flow along the road driver-side
+3941,Pedestrian observed flow along the road passenger-side
+3941,Land use - driver-side
+3941,Land use - passenger-side
+3941,Area type
+3941,Median type
+3941,Centreline rumble strips
+3941,Roadside severity - driver-side distance
+3941,Roadside severity - driver-side object
+3941,Roadside severity - passenger-side distance
+3941,Roadside severity - passenger-side object
+3941,Shoulder rumble strips
+3941,Paved shoulder - driver-side
+3941,Paved shoulder - passenger-side
+3941,Intersection type
+3941,Intersection channelisation
+3941,Intersecting road volume
+3941,Intersection quality
+3941,Property access points
+3941,Number of lanes
+3941,Curvature
+3941,Quality of curve
+3941,Grade
+3941,Road condition
+3941,Skid resistance / grip
+3941,Delineation
+3941,Street lighting
+3941,Pedestrian crossing facilities - inspected road
+3941,Pedestrian crossing quality
+3941,Pedestrian crossing facilities - intersecting road
+3941,Pedestrian fencing
+3941,Speed management / traffic calming
+3941,Vehicle parking
+3941,Sidewalk - driver-side
+3941,Sidewalk - passenger-side
+3941,Service road
+3941,Facilities for motorised two wheelers
+3941,Facilities for bicycles
+3941,Roadworks
+3941,Sight distance
+3941,Vehicle flow (AADT)
+3941,Pedestrian peak hour flow across the road
+3941,Pedestrian peak hour flow along the road driver-side
+3941,Pedestrian peak hour flow along the road passenger-side
+3941,Bicycle peak hour flow
+3941,School zone warning
+3941,School zone crossing supervisor
+3942,Area type
+3942,Intersecting road volume
+3942,Number of lanes
+3942,Vehicle flow (AADT)
+3943,Area type
+3943,Intersecting road volume
+3943,Number of lanes
+3943,Vehicle flow (AADT)
+3944,Carriageway
+3944,Upgrade cost
+3944,Motorcycle observed flow
+3944,Bicycle observed flow
+3944,Pedestrian observed flow across the road
+3944,Pedestrian observed flow along the road driver-side
+3944,Pedestrian observed flow along the road passenger-side
+3944,Land use - driver-side
+3944,Land use - passenger-side
+3944,Area type
+3944,Median type
+3944,Centreline rumble strips
+3944,Roadside severity - driver-side distance
+3944,Roadside severity - driver-side object
+3944,Roadside severity - passenger-side distance
+3944,Roadside severity - passenger-side object
+3944,Shoulder rumble strips
+3944,Paved shoulder - driver-side
+3944,Paved shoulder - passenger-side
+3944,Intersection type
+3944,Intersection channelisation
+3944,Intersection quality
+3944,Property access points
+3944,Curvature
+3944,Quality of curve
+3944,Grade
+3944,Road condition
+3944,Skid resistance / grip
+3944,Delineation
+3944,Street lighting
+3944,Pedestrian crossing facilities - inspected road
+3944,Pedestrian crossing quality
+3944,Pedestrian crossing facilities - intersecting road
+3944,Pedestrian fencing
+3944,Speed management / traffic calming
+3944,Vehicle parking
+3944,Sidewalk - driver-side
+3944,Sidewalk - passenger-side
+3944,Service road
+3944,Facilities for motorised two wheelers
+3944,Facilities for bicycles
+3944,Roadworks
+3944,Sight distance
+3944,Pedestrian peak hour flow across the road
+3944,Pedestrian peak hour flow along the road driver-side
+3944,Pedestrian peak hour flow along the road passenger-side
+3944,Bicycle peak hour flow
+3944,School zone warning
+3944,School zone crossing supervisor
+3945,Area type
+3946,Area type
+3947,Area type
+3948,Area type
+3949,Area type
+3950,Area type
+3951,Area type
+3952,Area type
+3953,Area type
+3954,Area type
+3955,Area type
+3956,Area type
+3957,Area type
+3958,Area type
+3959,Area type
+3960,Area type
+3961,Area type
+3962,Area type
+3963,Area type
+3964,Area type
+3965,Area type
+3966,Area type
+3967,Area type
+3968,Area type
+3969,Area type
+3970,Area type
+3971,Area type
+3972,Area type
+3973,Area type
+3974,Area type
+3975,Area type
+3976,Area type
+3977,Area type
+3978,Area type
+3979,Area type
+3980,Area type
+3981,Area type
+3982,Area type
+3983,Area type
+3984,Area type
+3985,Area type
+3986,Area type
+3987,Area type
+3988,Area type
+3989,Area type
+3990,Area type
+3991,Area type
+3992,Area type
+3993,Area type
+3994,Area type
+3995,Area type
+3996,Area type
+3997,Area type
+3998,Area type
+3999,Area type
+4000,Area type
+4001,Area type
+4002,Area type
+4003,Area type
+4004,Area type
+4005,Area type
+4006,Area type
+4007,Area type
+4008,Area type
+4009,Area type
+4010,Area type
+4011,Area type
+4012,Area type
+4013,Area type
+4014,Area type
+4015,Area type
+4016,Area type
+4017,Area type
+4018,Area type
+4019,Area type
+4020,Area type
+4021,Area type
+4022,Area type
+4023,Area type
+4024,Area type
+4025,Area type
+4026,Area type
+4027,Area type
+4028,Area type
+4029,Area type
+4339,Carriageway
+4339,Upgrade cost
+4339,Motorcycle observed flow
+4339,Bicycle observed flow
+4339,Pedestrian observed flow across the road
+4339,Pedestrian observed flow along the road driver-side
+4339,Pedestrian observed flow along the road passenger-side
+4339,Land use - driver-side
+4339,Land use - passenger-side
+4339,Median type
+4339,Centreline rumble strips
+4339,Roadside severity - driver-side distance
+4339,Roadside severity - driver-side object
+4339,Roadside severity - passenger-side distance
+4339,Roadside severity - passenger-side object
+4339,Shoulder rumble strips
+4339,Paved shoulder - driver-side
+4339,Paved shoulder - passenger-side
+4339,Intersection type
+4339,Intersection channelisation
+4339,Intersection quality
+4339,Property access points
+4339,Curvature
+4339,Quality of curve
+4339,Grade
+4339,Road condition
+4339,Skid resistance / grip
+4339,Delineation
+4339,Street lighting
+4339,Pedestrian crossing facilities - inspected road
+4339,Pedestrian crossing quality
+4339,Pedestrian crossing facilities - intersecting road
+4339,Pedestrian fencing
+4339,Speed management / traffic calming
+4339,Vehicle parking
+4339,Sidewalk - driver-side
+4339,Sidewalk - passenger-side
+4339,Service road
+4339,Facilities for motorised two wheelers
+4339,Facilities for bicycles
+4339,Roadworks
+4339,Sight distance
+4339,Pedestrian peak hour flow across the road
+4339,Pedestrian peak hour flow along the road driver-side
+4339,Pedestrian peak hour flow along the road passenger-side
+4339,Bicycle peak hour flow
+4339,School zone warning
+4339,School zone crossing supervisor
+4340,Carriageway
+4340,Upgrade cost
+4340,Motorcycle observed flow
+4340,Bicycle observed flow
+4340,Pedestrian observed flow across the road
+4340,Pedestrian observed flow along the road driver-side
+4340,Pedestrian observed flow along the road passenger-side
+4340,Land use - driver-side
+4340,Land use - passenger-side
+4340,Median type
+4340,Centreline rumble strips
+4340,Roadside severity - driver-side distance
+4340,Roadside severity - driver-side object
+4340,Roadside severity - passenger-side distance
+4340,Roadside severity - passenger-side object
+4340,Shoulder rumble strips
+4340,Paved shoulder - driver-side
+4340,Paved shoulder - passenger-side
+4340,Intersection type
+4340,Intersection channelisation
+4340,Intersection quality
+4340,Property access points
+4340,Curvature
+4340,Quality of curve
+4340,Grade
+4340,Road condition
+4340,Skid resistance / grip
+4340,Delineation
+4340,Street lighting
+4340,Pedestrian crossing facilities - inspected road
+4340,Pedestrian crossing quality
+4340,Pedestrian crossing facilities - intersecting road
+4340,Pedestrian fencing
+4340,Speed management / traffic calming
+4340,Vehicle parking
+4340,Sidewalk - driver-side
+4340,Sidewalk - passenger-side
+4340,Service road
+4340,Facilities for motorised two wheelers
+4340,Facilities for bicycles
+4340,Roadworks
+4340,Sight distance
+4340,Pedestrian peak hour flow across the road
+4340,Pedestrian peak hour flow along the road driver-side
+4340,Pedestrian peak hour flow along the road passenger-side
+4340,Bicycle peak hour flow
+4340,School zone warning
+4340,School zone crossing supervisor
+4341,Carriageway
+4341,Upgrade cost
+4341,Motorcycle observed flow
+4341,Bicycle observed flow
+4341,Pedestrian observed flow across the road
+4341,Pedestrian observed flow along the road driver-side
+4341,Pedestrian observed flow along the road passenger-side
+4341,Land use - driver-side
+4341,Land use - passenger-side
+4341,Median type
+4341,Centreline rumble strips
+4341,Roadside severity - driver-side distance
+4341,Roadside severity - driver-side object
+4341,Roadside severity - passenger-side distance
+4341,Roadside severity - passenger-side object
+4341,Shoulder rumble strips
+4341,Paved shoulder - driver-side
+4341,Paved shoulder - passenger-side
+4341,Intersection type
+4341,Intersection channelisation
+4341,Intersection quality
+4341,Property access points
+4341,Curvature
+4341,Quality of curve
+4341,Grade
+4341,Road condition
+4341,Skid resistance / grip
+4341,Delineation
+4341,Street lighting
+4341,Pedestrian crossing facilities - inspected road
+4341,Pedestrian crossing quality
+4341,Pedestrian crossing facilities - intersecting road
+4341,Pedestrian fencing
+4341,Speed management / traffic calming
+4341,Vehicle parking
+4341,Sidewalk - driver-side
+4341,Sidewalk - passenger-side
+4341,Service road
+4341,Facilities for motorised two wheelers
+4341,Facilities for bicycles
+4341,Roadworks
+4341,Sight distance
+4341,Pedestrian peak hour flow across the road
+4341,Pedestrian peak hour flow along the road driver-side
+4341,Pedestrian peak hour flow along the road passenger-side
+4341,Bicycle peak hour flow
+4341,School zone warning
+4341,School zone crossing supervisor
+4342,Carriageway
+4342,Upgrade cost
+4342,Motorcycle observed flow
+4342,Bicycle observed flow
+4342,Pedestrian observed flow across the road
+4342,Pedestrian observed flow along the road driver-side
+4342,Pedestrian observed flow along the road passenger-side
+4342,Land use - driver-side
+4342,Land use - passenger-side
+4342,Median type
+4342,Centreline rumble strips
+4342,Roadside severity - driver-side distance
+4342,Roadside severity - driver-side object
+4342,Roadside severity - passenger-side distance
+4342,Roadside severity - passenger-side object
+4342,Shoulder rumble strips
+4342,Paved shoulder - driver-side
+4342,Paved shoulder - passenger-side
+4342,Intersection type
+4342,Intersection channelisation
+4342,Intersection quality
+4342,Property access points
+4342,Curvature
+4342,Quality of curve
+4342,Grade
+4342,Road condition
+4342,Skid resistance / grip
+4342,Delineation
+4342,Street lighting
+4342,Pedestrian crossing facilities - inspected road
+4342,Pedestrian crossing quality
+4342,Pedestrian crossing facilities - intersecting road
+4342,Pedestrian fencing
+4342,Speed management / traffic calming
+4342,Vehicle parking
+4342,Sidewalk - driver-side
+4342,Sidewalk - passenger-side
+4342,Service road
+4342,Facilities for motorised two wheelers
+4342,Facilities for bicycles
+4342,Roadworks
+4342,Sight distance
+4342,Pedestrian peak hour flow across the road
+4342,Pedestrian peak hour flow along the road driver-side
+4342,Pedestrian peak hour flow along the road passenger-side
+4342,Bicycle peak hour flow
+4342,School zone warning
+4342,School zone crossing supervisor
+4343,Carriageway
+4343,Upgrade cost
+4343,Motorcycle observed flow
+4343,Bicycle observed flow
+4343,Pedestrian observed flow across the road
+4343,Pedestrian observed flow along the road driver-side
+4343,Pedestrian observed flow along the road passenger-side
+4343,Land use - driver-side
+4343,Land use - passenger-side
+4343,Median type
+4343,Centreline rumble strips
+4343,Roadside severity - driver-side distance
+4343,Roadside severity - driver-side object
+4343,Roadside severity - passenger-side distance
+4343,Roadside severity - passenger-side object
+4343,Shoulder rumble strips
+4343,Paved shoulder - driver-side
+4343,Paved shoulder - passenger-side
+4343,Intersection type
+4343,Intersection channelisation
+4343,Intersection quality
+4343,Property access points
+4343,Curvature
+4343,Quality of curve
+4343,Grade
+4343,Road condition
+4343,Skid resistance / grip
+4343,Delineation
+4343,Street lighting
+4343,Pedestrian crossing facilities - inspected road
+4343,Pedestrian crossing quality
+4343,Pedestrian crossing facilities - intersecting road
+4343,Pedestrian fencing
+4343,Speed management / traffic calming
+4343,Vehicle parking
+4343,Sidewalk - driver-side
+4343,Sidewalk - passenger-side
+4343,Service road
+4343,Facilities for motorised two wheelers
+4343,Facilities for bicycles
+4343,Roadworks
+4343,Sight distance
+4343,Pedestrian peak hour flow across the road
+4343,Pedestrian peak hour flow along the road driver-side
+4343,Pedestrian peak hour flow along the road passenger-side
+4343,Bicycle peak hour flow
+4343,School zone warning
+4343,School zone crossing supervisor
+4344,Carriageway
+4344,Upgrade cost
+4344,Motorcycle observed flow
+4344,Bicycle observed flow
+4344,Pedestrian observed flow across the road
+4344,Pedestrian observed flow along the road driver-side
+4344,Pedestrian observed flow along the road passenger-side
+4344,Land use - driver-side
+4344,Land use - passenger-side
+4344,Median type
+4344,Centreline rumble strips
+4344,Roadside severity - driver-side distance
+4344,Roadside severity - driver-side object
+4344,Roadside severity - passenger-side distance
+4344,Roadside severity - passenger-side object
+4344,Shoulder rumble strips
+4344,Paved shoulder - driver-side
+4344,Paved shoulder - passenger-side
+4344,Intersection type
+4344,Intersection channelisation
+4344,Intersection quality
+4344,Property access points
+4344,Curvature
+4344,Quality of curve
+4344,Grade
+4344,Road condition
+4344,Skid resistance / grip
+4344,Delineation
+4344,Street lighting
+4344,Pedestrian crossing facilities - inspected road
+4344,Pedestrian crossing quality
+4344,Pedestrian crossing facilities - intersecting road
+4344,Pedestrian fencing
+4344,Speed management / traffic calming
+4344,Vehicle parking
+4344,Sidewalk - driver-side
+4344,Sidewalk - passenger-side
+4344,Service road
+4344,Facilities for motorised two wheelers
+4344,Facilities for bicycles
+4344,Roadworks
+4344,Sight distance
+4344,Pedestrian peak hour flow across the road
+4344,Pedestrian peak hour flow along the road driver-side
+4344,Pedestrian peak hour flow along the road passenger-side
+4344,Bicycle peak hour flow
+4344,School zone warning
+4344,School zone crossing supervisor
+4345,Carriageway
+4345,Upgrade cost
+4345,Motorcycle observed flow
+4345,Bicycle observed flow
+4345,Pedestrian observed flow across the road
+4345,Pedestrian observed flow along the road driver-side
+4345,Pedestrian observed flow along the road passenger-side
+4345,Land use - driver-side
+4345,Land use - passenger-side
+4345,Median type
+4345,Centreline rumble strips
+4345,Roadside severity - driver-side distance
+4345,Roadside severity - driver-side object
+4345,Roadside severity - passenger-side distance
+4345,Roadside severity - passenger-side object
+4345,Shoulder rumble strips
+4345,Paved shoulder - driver-side
+4345,Paved shoulder - passenger-side
+4345,Intersection type
+4345,Intersection channelisation
+4345,Intersection quality
+4345,Property access points
+4345,Curvature
+4345,Quality of curve
+4345,Grade
+4345,Road condition
+4345,Skid resistance / grip
+4345,Delineation
+4345,Street lighting
+4345,Pedestrian crossing facilities - inspected road
+4345,Pedestrian crossing quality
+4345,Pedestrian crossing facilities - intersecting road
+4345,Pedestrian fencing
+4345,Speed management / traffic calming
+4345,Vehicle parking
+4345,Sidewalk - driver-side
+4345,Sidewalk - passenger-side
+4345,Service road
+4345,Facilities for motorised two wheelers
+4345,Facilities for bicycles
+4345,Roadworks
+4345,Sight distance
+4345,Pedestrian peak hour flow across the road
+4345,Pedestrian peak hour flow along the road driver-side
+4345,Pedestrian peak hour flow along the road passenger-side
+4345,Bicycle peak hour flow
+4345,School zone warning
+4345,School zone crossing supervisor
+4369,Area type
+4370,Area type
+4371,Area type
+4372,Area type
+4373,Area type
+4374,Area type
+4375,Area type
+4376,Area type
+4377,Area type
+4378,Area type
+4379,Area type
+4380,Area type
+4381,Area type
+4382,Area type
+4383,Area type
+4384,Area type
+4385,Area type
+4386,Area type
+4387,Area type
+4388,Area type
+4389,Area type
+4390,Area type
+4391,Area type
+4392,Area type
+4393,Area type
+4394,Area type
+4827,Area type
+4828,Area type
+4829,Area type
+4830,Area type
+4831,Area type
+4982,Area type
+4983,Area type
+4984,Area type
+4985,Area type
+4986,Area type
+4987,Area type
+4988,Area type
+4989,Area type
+4990,Area type
+4991,Area type
+5066,Area type
+5067,Area type
+5068,Area type
+5069,Area type
+5070,Area type
+5071,Area type
+5072,Area type
+5073,Area type
+5074,Area type
+5075,Area type
+5076,Area type
+5077,Area type
+5078,Area type
+5079,Area type
+5080,Area type
+5081,Area type
+5082,Area type
+5083,Area type
+5084,Area type
+5085,Area type
+5086,Area type
+5087,Area type
+5088,Area type
+5089,Area type
+5090,Area type
