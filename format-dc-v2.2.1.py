@@ -254,7 +254,7 @@ def differential_speed_limits():
     # +1 -> 0-1 not present; 1-2 present
   vida_batch[f'{diff}'] = vida_batch[f'{diff}'].notna().astype(int) + 1
 
-def number_of_lanes(): ## ANCHOR / WORKING HERE
+def number_of_lanes(): 
   # AO: 
   #  if Median_Type_of_Roadway = "Divided Highway" -> Lanes_Number_Cardinal
   #  if Median_Type_of_Roadway = "Undivided Highway" -> Lanes_Total_Number_Driving
@@ -295,7 +295,7 @@ def number_of_lanes(): ## ANCHOR / WORKING HERE
 
   number_of_lanes_to_code(col)
 
-def number_of_lanes_to_code(col):
+def number_of_lanes_to_code(col): # // WORKING HERE - code 5 and 6
   # Assign ViDA CODES to fields in 'vida_batch'
   # Only Undivided (mask2) can gain code '5' and '6'
 
