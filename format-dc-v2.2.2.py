@@ -1,7 +1,7 @@
 # FORMAT SPECIFIC FIELDS POST DATA COLLECTION INTO ViDA CODES
 
 #############################################################################
-# NOTES v. 2.2.1
+# NOTES v. 2.2.2
 #############################################################################
 
 '''
@@ -13,10 +13,8 @@
 - V2.1.3 creates .csv of rows with MISSING data, only Cols that 'matter', e.g. not Comments.
 - V2.2 will provide a “log file” with Rows that ONLY have REQUIRED missing data.
 - V2.2.1 Fixes 'Speed limit' logic
-- V2.2.2 will fix 'Number of Lanes' logic
-
-***********************
-- CHANGE SR4D into ViDA
+- V2.2.2 Fixes 'Number of Lanes' logic
+- V2.2.3 will CHANGE references to 'SR4D' into ViDA
 ***********************
 
 '''
@@ -265,12 +263,12 @@ def number_of_lanes():
       total_num = 'Lanes_Total_Number_Driving' # This column needs to be added to SR4D, not a problem with Spatial input
       median = 'Median type'
 
-      mask1 = batch[f'{median}'] == 'Divided Highway'
-      mask2 = batch[f'{median}'] == 'Undivided Highway'
+      mask_div = batch[f'{median}'] == 'Divided Highway'
+      mask_undiv = batch[f'{median}'] == 'Undivided Highway'
 
     # Apply correct fields from 'batch' to 'vida_batch'
-      vida_batch.loc[mask1, f'{col}'] = batch.loc[mask1, f'{cardinal}']
-      vida_batch.loc[mask2, f'{col}'] = batch.loc[mask2, f'{total_num}']
+      vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
+      vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{total_num}']
 
     except KeyError:
       print('**********************************************************************\n')
@@ -284,25 +282,47 @@ def number_of_lanes():
     cardinal = 'Lanes_Number_Cardinal'
     total_num = 'Lanes_Total_Number_Driving'
     median = 'Median_Type_of_Roadway'
-
     # Build filters for Divided and Undivided rows
-    mask1 = batch[f'{median}'] == 'Divided Highway'
-    mask2 = batch[f'{median}'] == 'Undivided Highway'
+    mask_div = batch[f'{median}'] == 'Divided Highway'
+    mask_undiv = batch[f'{median}'] == 'Undivided Highway'
   
-  # Apply correct fields from 'batch' to 'vida_batch'
-    vida_batch.loc[mask1, f'{col}'] = batch.loc[mask1, f'{cardinal}']
-    vida_batch.loc[mask2, f'{col}'] = batch.loc[mask2, f'{total_num}']
+  # Using mask1 & mask2 as a kind of if/else for Pandas
+  ## to apply correct fields from 'lanes num cardinal' and 'lanes_total_num' in 'batch' to 'Number of lanes' in 'vida_batch'
+    vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
+    vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{total_num}']
 
-  number_of_lanes_to_code(col)
+  # Need to call two separate functions because value of '3' and '> 4' works differently for each
+  number_of_lanes_to_code_undivided(col, mask_undiv)
+  number_of_lanes_to_code_divided(col, mask_div)
 
-def number_of_lanes_to_code(col): # // WORKING HERE - code 5 and 6
-  # Assign ViDA CODES to fields in 'vida_batch'
-  # Only Undivided (mask2) can gain code '5' and '6'
+def number_of_lanes_to_code_undivided(col, mask_undiv):
+  # Assign ViDA CODES to fields with 'Undivided' Median Type in 'vida_batch' for 'Number of lanes'
+    ## Assuming Undivided, if Lanes_Total_Number_Driving = 5, must be 3 & 2, so code 6
+    ## ~, if Lanes_Total_Number_Driving = 3, must be 2 & 1, so code 5
 
-  series = vida_batch[col]
-  # Only overwrite valid fields, e.g. not NaN or blank
+  # Values for cells in 'col'
+  series = vida_batch.loc[mask_undiv, col]
   
-  vida_batch[col] = np.select(
+  vida_batch.loc[mask_undiv, col] = np.select(
+    [
+      series >= 6,
+      series == 5,
+      series == 4,
+      series == 3,
+      series == 2,
+      series == 1
+    ],
+    [4, 6, 4, 5, 2, 1],
+    default = vida_batch.loc[mask_undiv, col]
+  )
+  
+def number_of_lanes_to_code_divided(col, mask_div): 
+  # Assign ViDA CODES to fields with 'Divided' Median Type in 'vida_batch' for 'Number of lanes'
+
+  # Values for cells in 'col'
+  series = vida_batch.loc[mask_div, col]
+  
+  vida_batch.loc[mask_div, col] = np.select(
     [
       series >= 4,
       series == 3,
@@ -310,18 +330,9 @@ def number_of_lanes_to_code(col): # // WORKING HERE - code 5 and 6
       series == 1
     ],
     [4, 3, 2, 1],
-    default = np.nan # Preserves Blanks from np.select assigning '0'
+    default = vida_batch.loc[mask_div, col]
   )
   
-''' number of lanes
-4	four or more
-3	three
-6	three and two
-2	two   
-5	two and one
-1	one
-'''
- 
 def lane_width():
   # ap: lane_width_feet 
 #  lane = 'lane_width' # for vida
@@ -401,7 +412,7 @@ def motorcycle_percentile():
 # GATHERS needed elements from 'vida_batch' into a ViDA / SR4D format
   ## for uploading to ViDA
 # ALSO CALLS 'log()'
-def build_sr4d_csv(): ## ANCHOR / WORKING HERE
+def build_sr4d_csv(): 
   vida_with_arcgis = {}
 
   # ViDA / SR4D paired with ArcGIS col names:
@@ -497,7 +508,7 @@ def build_sr4d_csv(): ## ANCHOR / WORKING HERE
   return new_df, log_missing
 
 # Creates df for Rows with Missing Data
-def logs(new_df, vida_keys): ## WORKING HERE
+def logs(new_df, vida_keys):
   # Needs to EXCLUDE Cells which do not matter, e.g. Reference ID
   ## Or ONLY INCLUDE Cells which do matter
   # CREATE 'blacklist' for cols we do NOT want:
