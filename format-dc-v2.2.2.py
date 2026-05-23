@@ -15,6 +15,16 @@
 - V2.2.1 Fixes 'Speed limit' logic
 - V2.2.2 Fixes 'Number of Lanes' logic
 - V2.2.3 will CHANGE references to 'SR4D' into ViDA
+- v2.2.4 to 2.2.5 will aim to DO THE FOLLOWING:
+  - Option '1' to 'Convert Spatial to ViDA
+    - will take a Spatial .csv as INPUT and OUTPUT a someFile.csv
+    - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
+  - Option '2' to 'Get Missing Cell Log'
+    - will take either a Spatial or ViDA as INPUT and OUTPUT a 'Missing Cell Log'.
+    - leaves INPUT file alone.
+  - Option '3' to 'ViDA Modified' to 'ViDA Cleaned'
+    - will take ViDA .csv with added Cols, ..., and OUTPUT ViDA ready for upload to ViDA site.
+    - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
 ***********************
 
 '''
@@ -27,17 +37,30 @@
 3. Choose option '2' Spatial
 4. Type filename
 5. Press <Enter>
+EXPORTS 2 files: OUTPUT--filename--CODED-FOR-ViDA.csv and OUTPUT--filename--MISSING-CELLS-LOG.csv
+~
+# Once Missing Cells have been filled with Data, run script again
+1. Place "updated" file without missing data in same directory as this script
+2. $ ptyhon format-dc.py
+3. Choose option '1' ViDA
+4. Type filename
+5. Press <Enter> 
+EXPORTS 2 files: OUTPUT--filename--CODED-FOR-ViDA.csv and OUTPUT--filename--MISSING-CELLS-LOG.csv
+
 '''
 
 #############################################################################
-# CONCERNS
+# CONCERNS COMPLAINTS
 #############################################################################
 
 ''' 
-# 04.30.26
+# 04.30.26 SOLVED
 1. Number_of_lanes -> how to deal with Undivided 3&2, 2&1 ???
 2. Check Column names needed for ViDA
 3. Should option '1' for SR4D output a file WITH or WITHOUT the 2 arcGIS cols, 'Lanes_Total_Number_Driving' and 'Lanes_Number_Cardinarl' ???
+
+# 05.22.2026
+1. DOES THIS NEED 2 EXTRA COLUMNS ADDED TO WORK?
 ...
 '''
 
@@ -67,9 +90,9 @@ def get_batch():
   print("Type 'q' to quit to exit")
 
   while True:
-    user_choice = input('What format is the Input file: choose (1) SR4D or (2) Spatial: ')
+    user_choice = input('What format is the Input file: choose (1) ViDA or (2) Spatial: ')
     if user_choice == '1':
-      file_format = 'ViDA Input'
+      file_format = 'sr4d' # ANCHOR / WORKING: NEED TO CHANGE THIS (AND ELSEWHERE) TO 'vida'
       
     elif user_choice == '2':
       file_format = 'spatial' 
@@ -272,8 +295,12 @@ def number_of_lanes():
 
     except KeyError:
       print('**********************************************************************\n')
-      print(f"You must add {cardinal} and {total_num} Columns to SR4D formatted file.") 
-      print('to run code against a file in SR4D format.\n')
+      print(f"You must add {cardinal} and {total_num} Columns to ViDA formatted file.") 
+      print('to run code against a file in ViDA format.\n')
+      print('...ATTENTION...\n')
+      print('This feature does not work.\n')
+      print('Must ONLY use Spatial file with this script.\n')
+      print('Make edits and data additions to Spatial file.\n')
       print('Exiting program...')
       sys.exit()
 
