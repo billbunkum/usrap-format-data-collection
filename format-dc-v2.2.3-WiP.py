@@ -442,11 +442,11 @@ def motorcycle_percentile():
   ## for uploading to ViDA
 # ALSO CALLS 'log()'
 def build_sr4d_csv(): 
-  vida_with_arcgis = {}
+  col_conversion = {}
 
-  # ViDA / SR4D paired with ArcGIS col names:
-  if file_format == 'spatial':
-    vida_with_arcgis = {
+  # Convert Column Names
+  if file_format == 'spatial': # Converts Spatial cols into ViDA cols
+    col_conversion = {
       'Coder name': vida_batch['Coder_name'],
       'Coding date': vida_batch['Coding_date'],
       'Road survey date': vida_batch['Road_survey_date'],
@@ -526,13 +526,95 @@ def build_sr4d_csv():
       'School zone warning': vida_batch['School_zone_warning'],
       'School zone crossing supervisor': vida_batch['School_zone_crossing_supervisor']
     }
-  new_df = pd.DataFrame(vida_with_arcgis)
+  elif file_format == 'vida': # Converts ViDA cols into Spatial cols
+    col_conversion = {
+    'Coder_name': vida_batch['Coder name'],
+    'Coding_date': vida_batch['Coding date'],
+    'Road_survey_date': vida_batch['Road survey date'],
+    'Image_reference': vida_batch['Image reference'],
+    'Road_name': vida_batch['Road name'],
+    'Section': vida_batch['Section'],
+    'Distance': vida_batch['Distance'],
+    'Length': vida_batch['Length'],
+    'Latitude': vida_batch['Latitude'],
+    'Longitude': vida_batch['Longitude'],
+    'Landmark': vida_batch['Landmark'],
+    'Comments': vida_batch['Comments'],
+    'Carriageway': vida_batch['Carriageway'],
+    'Upgrade_cost': vida_batch['Upgrade cost'],
+    'Motorcycle_observed_flow': vida_batch['Motorcycle observed flow'],
+    'Bicycle_observed_flow': vida_batch['Bicycle observed flow'],
+    'Pedestrian_observed_flow_across_the_road': vida_batch['Pedestrian observed flow across the road'],
+    'Pedestrian_observed_flow_along_the_road_driver_side': vida_batch['Pedestrian observed flow along the road driver-side'],
+    'Pedestrian_observed_flow_along_the_road_passenger_side': vida_batch['Pedestrian observed flow along the road passenger-side'],
+    'Land_use___driver_side': vida_batch['Land use - driver-side'],
+    'Land_use___passenger_side': vida_batch['Land use - passenger-side'],
+    'Urban_Area_Census': vida_batch['Area type'],
+    'Speed_limit': vida_batch['Speed limit'],
+    'Motorcycle_speed_limit': vida_batch['Motorcycle speed limit'],
+    'Truck_speed_limit': vida_batch['Truck speed limit'],
+    'Differential_speed_limits': vida_batch['Differential speed limits'],
+    'Median_type': vida_batch['Median type'],
+    'Centreline_rumble_strips': vida_batch['Centreline rumble strips'],
+    'Roadside_severity___driver_side_distance': vida_batch['Roadside severity - driver-side distance'],
+    'Roadside_severity___driver_side_object': vida_batch['Roadside severity - driver-side object'],
+    'Roadside_severity___passenger_side_distance': vida_batch['Roadside severity - passenger-side distance'],
+    'Roadside_severity___passenger_side_object': vida_batch['Roadside severity - passenger-side object'],
+    'Shoulder_rumble_strips': vida_batch['Shoulder rumble strips'],
+    'Paved_shoulder___driver_side': vida_batch['Paved shoulder - driver-side'],
+    'Paved_shoulder___passenger_side': vida_batch['Paved shoulder - passenger-side'],
+    'Intersection_type': vida_batch['Intersection type'],
+    'Intersection_channelisation': vida_batch['Intersection channelisation'],
+    'Intersecting_road_volume': vida_batch['Intersecting road volume'],
+    'Intersection_quality': vida_batch['Intersection quality'],
+    'Property_access_points': vida_batch['Property access points'],
+    'Number_of_lanes': vida_batch['Number of lanes'],
+    'Lane_width': vida_batch['Lane width'],
+    'Curvature': vida_batch['Curvature'],
+    'Quality_of_curve': vida_batch['Quality of curve'],
+    'Grade': vida_batch['Grade'],
+    'Road_condition': vida_batch['Road condition'],
+    'Skid_resistance___grip': vida_batch['Skid resistance / grip'],
+    'Delineation': vida_batch['Delineation'],
+    'Street_lighting': vida_batch['Street lighting'],
+    'Pedestrian_crossing_facilities___inspected_road': vida_batch['Pedestrian crossing facilities - inspected road'],
+    'Pedestrian_crossing_quality': vida_batch['Pedestrian crossing quality'],
+    'Pedestrian_crossing_facilities___intersecting_road': vida_batch['Pedestrian crossing facilities - intersecting road'],
+    'Pedestrian_fencing': vida_batch['Pedestrian fencing'],
+    'Speed_management___traffic_calming': vida_batch['Speed management / traffic calming'],
+    'Vehicle_parking': vida_batch['Vehicle parking'],
+    'Sidewalk___driver_side': vida_batch['Sidewalk - driver-side'],
+    'Sidewalk___passenger_side': vida_batch['Sidewalk - passenger-side'],
+    'Service_road': vida_batch['Service road'],
+    'Facilities_for_motorised_two_wheelers': vida_batch['Facilities for motorised two wheelers'],
+    'Facilities_for_bicycles': vida_batch['Facilities for bicycles'],
+    'Roadworks': vida_batch['Roadworks'],
+    'Sight_distance': vida_batch['Sight distance'],
+    'Traffic_Last_Count': vida_batch['Vehicle flow (AADT)'],
+    'Motorcycle__': vida_batch['Motorcycle %'],
+    'Pedestrian_peak_hour_flow_across_the_road': vida_batch['Pedestrian peak hour flow across the road'],
+    'Pedestrian_peak_hour_flow_along_the_road_driver_side': vida_batch['Pedestrian peak hour flow along the road driver-side'],
+    'Pedestrian_peak_hour_flow_along_the_road_passenger_side': vida_batch['Pedestrian peak hour flow along the road passenger-side'],
+    'Bicycle_peak_hour_flow': vida_batch['Bicycle peak hour flow'],
+    'Operating_Speed__85th_percentile_': vida_batch['Operating Speed (85th percentile)'],
+    'Operating_Speed__mean_': vida_batch['Operating Speed (mean)'],
+    'Roads_that_cars_can_read': vida_batch['Roads that cars can read'],
+    'Vehicle_Occupant_Star_Rating_Policy_Target': vida_batch['Vehicle Occupant Star Rating Policy Target'],
+    'Motorcycle_Star_Rating_Policy_Target': vida_batch['Motorcycle Star Rating Policy Target'],
+    'Pedestrian_Star_Rating_Policy_Target': vida_batch['Pedestrian Star Rating Policy Target'],
+    'Bicycle_Star_Rating_Policy_Target': vida_batch['Bicycle Star Rating Policy Target'],
+    'Annual_Fatality_Growth_Multiplier': vida_batch['Annual Fatality Growth Multiplier'],
+    'School_zone_warning': vida_batch['School zone warning'],
+    'School_zone_crossing_supervisor': vida_batch['School zone crossing supervisor'],
+  }
+
+  new_df = pd.DataFrame(col_conversion)
 
   #print(new_df.keys())
 
   # Log missing cols for SR4D
-  vida_keys = vida_with_arcgis.keys()
-  log_missing = logs(new_df, vida_keys)
+  col_conversion_keys = col_conversion.keys()
+  log_missing = logs(new_df, col_conversion_keys)
 
   return new_df, log_missing
 
