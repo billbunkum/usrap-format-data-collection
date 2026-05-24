@@ -36,19 +36,19 @@
 '''
 1. Place "spatial" file exported from ArcGIS in same directory as this script
 2. $ python format-dc.py
-3. Choose option '2' Spatial
+3. Choose option '1' Spatial
 4. Type filename
 5. Press <Enter>
 EXPORTS 2 files: OUTPUT--filename--CODED-FOR-ViDA.csv and OUTPUT--filename--MISSING-CELLS-LOG.csv
 ~
-# Once Missing Cells have been filled with Data, run script again
-1. Place "updated" file without missing data in same directory as this script
-2. $ ptyhon format-dc.py
-3. Choose option '1' ViDA
-4. Type filename
-5. Press <Enter> 
-EXPORTS 2 files: OUTPUT--filename--CODED-FOR-ViDA.csv and OUTPUT--filename--MISSING-CELLS-LOG.csv
-
+WiP
+. Option '2' Get Missing Cell Log'
+. Enter filename.csv
+  - can be Spatial or ViDA format
+. Exports 1 file: OUTPUT--filename--MISSING-CELLS-LOG.csv 
+~
+WiP
+. Option '3' ViDA Modified
 '''
 
 #############################################################################
@@ -92,11 +92,11 @@ def get_batch():
   print("Type 'q' to quit to exit")
 
   while True:
-    user_choice = input('What format is the Input file: choose (1) ViDA or (2) Spatial: ')
-    if user_choice == '1':
-      file_format = 'sr4d' # ANCHOR / WORKING: NEED TO CHANGE THIS (AND ELSEWHERE) TO 'vida'
+    user_choice = input('What format is the Input file: choose (1) Spatial: ')
+#    if user_choice == '1':
+#      file_format = 'sr4d' # ANCHOR / WORKING: NEED TO CHANGE THIS (AND ELSEWHERE) TO 'vida'
       
-    elif user_choice == '2':
+    if user_choice == '1':
       file_format = 'spatial' 
 
     elif user_choice.lower() == 'q':
