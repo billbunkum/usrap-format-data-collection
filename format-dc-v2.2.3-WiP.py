@@ -126,7 +126,8 @@ batch = get_batch()
 ##   batch = pd.read_csv('use-this-test-batch.csv', header='infer', skip_blank_lines=False, low_memory=False)
 
 # Create copy of BATCH to avoid destructive changes
-vida_batch = batch.copy()
+input_batch = batch.copy() # For Option 1 Check Spatial
+vida_batch = batch.copy() # For Option 2 Convert Spatial
 
 #############################################################################
 # FUNCTIONS CONVERT HIS FORMAT INTO ViDA NUMBERICAL CODES
@@ -453,7 +454,7 @@ def motorcycle_percentile():
 # EXPORT Function
 # GATHERS needed elements from 'vida_batch' into a Spatial or ViDA formats as dictated by 'file_format' when script is run
   ## ALSO CALLS 'log()' for Missing Cells
-def build_csv(): 
+def conversion_csv(): 
   col_conversion = {}
 
   # Convert Column Names
@@ -638,7 +639,9 @@ def logs(new_df, col_keys):
   # CREATE 'blacklist' for cols we do NOT want:
   blacklist = ['Reference ID', 'Comments', 'Landmark', 'Coder name', 'Coding date', 'Road survey date', 'Image reference', 'Road name', 'Section',
                'Annual Fatality Growth Multiplier', 'Roads that cars can read', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target',
-               'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target' ]
+               'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target' ] # WORKING // THESE NEED Spatial COLS AS WELL
+
+  whitelist = [] # ANCHOR // WORKING // ADD ALL REQUIRED Cols FOR Spatial AND ViDA
 
   ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
   ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and not in blacklist
@@ -690,15 +693,15 @@ new_filename = user_input.split('.')[0]
 
 if file_format == 'check_spatial':
   print('check spatial')
-  new_df = build_csv()
 
-  new_df[0].to_csv(f'OUTPUT--{new_filename}--let-us-see.csv', index=False) 
-  new_df[1].to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
+  new_df = logs(input_batch, input_batch.keys())
+
+  new_df.to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
 
 # Exports 2 files, one as SR4D and one as Spatial formats
 ## Turns Spatial format into SR4D format for ViDA
 if file_format == 'convert_spatial':
-  new_df = build_csv() # Returns 'new_df' with ViDA or Spatial cols in [0] and 'log_missing' in [1]
+  new_df = conversion_csv() # Returns 'new_df' with ViDA or Spatial cols in [0] and 'log_missing' in [1]
 
   new_df[0].to_csv(f'OUTPUT--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
   new_df[1].to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
