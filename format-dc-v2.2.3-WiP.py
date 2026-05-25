@@ -647,39 +647,41 @@ def logs(new_df, col_keys):
     valid_keys = [key for key in col_keys if key in new_df.columns and key not in blacklist]
 
   elif file_format == 'check_spatial':
+#    blacklist = [
+#      'Bicycle_Star_Rating_Policy_Target',
+#      'Coder_name',
+#      'Coding_date',
+#      'Comments',
+#      'Image_reference',
+#      'Landmark',
+#      'Motorcycle_Star_Rating_Policy_Target',
+#      'Pedestrian_Star_Rating_Policy_Target',
+#      'Road_name',
+#      'Road_survey_date',
+#      'Roads_that_cars_can_read',
+#      'Section',
+#      'Vehicle_Occupant_Star_Rating_Policy_Target',
+#      ]
     whitelist = [
       'Access_Control_Type',
       'Area_type',
       'Bicycle_observed_flow',
       'Bicycle_peak_hour_flow',
-      'Bicycle_Star_Rating_Policy_Target',
       'Carriageway',
       'Centreline_rumble_strips',
-      'Coder_name',
-      'Coding_date',
-      'Comments',
-      'County_Name',
-      'County_Number',
       'Curvature',
       'Delineation',
-      'Differential_speed_limits',
       'Distance',
-      'District',
       'Facilities_for_bicycles',
       'Facilities_for_motorised_two_wheelers',
       'Grade',
-      'Image_reference',
-      'Intersecting_road_volume',
       'Intersection_channelisation',
       'Intersection_quality',
       'Intersection_type',
       'Land_use___driver_side',
       'Land_use___passenger_side',
-      'Landmark',
-      'Lane_width',
       'Lane_Width_Feet',
       'Lanes_Number_Cardinal',
-      'Lanes_Number_NonCardinal',
       'Lanes_Total_Number_Driving',
       'Latitude',
       'Length',
@@ -687,13 +689,7 @@ def logs(new_df, col_keys):
       'Median_type',
       'Median_Type_of_Roadway',
       'Median_Width_Feet',
-      'Motorcycle__',
       'Motorcycle_observed_flow',
-      'Motorcycle_speed_limit',
-      'Motorcycle_Star_Rating_Policy_Target',
-      'Number_of_lanes',
-      'Operating_Speed__85th_percentile_',
-      'Operating_Speed__mean_',
       'Paved_shoulder___driver_side',
       'Paved_shoulder___passenger_side',
       'Pedestrian_crossing_facilities___inspected_road',
@@ -706,13 +702,9 @@ def logs(new_df, col_keys):
       'Pedestrian_peak_hour_flow_across_the_road',
       'Pedestrian_peak_hour_flow_along_the_road_driver_side',
       'Pedestrian_peak_hour_flow_along_the_road_passenger_side',
-      'Pedestrian_Star_Rating_Policy_Target',
       'Property_access_points',
       'Quality_of_curve',
       'Road_condition',
-      'Road_name',
-      'Road_survey_date',
-      'Roads_that_cars_can_read',
       'Roadside_severity___driver_side_distance',
       'Roadside_severity___driver_side_object',
       'Roadside_severity___passenger_side_distance',
@@ -720,26 +712,18 @@ def logs(new_df, col_keys):
       'Roadworks',
       'School_zone_crossing_supervisor',
       'School_zone_warning',
-      'Section',
       'Service_road',
       'Shoulder_rumble_strips',
       'Sidewalk___driver_side',
       'Sidewalk___passenger_side',
       'Sight_distance',
       'Skid_resistance___grip',
-      'Speed_limit',
       'Speed_Limit_Posted_MPH',
       'Speed_management___traffic_calming',
       'Street_lighting',
-      'Traffic_ADT_Station',
-      'Traffic_ADT_Station_Type',
       'Traffic_Last_Count',
-      'Truck_speed_limit',
-      'Type_Operation_Code',
       'Upgrade_cost',
       'Urban_Area_Census',
-      'Vehicle_flow__AADT_',
-      'Vehicle_Occupant_Star_Rating_Policy_Target',
       'Vehicle_parking',
     ] # ANCHOR // WORKING // ADD ALL REQUIRED Cols FOR Spatial AND ViDA
     ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
@@ -790,11 +774,12 @@ if file_format == 'convert_spatial':
 # Create new filename for export 
 new_filename = user_input.split('.')[0]
 
+# Exports 1 Missing Cell Log for the Spatial file selected
 if file_format == 'check_spatial':
   print('check spatial')
 
   new_df = logs(input_batch, input_batch.keys())
-  new_df['Row'] = new_df['Row'] + 2 # Try to offset Index from 0 so Rows show up properly in Log when referencing original Input File
+  new_df['Row'] = new_df['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
   new_df.to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
 
@@ -802,6 +787,7 @@ if file_format == 'check_spatial':
 ## Turns Spatial format into SR4D format for ViDA
 if file_format == 'convert_spatial':
   new_df = conversion_csv() # Returns 'new_df' with ViDA or Spatial cols in [0] and 'log_missing' in [1]
+  new_df[1]['Row'] = new_df[1]['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
   new_df[0].to_csv(f'OUTPUT--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
   new_df[1].to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
