@@ -14,41 +14,34 @@
 - V2.2 will provide a “log file” with Rows that ONLY have REQUIRED missing data.
 - V2.2.1 Fixes 'Speed limit' logic
 - V2.2.2 Fixes 'Number of Lanes' logic
+
 - V2.2.3 Start changes to workflow & features, i.e. Options,
   - Removes references to 'sr4d'
-  - Begins internal work for 2.2.4 & 2.2.5
-- v2.2.4 to 2.2.5 will aim to DO THE FOLLOWING:
-  - Option '1' to 'Convert Spatial to ViDA
+  - Begins internal work for 2.2.4, testing 
+
+- v2.2.4 will DO THE FOLLOWING:
+  - Option '1' to CHECK Spatial for Missing
+    - User then needs to correct Missing Cells within a Spatial file
+    
+  - Option '2' to 'CONVERT Spatial to ViDA'
     - will take a Spatial .csv as INPUT and OUTPUT a someFile.csv
     - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
-  - Option '2' to 'Get Missing Cell Log'
-    - will take either a Spatial or ViDA as INPUT and OUTPUT a 'Missing Cell Log'.
-    - leaves INPUT file alone.
-  - Option '3' to 'ViDA Modified' to 'ViDA Cleaned'
+
+  - Option '3' to 'CHECK ViDA for Missing'
     - will take ViDA .csv with added Cols, ..., and OUTPUT ViDA ready for upload to ViDA site.
     - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
+
+FUTURE Version????
+  - Option '4' to 'GET MISSING Cell Log'
+    - will take either a Spatial or ViDA as INPUT and OUTPUT a 'Missing Cell Log'.
+    - leaves INPUT file alone.
 ***********************
 
 '''
 #############################################################################
-# USAGE 
+# USAGE // ANCHOR / WORKING 
 #############################################################################
 '''
-1. Place "spatial" file exported from ArcGIS in same directory as this script
-2. $ python format-dc.py
-3. Choose option '1' Spatial
-4. Type filename
-5. Press <Enter>
-EXPORTS 2 files: OUTPUT--filename--CODED-FOR-ViDA.csv and OUTPUT--filename--MISSING-CELLS-LOG.csv
-~
-WiP
-. Option '2' Get Missing Cell Log'
-. Enter filename.csv
-  - can be Spatial or ViDA format
-. Exports 1 file: OUTPUT--filename--MISSING-CELLS-LOG.csv 
-~
-WiP
-. Option '3' ViDA Modified
 '''
 
 #############################################################################
@@ -92,12 +85,18 @@ def get_batch():
   print("Type 'q' to quit to exit")
 
   while True:
-    user_choice = input('What format is the Input file: choose (1) Spatial: ')
+    user_choice = input('What format is the Input file: choose (1) Check Spatial for Missing Cells, (2) Convert Spatial to ViDA: ')
 #    if user_choice == '1':
 #      file_format = 'sr4d' # ANCHOR / WORKING: NEED TO CHANGE THIS (AND ELSEWHERE) TO 'vida'
-      
+    
     if user_choice == '1':
-      file_format = 'spatial' 
+      file_format = 'check_spatial'
+     
+    elif user_choice == '2': # Main choice; code below has this 'option' as the elif case; 05.25.26
+      file_format = 'convert_spatial' 
+
+#    elif user_choice == '3':
+#      file_format = 'check_vida'
 
     elif user_choice.lower() == 'q':
       print('Exiting program...')
@@ -138,8 +137,13 @@ vida_batch = batch.copy()
 
 # DUMMY data -> can add as Input
 def coder_name():
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     coder = 'Coder name'
+
+  elif file_format == 'check_spatial':
+    print('passed coder_name')
+    return None 
+
   else:
     coder = 'Coder_name'
 
@@ -147,8 +151,13 @@ def coder_name():
 
 # DUMMY Data -> can add as Input
 def road_survey_date():
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     survey = 'Road survey date'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
+
   else:
     survey = 'Road_survey_date'
 
@@ -156,13 +165,27 @@ def road_survey_date():
 
 # DUMMY Data -> can add as Input
 def landmark():
-  landmark = 'Landmark'
-  vida_batch[f'{landmark}'] = 'some landmark'
-
+  if file_format == 'convert_spatial':
+    landmark = 'Landmark'
+    vida_batch[f'{landmark}'] = 'some landmark'
+   
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
+    
+  else:
+    landmark = 'Landmark'
+    vida_batch[f'{landmark}'] = 'some landmark'
+ 
 def area_type():
   # V: Urban_Area_Census -> gives info. as 'Rural' or 'Urban'
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     area = 'Area type'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
+
   else:
     area = 'Urban_Area_Census'
 
@@ -171,8 +194,13 @@ def area_type():
 
 def speed_limit():
   # W: Speed_Limit_Posted_MPH
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     speed = 'Speed limit'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
+
   else:
     speed = 'Speed_Limit_Posted_MPH'
     limit = 'Speed_limit'
@@ -189,9 +217,13 @@ def speed_limit():
 def motorcycle_speed_limit():
 # X: as Speed limit
 
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     moto = 'Motorcycle speed limit'
     speed = 'Speed limit'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
 
   else:
     moto = 'Motorcycle_speed_limit'
@@ -204,9 +236,13 @@ def motorcycle_speed_limit():
 def truck_speed_limit():
 # Y: as Speed limit (unless listed)
 
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     truck = 'Truck speed limit'
     speed = 'Speed limit'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
 
   else:
     truck = 'Truck_speed_limit'
@@ -219,9 +255,13 @@ def truck_speed_limit():
 def operating_speed_85th():
   # BQ: as Speed limit
 
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     operating = 'Operating Speed (85th percentile)'
     speed = 'Speed limit'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
 
   else:
     operating = 'Operating_Speed__85th_percentile_'
@@ -234,9 +274,13 @@ def operating_speed_85th():
 def operating_speed_mean():
   # BR: as Speed limit
 
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     mean = 'Operating Speed (mean)'
     speed = 'Speed limit'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
 
   else:
     mean = 'Operating_Speed__mean_'
@@ -265,8 +309,12 @@ def speed_to_code(col, num):
 def differential_speed_limits():
   # Z: as Speed limit (unless listed)
   # code is either '1' (not present) or '2' (present)
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     diff = 'Differential speed limits'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
 
   else:
     diff = 'Differential_speed_limits'
@@ -281,7 +329,7 @@ def number_of_lanes():
   # AO: 
   #  if Median_Type_of_Roadway = "Divided Highway" -> Lanes_Number_Cardinal
   #  if Median_Type_of_Roadway = "Undivided Highway" -> Lanes_Total_Number_Driving
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     col = 'Number of lanes'
     try:
       cardinal = 'Lanes_Number_Cardinal'# This column needs to be added to SR4D, not a problem with Spatial file input
@@ -306,6 +354,10 @@ def number_of_lanes():
       print('Exiting program...')
       sys.exit()
 
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
+
   else:
     col = 'Number_of_lanes'
     cardinal = 'Lanes_Number_Cardinal'
@@ -324,6 +376,7 @@ def number_of_lanes():
   number_of_lanes_to_code_undivided(col, mask_undiv)
   number_of_lanes_to_code_divided(col, mask_div)
 
+# AUX Function
 def number_of_lanes_to_code_undivided(col, mask_undiv):
   # Assign ViDA CODES to fields with 'Undivided' Median Type in 'vida_batch' for 'Number of lanes'
     ## Assuming Undivided, if Lanes_Total_Number_Driving = 5, must be 3 & 2, so code 6
@@ -344,7 +397,8 @@ def number_of_lanes_to_code_undivided(col, mask_undiv):
     [4, 6, 4, 5, 2, 1],
     default = vida_batch.loc[mask_undiv, col]
   )
-  
+ 
+# AUX Function 
 def number_of_lanes_to_code_divided(col, mask_div): 
   # Assign ViDA CODES to fields with 'Divided' Median Type in 'vida_batch' for 'Number of lanes'
 
@@ -369,6 +423,10 @@ def lane_width():
     col = 'Lane width'
     lane_width = 'Lane width'
 
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
+
   else:
     col = 'Lane_Width_Feet' # for export from arcgis
     lane_width = 'Lane_width'
@@ -378,6 +436,7 @@ def lane_width():
 
   lane_width_to_code(lane_width, mask)
 
+# AUX Function
 # convert lane_width_feet into vida code and place into 'lane_width'
 def lane_width_to_code(col, mask):
   vida_batch[col] = np.select(
@@ -399,8 +458,12 @@ def lane_width_to_code(col, mask):
 def vehicle_flow(): # a.k.a. aadt
   # bk: traffic_last_count
   # the code for this is the number
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     flow = 'Vehicle flow (AADT)'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
 
   else:
 #    flow = 'Vehicle_flow__AADT_'
@@ -413,9 +476,13 @@ def vehicle_flow(): # a.k.a. aadt
 def intersecting_road_volume():  
   # al: traffic_last_count / 2 (calculation)
     # in other words: vehicle_flow / 2
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     vol = 'Intersecting road volume'
     flow = 'Vehicle flow (AADT)'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
 
   else:
     vol = 'Intersecting_road_volume'
@@ -431,21 +498,26 @@ def intersecting_road_volume():
 
 def motorcycle_percentile(): 
   # bl: code '0'
-  if file_format == 'sr4d':
+  if file_format == 'vida':
     moto = 'Motorcycle %'
+
+  elif file_format == 'check_spatial':
+    print('passed ...')
+    return None
+
   else:
     moto = 'Motorcycle__'
 
   vida_batch[f'{moto}'] = 0
 
-# GATHERS needed elements from 'vida_batch' into a ViDA / SR4D format
-  ## for uploading to ViDA
-# ALSO CALLS 'log()'
-def build_sr4d_csv(): 
+# EXPORT Function
+# GATHERS needed elements from 'vida_batch' into a Spatial or ViDA formats as dictated by 'file_format' when script is run
+  ## ALSO CALLS 'log()' for Missing Cells
+def build_csv(): 
   col_conversion = {}
 
   # Convert Column Names
-  if file_format == 'spatial': # Converts Spatial cols into ViDA cols
+  if file_format == 'convert_spatial': # Converts Spatial cols into ViDA cols
     col_conversion = {
       'Coder name': vida_batch['Coder_name'],
       'Coding date': vida_batch['Coding_date'],
@@ -618,6 +690,7 @@ def build_sr4d_csv():
 
   return new_df, log_missing
 
+# AUX Function
 # Creates df for Rows with Missing Data
 def logs(new_df, vida_keys):
   # Needs to EXCLUDE Cells which do not matter, e.g. Reference ID
@@ -678,16 +751,18 @@ new_filename = user_input.split('.')[0]
 
 # Exports 2 files, one as SR4D and one as Spatial formats
 ## Turns Spatial format into SR4D format for ViDA
-if file_format == 'spatial':
-  new_df = build_sr4d_csv() # Returns 'new_df' with ViDA cols in [0] and 'log_missing' in [1]
+if file_format == 'convert_spatial':
+  new_df = build_csv() # Returns 'new_df' with ViDA or Spatial cols in [0] and 'log_missing' in [1]
 
   new_df[0].to_csv(f'OUTPUT--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
   new_df[1].to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
 #  vida_batch.to_csv(f'{new_filename}--coded-from-spatial.csv', index=False)
 
-# Accepts SR4D but adds 2 extra ArcGIS cols
-if file_format == 'sr4d':
-  vida_batch.to_csv(f'OUTPUT--{new_filename}--coded-from-sr4d-plus-2-arcCols.csv', index=False)
+# For ViDA format, but adds 2 extra ArcGIS cols:
+  ## Lanes_Number_Cardinal'
+  ## Lanes_Total_Number_Driving'
+if file_format == 'vida':
+  ...
 
 
 ## ANCHOR END_OF_FILE
