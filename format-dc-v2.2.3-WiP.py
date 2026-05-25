@@ -140,10 +140,6 @@ def coder_name():
   if file_format == 'vida':
     coder = 'Coder name'
 
-  elif file_format == 'check_spatial':
-    print('passed coder_name')
-    return None 
-
   else:
     coder = 'Coder_name'
 
@@ -153,10 +149,6 @@ def coder_name():
 def road_survey_date():
   if file_format == 'vida':
     survey = 'Road survey date'
-
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
 
   else:
     survey = 'Road_survey_date'
@@ -169,10 +161,6 @@ def landmark():
     landmark = 'Landmark'
     vida_batch[f'{landmark}'] = 'some landmark'
    
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
-    
   else:
     landmark = 'Landmark'
     vida_batch[f'{landmark}'] = 'some landmark'
@@ -181,10 +169,6 @@ def area_type():
   # V: Urban_Area_Census -> gives info. as 'Rural' or 'Urban'
   if file_format == 'vida':
     area = 'Area type'
-
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
 
   else:
     area = 'Urban_Area_Census'
@@ -196,10 +180,6 @@ def speed_limit():
   # W: Speed_Limit_Posted_MPH
   if file_format == 'vida':
     speed = 'Speed limit'
-
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
 
   else:
     speed = 'Speed_Limit_Posted_MPH'
@@ -221,10 +201,6 @@ def motorcycle_speed_limit():
     moto = 'Motorcycle speed limit'
     speed = 'Speed limit'
 
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
-
   else:
     moto = 'Motorcycle_speed_limit'
     speed = 'Speed_Limit_Posted_MPH'
@@ -239,10 +215,6 @@ def truck_speed_limit():
   if file_format == 'vida':
     truck = 'Truck speed limit'
     speed = 'Speed limit'
-
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
 
   else:
     truck = 'Truck_speed_limit'
@@ -259,10 +231,6 @@ def operating_speed_85th():
     operating = 'Operating Speed (85th percentile)'
     speed = 'Speed limit'
 
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
-
   else:
     operating = 'Operating_Speed__85th_percentile_'
     speed = 'Speed_Limit_Posted_MPH'
@@ -277,10 +245,6 @@ def operating_speed_mean():
   if file_format == 'vida':
     mean = 'Operating Speed (mean)'
     speed = 'Speed limit'
-
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
 
   else:
     mean = 'Operating_Speed__mean_'
@@ -311,10 +275,6 @@ def differential_speed_limits():
   # code is either '1' (not present) or '2' (present)
   if file_format == 'vida':
     diff = 'Differential speed limits'
-
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
 
   else:
     diff = 'Differential_speed_limits'
@@ -353,10 +313,6 @@ def number_of_lanes():
       print('Make edits and data additions to Spatial file.\n')
       print('Exiting program...')
       sys.exit()
-
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
 
   else:
     col = 'Number_of_lanes'
@@ -423,10 +379,6 @@ def lane_width():
     col = 'Lane width'
     lane_width = 'Lane width'
 
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
-
   else:
     col = 'Lane_Width_Feet' # for export from arcgis
     lane_width = 'Lane_width'
@@ -461,10 +413,6 @@ def vehicle_flow(): # a.k.a. aadt
   if file_format == 'vida':
     flow = 'Vehicle flow (AADT)'
 
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
-
   else:
 #    flow = 'Vehicle_flow__AADT_'
     #flow = 'Vehicle_flow'
@@ -479,10 +427,6 @@ def intersecting_road_volume():
   if file_format == 'vida':
     vol = 'Intersecting road volume'
     flow = 'Vehicle flow (AADT)'
-
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
 
   else:
     vol = 'Intersecting_road_volume'
@@ -501,10 +445,6 @@ def motorcycle_percentile():
   if file_format == 'vida':
     moto = 'Motorcycle %'
 
-  elif file_format == 'check_spatial':
-    print('passed ...')
-    return None
-
   else:
     moto = 'Motorcycle__'
 
@@ -518,7 +458,7 @@ def build_csv():
 
   # Convert Column Names
   if file_format == 'convert_spatial': # Converts Spatial cols into ViDA cols
-    col_conversion = {
+    col_conversion = {  # ViDA col <- Spatial col
       'Coder name': vida_batch['Coder_name'],
       'Coding date': vida_batch['Coding_date'],
       'Road survey date': vida_batch['Road_survey_date'],
@@ -598,8 +538,8 @@ def build_csv():
       'School zone warning': vida_batch['School_zone_warning'],
       'School zone crossing supervisor': vida_batch['School_zone_crossing_supervisor']
     }
-  elif file_format == 'vida': # Converts ViDA cols into Spatial cols
-    col_conversion = {
+  elif file_format == 'convert_vida': # ANCHOR // WORKING // THIS CURRENTLY NOT IN PLAY // Converts ViDA cols into Spatial cols
+    col_conversion = { # Spatial Col <- ViDA Col
     'Coder_name': vida_batch['Coder name'],
     'Coding_date': vida_batch['Coding date'],
     'Road_survey_date': vida_batch['Road survey date'],
@@ -692,7 +632,7 @@ def build_csv():
 
 # AUX Function
 # Creates df for Rows with Missing Data
-def logs(new_df, vida_keys):
+def logs(new_df, col_keys):
   # Needs to EXCLUDE Cells which do not matter, e.g. Reference ID
   ## Or ONLY INCLUDE Cells which do matter
   # CREATE 'blacklist' for cols we do NOT want:
@@ -702,7 +642,7 @@ def logs(new_df, vida_keys):
 
   ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
   ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and not in blacklist
-  valid_keys = [key for key in vida_keys if key in new_df.columns and key not in blacklist]
+  valid_keys = [key for key in col_keys if key in new_df.columns and key not in blacklist]
 
   # Gets integer coordinates of NaNs
   rows, cols = np.where(new_df[valid_keys].isna())
@@ -717,30 +657,29 @@ def logs(new_df, vida_keys):
 
   return log_missing 
 
-
 #############################################################################
 # FUNCTION CALLS
 #############################################################################
 
-## dummy defs
-coder_name()
-road_survey_date()
-landmark()
+if file_format == 'convert_spatial':
+  # dummy defs
+  coder_name()
+  road_survey_date()
+  landmark()
 
-## real defs
-area_type()
-speed_limit() 
-motorcycle_speed_limit() 
-differential_speed_limits()
-lane_width()
-vehicle_flow()
-intersecting_road_volume()
-truck_speed_limit()
-operating_speed_85th()
-operating_speed_mean()
-motorcycle_percentile()
-number_of_lanes() ## QUESTION about Code 5 and 6 (Undivided) 
-
+  # real defs
+  area_type()
+  speed_limit() 
+  motorcycle_speed_limit() 
+  differential_speed_limits()
+  lane_width()
+  vehicle_flow()
+  intersecting_road_volume()
+  truck_speed_limit()
+  operating_speed_85th()
+  operating_speed_mean()
+  motorcycle_percentile()
+  number_of_lanes() 
 
 ##############################################################################
 # EXPORTS
@@ -748,6 +687,13 @@ number_of_lanes() ## QUESTION about Code 5 and 6 (Undivided)
 
 # Create new filename for export 
 new_filename = user_input.split('.')[0]
+
+if file_format == 'check_spatial':
+  print('check spatial')
+  new_df = build_csv()
+
+  new_df[0].to_csv(f'OUTPUT--{new_filename}--let-us-see.csv', index=False) 
+  new_df[1].to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
 
 # Exports 2 files, one as SR4D and one as Spatial formats
 ## Turns Spatial format into SR4D format for ViDA
