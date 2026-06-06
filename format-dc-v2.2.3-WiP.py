@@ -17,16 +17,20 @@
 
 - V2.2.3 Start changes to workflow & features, i.e. Options,
   - Removes references to 'sr4d'
+  - NOTE_: present Functions have if/else concerning `file_format` == 'sr4d'; this is DEPRECATED.
   - Begins internal work for 2.2.4, testing 
 
-- v2.2.4 will DO THE FOLLOWING:
   - Option '1' to CHECK Spatial for Missing
+    - USAGE_: Outputs a single Missing Log .csv
+      - OUTPUT-ConvertSpatial--someFilename-MissingCellsLog.csv
     - User then needs to correct Missing Cells within a Spatial file
     
   - Option '2' to 'CONVERT Spatial to ViDA'
+    - USAGE_: Outputs two .csv; 1 Missing Log, 1 CSV prepared for ViDA upload
     - will take a Spatial .csv as INPUT and OUTPUT a someFile.csv
     - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
 
+- v2.2.4
   - Option '3' to 'CHECK ViDA for Missing'
     - will take ViDA .csv with added Cols, ..., and OUTPUT ViDA ready for upload to ViDA site.
     - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
@@ -115,7 +119,11 @@ def get_batch():
     
     try:
       df = pd.read_csv(f'{user_input}', header='infer', skip_blank_lines=False, low_memory=False)
-      print('File loaded and running')  
+      print('File loaded and running\n')  
+      if file_format == 'check_spatial':
+        print('Outputs: 1 Missing Log file.')
+      elif file_format == 'convert_spatial':
+        print('Outputs: 1 Missing Log file and 1 CSV prepped for ViDA upload.')
       return df
     except FileNotFoundError:
       print(f'File {user_input} not found. Try again.')
@@ -646,22 +654,7 @@ def logs(new_df, col_keys):
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and not in blacklist
     valid_keys = [key for key in col_keys if key in new_df.columns and key not in blacklist]
 
-  elif file_format == 'check_spatial':
-#    blacklist = [
-#      'Bicycle_Star_Rating_Policy_Target',
-#      'Coder_name',
-#      'Coding_date',
-#      'Comments',
-#      'Image_reference',
-#      'Landmark',
-#      'Motorcycle_Star_Rating_Policy_Target',
-#      'Pedestrian_Star_Rating_Policy_Target',
-#      'Road_name',
-#      'Road_survey_date',
-#      'Roads_that_cars_can_read',
-#      'Section',
-#      'Vehicle_Occupant_Star_Rating_Policy_Target',
-#      ]
+  elif file_format == 'check_spatial': # ANCHOR // WORKING // STILL NEED TO IGNORE Cols WHICH MAY NEED DEFAULT VALS, e.g. Ped_Observed_Flow, etc.
     whitelist = [
       'Access_Control_Type',
       'Area_type',
@@ -781,7 +774,7 @@ if file_format == 'check_spatial':
   new_df = logs(input_batch, input_batch.keys())
   new_df['Row'] = new_df['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
-  new_df.to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
+  new_df.to_csv(f'OUTPUT-CheckSpatial--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
 
 # Exports 2 files, one as SR4D and one as Spatial formats
 ## Turns Spatial format into SR4D format for ViDA
@@ -789,8 +782,8 @@ if file_format == 'convert_spatial':
   new_df = conversion_csv() # Returns 'new_df' with ViDA or Spatial cols in [0] and 'log_missing' in [1]
   new_df[1]['Row'] = new_df[1]['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
-  new_df[0].to_csv(f'OUTPUT--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
-  new_df[1].to_csv(f'OUTPUT--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
+  new_df[0].to_csv(f'OUTPUT-ConvertSpatial--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
+  new_df[1].to_csv(f'OUTPUT-ConvertSpatial--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
 #  vida_batch.to_csv(f'{new_filename}--coded-from-spatial.csv', index=False)
 
 # For ViDA format, but adds 2 extra ArcGIS cols:
