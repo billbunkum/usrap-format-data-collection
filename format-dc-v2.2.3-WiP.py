@@ -15,10 +15,10 @@
 - V2.2.1 Fixes 'Speed limit' logic
 - V2.2.2 Fixes 'Number of Lanes' logic
 
-- V2.2.3 Start changes to workflow & features, i.e. Options,
-  - Removes references to 'sr4d'
-  - NOTE_: present Functions have if/else concerning `file_format` == 'sr4d'; this is DEPRECATED.
-  - Begins internal work for 2.2.4, testing 
+- V2.2.3 Start changes to workflow & features, i.e. Options '1' and '2'.
+  - DID NOT DO THIS - Removes references to 'sr4d'
+    - NOTE_: present Functions have if/else concerning `file_format` == 'sr4d'; this is DEPRECATED.
+    - Begins internal work for 2.2.4, testing 
 
   - Option '1' to CHECK Spatial for Missing
     - USAGE_: Outputs a single Missing Log .csv
@@ -30,21 +30,25 @@
     - will take a Spatial .csv as INPUT and OUTPUT a someFile.csv
     - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
 
-- v2.2.4
-  - Option '3' to 'CHECK ViDA for Missing'
+- v2.2.4 Add workflow Feature, i.e. adds Option '3'.
+  - Option '3' to 'CLEAN Spatial'
+    - Removes unneeded Cols from Spatial file.
+      - Workflow requires User to work from a Spatial file to make corrections, e.g. missing cells, incorrect data, etc., *not* a ViDA file.
+
+- NEED TO DO
+  - Option '...' to 'CHECK ViDA for Missing'
     - will take ViDA .csv with added Cols, ..., and OUTPUT ViDA ready for upload to ViDA site.
     - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
-
-FUTURE Version????
-  - Option '4' to 'GET MISSING Cell Log'
-    - will take either a Spatial or ViDA as INPUT and OUTPUT a 'Missing Cell Log'.
-    - leaves INPUT file alone.
-***********************
+  - Removes references to 'sr4d'
+    - NOTE_: present Functions have if/else concerning `file_format` == 'sr4d'; this is DEPRECATED.
+    - Begins internal work for 2.2.4, testing 
 
 '''
+
 #############################################################################
 # USAGE // ANCHOR / WORKING 
 #############################################################################
+
 '''
 '''
 
@@ -96,8 +100,11 @@ def get_batch():
     if user_choice == '1':
       file_format = 'check_spatial'
      
-    elif user_choice == '2': # Main choice; code below has this 'option' as the elif case; 05.25.26
+    elif user_choice == '2': # Converts a Spatial file into a ViDA file
       file_format = 'convert_spatial' 
+
+    elif user_choice == '3': # Removes unnecessary Cols in Spatial
+      file_format = 'clean_spatial'
 
 #    elif user_choice == '3':
 #      file_format = 'check_vida'
@@ -631,19 +638,87 @@ def conversion_csv():
 
   new_df = pd.DataFrame(col_conversion)
 
-  #print(new_df.keys())
-
-  # Log missing cols for SR4D
+  # Gathers 'keys' aka Cols from either ViDA or Spatial, depending on 'file_format' aka 'user_choice'
   col_conversion_keys = col_conversion.keys()
   log_missing = logs(new_df, col_conversion_keys)
 
   return new_df, log_missing
 
-# AUX Function
+# Returns a Spatial file without unnecessary Cols
+## Called with Option '3'
+def clean_spatial(): # ANCHOR // WORKING
+  ...
+
+# AUX DRY def; gathers necessary Cols
+def whitelist_cols():
+  whitelist = [
+    'Access_Control_Type',
+    'Area_type',
+    'Bicycle_observed_flow',
+    'Bicycle_peak_hour_flow',
+    'Carriageway',
+    'Centreline_rumble_strips',
+    'Curvature',
+    'Delineation',
+    'Distance',
+    'Facilities_for_bicycles',
+    'Facilities_for_motorised_two_wheelers',
+    'Grade',
+    'Intersection_channelisation',
+    'Intersection_quality',
+    'Intersection_type',
+    'Land_use___driver_side',
+    'Land_use___passenger_side',
+    'Lane_Width_Feet',
+    'Lanes_Number_Cardinal',
+    'Lanes_Total_Number_Driving',
+    'Latitude',
+    'Length',
+    'Longitude',
+    'Median_type',
+    'Median_Type_of_Roadway',
+    'Median_Width_Feet',
+    'Motorcycle_observed_flow',
+    'Paved_shoulder___driver_side',
+    'Paved_shoulder___passenger_side',
+    'Pedestrian_crossing_facilities___inspected_road',
+    'Pedestrian_crossing_facilities___intersecting_road',
+    'Pedestrian_crossing_quality',
+    'Pedestrian_fencing',
+    'Pedestrian_observed_flow_across_the_road',
+    'Pedestrian_observed_flow_along_the_road_driver_side',
+    'Pedestrian_observed_flow_along_the_road_passenger_side',
+    'Pedestrian_peak_hour_flow_across_the_road',
+    'Pedestrian_peak_hour_flow_along_the_road_driver_side',
+    'Pedestrian_peak_hour_flow_along_the_road_passenger_side',
+    'Property_access_points',
+    'Quality_of_curve',
+    'Road_condition',
+    'Roadside_severity___driver_side_distance',
+    'Roadside_severity___driver_side_object',
+    'Roadside_severity___passenger_side_distance',
+    'Roadside_severity___passenger_side_object',
+    'Roadworks',
+    'School_zone_crossing_supervisor',
+    'School_zone_warning',
+    'Service_road',
+    'Shoulder_rumble_strips',
+    'Sidewalk___driver_side',
+    'Sidewalk___passenger_side',
+    'Sight_distance',
+    'Skid_resistance___grip',
+    'Speed_Limit_Posted_MPH',
+    'Speed_management___traffic_calming',
+    'Street_lighting',
+    'Traffic_Last_Count',
+    'Upgrade_cost',
+    'Urban_Area_Census',
+    'Vehicle_parking',
+  ]
+  return whitelist 
+
 # Creates df for Rows with Missing Data
 def logs(new_df, col_keys):
-  # Needs to EXCLUDE Cells which do not matter, e.g. Reference ID
-  ## Or ONLY INCLUDE Cells which do matter
   # CREATE 'blacklist' for cols we do NOT want:
   if file_format == 'convert_spatial':
     blacklist = ['Reference ID', 'Comments', 'Landmark', 'Coder name', 'Coding date', 'Road survey date', 'Image reference', 'Road name', 'Section',
@@ -655,70 +730,7 @@ def logs(new_df, col_keys):
     valid_keys = [key for key in col_keys if key in new_df.columns and key not in blacklist]
 
   elif file_format == 'check_spatial': # ANCHOR // WORKING // STILL NEED TO IGNORE Cols WHICH MAY NEED DEFAULT VALS, e.g. Ped_Observed_Flow, etc.
-    whitelist = [
-      'Access_Control_Type',
-      'Area_type',
-      'Bicycle_observed_flow',
-      'Bicycle_peak_hour_flow',
-      'Carriageway',
-      'Centreline_rumble_strips',
-      'Curvature',
-      'Delineation',
-      'Distance',
-      'Facilities_for_bicycles',
-      'Facilities_for_motorised_two_wheelers',
-      'Grade',
-      'Intersection_channelisation',
-      'Intersection_quality',
-      'Intersection_type',
-      'Land_use___driver_side',
-      'Land_use___passenger_side',
-      'Lane_Width_Feet',
-      'Lanes_Number_Cardinal',
-      'Lanes_Total_Number_Driving',
-      'Latitude',
-      'Length',
-      'Longitude',
-      'Median_type',
-      'Median_Type_of_Roadway',
-      'Median_Width_Feet',
-      'Motorcycle_observed_flow',
-      'Paved_shoulder___driver_side',
-      'Paved_shoulder___passenger_side',
-      'Pedestrian_crossing_facilities___inspected_road',
-      'Pedestrian_crossing_facilities___intersecting_road',
-      'Pedestrian_crossing_quality',
-      'Pedestrian_fencing',
-      'Pedestrian_observed_flow_across_the_road',
-      'Pedestrian_observed_flow_along_the_road_driver_side',
-      'Pedestrian_observed_flow_along_the_road_passenger_side',
-      'Pedestrian_peak_hour_flow_across_the_road',
-      'Pedestrian_peak_hour_flow_along_the_road_driver_side',
-      'Pedestrian_peak_hour_flow_along_the_road_passenger_side',
-      'Property_access_points',
-      'Quality_of_curve',
-      'Road_condition',
-      'Roadside_severity___driver_side_distance',
-      'Roadside_severity___driver_side_object',
-      'Roadside_severity___passenger_side_distance',
-      'Roadside_severity___passenger_side_object',
-      'Roadworks',
-      'School_zone_crossing_supervisor',
-      'School_zone_warning',
-      'Service_road',
-      'Shoulder_rumble_strips',
-      'Sidewalk___driver_side',
-      'Sidewalk___passenger_side',
-      'Sight_distance',
-      'Skid_resistance___grip',
-      'Speed_Limit_Posted_MPH',
-      'Speed_management___traffic_calming',
-      'Street_lighting',
-      'Traffic_Last_Count',
-      'Upgrade_cost',
-      'Urban_Area_Census',
-      'Vehicle_parking',
-    ] # ANCHOR // WORKING // ADD ALL REQUIRED Cols FOR Spatial AND ViDA
+    whitelist = whitelist_cols()
     ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and in whitelist
     valid_keys = [key for key in col_keys if key in new_df.columns and key in whitelist]
@@ -786,10 +798,8 @@ if file_format == 'convert_spatial':
   new_df[1].to_csv(f'OUTPUT-ConvertSpatial--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
 #  vida_batch.to_csv(f'{new_filename}--coded-from-spatial.csv', index=False)
 
-# For ViDA format, but adds 2 extra ArcGIS cols:
-  ## Lanes_Number_Cardinal'
-  ## Lanes_Total_Number_Driving'
-if file_format == 'vida':
+# Option '3' for WORKFLOW, removes unnecessary Cols for fixing Missed, Errors, etc.
+if file_format == 'clean_spatial':
   ...
 
 
