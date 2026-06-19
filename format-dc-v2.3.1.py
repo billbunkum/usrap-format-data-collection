@@ -1,7 +1,7 @@
 # FORMAT SPECIFIC FIELDS POST DATA COLLECTION INTO ViDA CODES
 
 #############################################################################
-# NOTES v. 2.3
+# NOTES v. 2.3.1
 #############################################################################
 
 '''
@@ -30,6 +30,9 @@
   - Option '3' to 'CLEAN Spatial'
     - Removes unneeded Cols from Spatial file.
       - Workflow requires User to work from a Spatial file to make corrections, e.g. missing cells, incorrect data, etc., *not* a ViDA file.
+- V2.3.1 Adds Option '4' to create a CSV with only Rows with Missing Cells
+  - Only check for necessary Cols
+  - Works with other options EXCEPT for Option '1' Check Spatial for Missing Cells
 
 '''
 
@@ -91,6 +94,7 @@ user_input = None
 def get_batch():
   global file_format
   global user_input
+  global filetype_user_input # Used in 'Option 4' for gaining Whitelist in whitelist_cols()
   print("Type 'q' to quit to exit")
 
   while True:
@@ -109,6 +113,7 @@ def get_batch():
 
     elif user_choice == '4': # Creates CSV w/only Missing Rows in 'user_input' format 
       file_format = 'create_missing_csv'
+      filetype_user_input = input('What format is the input file?\n (1) Spatial,\n (2) ViDA\n ')
 #    elif user_choice == '3':
 #      file_format = 'check_vida'
 
@@ -651,7 +656,7 @@ def conversion_csv():
 # AUX DRY def; gathers necessary Cols
 def whitelist_cols():
   #'Access_Control_Type',
-  if file_format == 'clean_spatial':
+  if file_format == 'clean_spatial': # This ignores extrenuous HIS Cols gotten from ArcGIS export; 'cleans' the file of those for better workflow efficiency
     whitelist = [
       'Annual_Fatality_Growth_Multiplier',
       'Area_type',
@@ -739,8 +744,9 @@ def whitelist_cols():
       'Vehicle_Occupant_Star_Rating_Policy_Target',
       'Vehicle_parking'
     ]
-  elif file_format == 'check_spatial':
-    whitelist = [
+  # This only checks necessary Cols, in Spatial format, as others are either Dummy data or unnecessary for ViDA's purposes
+  elif file_format == 'check_spatial' or (file_format == 'create_missing_csv' and filetype_user_input == '1'): 
+       whitelist = [
       'Area_type',
       'Bicycle_observed_flow',
       'Bicycle_peak_hour_flow',
@@ -849,10 +855,10 @@ def clean_spatial():
 # Option '4' def which pulls Missing Rows from a CSV ('user_input') and creates a CSV in that same format
 def create_missing_csv(): # ANCHOR // WORKING // isna() gives True & False only; need to filter with 'mask'???
                           ## NEED: whitelist/blacklist to filter out unnecessary Cols
-
+  whitelist = whitelist_cols()
   input_df = batch.copy() # copy the 'user_input' CSV
-  mask = input_df.isna().any(axis=1) # creates 'mask' that is True for rows where ANY column is NaN
-
+  mask = input_df[whitelist].notna().all(axis=1) 
+  
   missing_only_df = input_df[mask] # filters original df ('input_df')
 
   return missing_only_df
