@@ -94,7 +94,7 @@ def get_batch():
   print("Type 'q' to quit to exit")
 
   while True:
-    user_choice = input('Bonjour!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV: ')
+    user_choice = input('What format is the Input file: choose (1) Check Spatial for Missing Cells, (2) Convert Spatial to ViDA, (3) Clean Spatial of Unneeded Cols: ')
 #    if user_choice == '1':
 #      file_format = 'sr4d' # ANCHOR / WORKING: NEED TO CHANGE THIS (AND ELSEWHERE) TO 'vida'
     
@@ -107,8 +107,6 @@ def get_batch():
     elif user_choice == '3': # Removes unnecessary Cols in Spatial
       file_format = 'clean_spatial'
 
-    elif user_choice == '4': # Creates CSV w/only Missing Rows in 'user_input' format 
-      file_format = 'create_missing_csv'
 #    elif user_choice == '3':
 #      file_format = 'check_vida'
 
@@ -846,19 +844,8 @@ def clean_spatial():
 
   return clean_df
 
-# Option '4' def which pulls Missing Rows from a CSV ('user_input') and creates a CSV in that same format
-def create_missing_csv(): # ANCHOR // WORKING // isna() gives True & False only; need to filter with 'mask'???
-                          ## NEED: whitelist/blacklist to filter out unnecessary Cols
-
-  input_df = batch.copy() # copy the 'user_input' CSV
-  mask = input_df.isna().any(axis=1) # creates 'mask' that is True for rows where ANY column is NaN
-
-  missing_only_df = input_df[mask] # filters original df ('input_df')
-
-  return missing_only_df
-
 #############################################################################
-# FUNCTION CALLS FOR 'convert spatial'
+# FUNCTION CALLS
 #############################################################################
 
 if file_format == 'convert_spatial':
@@ -882,40 +869,36 @@ if file_format == 'convert_spatial':
   number_of_lanes() 
 
 ##############################################################################
-# EXPORTS FROM OPTIONS WHEN PROGRAM WAS RUN
+# EXPORTS
 ##############################################################################
 
 # Create new filename for export 
 new_filename = user_input.split('.')[0]
 
-# Option '1'; exports 1 Missing Cell Log for the Spatial file selected
+# Exports 1 Missing Cell Log for the Spatial file selected
 if file_format == 'check_spatial':
   print('check spatial')
+
   new_df = logs(input_batch, input_batch.keys())
   new_df['Row'] = new_df['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
   new_df.to_csv(f'OUTPUT-CheckSpatial--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
 
-# Option '2'; exports 2 files, 1 in ViDA format, 1 a Missing Cell Log
+# Exports 2 files, one as SR4D and one as Spatial formats
+## Turns Spatial format into SR4D format for ViDA
 if file_format == 'convert_spatial':
-  print('convert spatial')
   new_df = conversion_csv() # Returns 'new_df' with ViDA or Spatial cols in [0] and 'log_missing' in [1]
   new_df[1]['Row'] = new_df[1]['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
   new_df[0].to_csv(f'OUTPUT-ConvertSpatial--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
   new_df[1].to_csv(f'OUTPUT-ConvertSpatial--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
+#  vida_batch.to_csv(f'{new_filename}--coded-from-spatial.csv', index=False)
 
-# Option '3'; removes unnecessary Cols for fixing Missed, Errors, etc.
+# Option '3' for WORKFLOW, removes unnecessary Cols for fixing Missed, Errors, etc.
 if file_format == 'clean_spatial':
-  print('clean spatial')
   clean_spatial_df = clean_spatial()
   clean_spatial_df.to_csv(f'OUTPUT-CleanSpatial--{new_filename}--WORK-FILE.csv', index=False)
 
-# Option '4'; create Missing CSV from Input CSV 'user_input'
-if file_format == 'create_missing_csv':
-  print(f'create missing csv from {user_input}')
-  missing_only_csv = create_missing_csv() 
-  missing_only_csv.to_csv(f'OUTPUT-CreateMissing--{new_filename}.csv', index=False)
 
 ## ANCHOR END_OF_FILE
 
