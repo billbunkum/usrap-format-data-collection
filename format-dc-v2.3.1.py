@@ -1,7 +1,7 @@
 # FORMAT SPECIFIC FIELDS POST DATA COLLECTION INTO ViDA CODES
 
 #############################################################################
-# NOTES v. 2.3.1
+# NOTES v. 2.3.2
 #############################################################################
 
 '''
@@ -39,11 +39,13 @@
     - [ ] Section???
   - [X] Ignore certain Fields for Option 1 'Check for Missing' when file_format is 'check_spatial'
     - [X] Area Type => derived from Urban_Area_Census
-  - [ ] Urban_Area_Census issues
+  - [X] Urban_Area_Census issues
     - [ ] FIX 1: May need a TEST block which checks for appropriate Data, not just Blank Fields
         Sometimes, HIS uses entry other than 'Rural' and 'Urban', e.g. `Louisville/Jefferson County etc.`
         This causes issue with Option 2 'Convert Spatial' as it thinks the Field is Blank.
-      [ ] FIX 2: Auto-decide a DEFAULT value (ASK ALEX ON THIS) # ANCHOR / WORKING: Need Instruction
+      [X] FIX 2: Auto-decide a DEFAULT value (ASK ALEX ON THIS) # ANCHOR / WORKING: Need Instruction
+        Currently, default is 'Urban' if Field is not 'Rural'
+      [] ASK ALEX ABOUT FIX 2
 '''
 
 #############################################################################
@@ -207,9 +209,22 @@ def area_type(): # ANCHOR / WORKING: Need logic for when `Urban_Area_Census` is 
 
   else:
     area = 'Urban_Area_Census'
+  
+  vida_batch[f'{area}'] = vida_batch[f'{area}'].apply(classify_area) # Pandas provides the 'text' arg with .apply()
 
-  mapping = {'Rural': 1, 'Urban': 2}
-  vida_batch[f'{area}'] = vida_batch[f'{area}'].map(mapping)
+# Old way
+##  mapping = {'Rural': 1, 'Urban': 2}
+##  vida_batch[f'{area}'] = vida_batch[f'{area}'].map(mapping)
+
+# AUX def for area_type()
+def classify_area(text):
+  text = str(text).lower()
+  if 'rural' in text:
+    return 1
+  elif 'urban' in text or 'county' in text or 'ky-in' in text:
+    return 2
+  else:
+    return 2
 
 def speed_limit():
   # W: Speed_Limit_Posted_MPH
