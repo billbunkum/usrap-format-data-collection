@@ -33,7 +33,17 @@
 - V2.3.1 Adds Option '4' to create a CSV with only Rows with Missing Cells
   - Only check for necessary Cols
   - Works with other options EXCEPT for Option '1' Check Spatial for Missing Cells
-
+- V2.3.2 Addresses issues found during first real test with 056-spatial.csv
+  - [ ] Might need dummy info for:
+    - [ ] Coding Date??? (add Code for "today's" date???)
+    - [ ] Section???
+  - [X] Ignore certain Fields for Option 1 'Check for Missing' when file_format is 'check_spatial'
+    - [X] Area Type => derived from Urban_Area_Census
+  - [ ] Urban_Area_Census issues
+    - [ ] FIX 1: May need a TEST block which checks for appropriate Data, not just Blank Fields
+        Sometimes, HIS uses entry other than 'Rural' and 'Urban', e.g. `Louisville/Jefferson County etc.`
+        This causes issue with Option 2 'Convert Spatial' as it thinks the Field is Blank.
+      [ ] FIX 2: Auto-decide a DEFAULT value (ASK ALEX ON THIS) # ANCHOR / WORKING: Need Instruction
 '''
 
 #############################################################################
@@ -98,7 +108,7 @@ def get_batch():
   print("Type 'q' to quit to exit")
 
   while True:
-    user_choice = input('Bonjour!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV: ')
+    user_choice = input('Salud!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV. \n\n Workflow is usually: 3, 1, then 2:\n')
 #    if user_choice == '1':
 #      file_format = 'sr4d' # ANCHOR / WORKING: NEED TO CHANGE THIS (AND ELSEWHERE) TO 'vida'
     
@@ -122,7 +132,7 @@ def get_batch():
       sys.exit()
 
     else:
-      print('That is not a format used.')
+      print('That is not an option. I quit!')
       sys.exit()
     
     user_input = input('Enter .csv filename: ').strip()
@@ -190,7 +200,7 @@ def landmark():
     landmark = 'Landmark'
     vida_batch[f'{landmark}'] = 'some landmark'
  
-def area_type():
+def area_type(): # ANCHOR / WORKING: Need logic for when `Urban_Area_Census` is something other than `Rural` or `Urban`
   # V: Urban_Area_Census -> gives info. as 'Rural' or 'Urban'
   if file_format == 'vida':
     area = 'Area type'
@@ -317,8 +327,8 @@ def number_of_lanes():
   if file_format == 'vida':
     col = 'Number of lanes'
     try:
-      cardinal = 'Lanes_Number_Cardinal'# This column needs to be added to SR4D, not a problem with Spatial file input
-      total_num = 'Lanes_Total_Number_Driving' # This column needs to be added to SR4D, not a problem with Spatial input
+      cardinal = 'Lanes_Number_Cardinal'# This column needs to be added to Spatial, not a problem with Spatial file input
+      total_num = 'Lanes_Total_Number_Driving' # This column needs to be added to Spatial, not a problem with Spatial input
       median = 'Median type'
 
       mask_div = batch[f'{median}'] == 'Divided Highway'
@@ -400,7 +410,7 @@ def number_of_lanes_to_code_divided(col, mask_div):
 def lane_width():
   # ap: lane_width_feet 
 #  lane = 'lane_width' # for vida
-  if file_format == 'sr4d':
+  if file_format == 'sr4d': # ANCHOR / WORKING: Refactor this if/else to avoid 'sr4d' and unused code.
     col = 'Lane width'
     lane_width = 'Lane width'
 
@@ -747,7 +757,7 @@ def whitelist_cols():
   # This only checks necessary Cols, in Spatial format, as others are either Dummy data or unnecessary for ViDA's purposes
   elif file_format == 'check_spatial' or (file_format == 'create_missing_csv' and filetype_user_input == '1'): 
        whitelist = [
-      'Area_type',
+#      'Area_type',
       'Bicycle_observed_flow',
       'Bicycle_peak_hour_flow',
       'Carriageway',
@@ -935,7 +945,7 @@ parser.add_argument("--test")
 args = parser.parse_args()
 '''
 
-sr4d_cols = [
+spatial_cols = [
   'Coder name',
   'Coding date',
   'Road survey date',
