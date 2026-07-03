@@ -212,10 +212,6 @@ def area_type(): # ANCHOR / WORKING: Need logic for when `Urban_Area_Census` is 
   
   vida_batch[f'{area}'] = vida_batch[f'{area}'].apply(classify_area) # Pandas provides the 'text' arg with .apply()
 
-# Old way
-##  mapping = {'Rural': 1, 'Urban': 2}
-##  vida_batch[f'{area}'] = vida_batch[f'{area}'].map(mapping)
-
 # AUX def for area_type()
 def classify_area(text):
   text = str(text).lower()
@@ -224,7 +220,7 @@ def classify_area(text):
   elif 'urban' in text or 'county' in text or 'ky-in' in text:
     return 2
   else:
-    return 2
+    return 1 # If NaN / missing / other, default to 'rural' ViDA code
 
 def speed_limit():
   # W: Speed_Limit_Posted_MPH
