@@ -2,7 +2,7 @@
 # FORMAT SPECIFIC FIELDS POST DATA COLLECTION INTO ViDA CODES
 
 #############################################################################
-# NOTES v. 2.3.2
+# NOTES v. 2.3.3
 #############################################################################
 
 '''
@@ -52,8 +52,8 @@
   - [] SETUP needs REFACTOR into various DEF calls --> TBD
 
 - V2.3.3 Fixing MISSING LOG
-  - [] Should include RT_UNIQUE ( Road Name)
-  - [] Should include Image Reference
+  - [X] Should include RT_UNIQUE ( Road Name)
+  - [X] Should include Image Reference
 '''
 
 #############################################################################
@@ -829,7 +829,7 @@ def logs(new_df, col_keys):
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and not in blacklist
     valid_keys = [key for key in col_keys if key in new_df.columns and key not in blacklist]
 
-  elif file_format == 'check_spatial':
+  elif file_format == 'check_spatial': 
     whitelist = whitelist_cols()
     ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and in whitelist
@@ -839,12 +839,19 @@ def logs(new_df, col_keys):
   rows, cols = np.where(new_df[valid_keys].isna())
 
   # Create a Col for ROWS and a Col for COLUMNS
-  missing_cells = [
-    {'Row': new_df.index[row], 'Column': valid_keys[col]}
-    for row, col in zip(rows, cols) # zip() takes multiple iterables and puts them together into a single object containing pairs of elements
-  ]
+  missing_cells = []
+  for row_id, col_id in zip(rows, cols):
+    row_label = new_df.index[row_id]
+    row_data = new_df.iloc[row_id]
+    
+    missing_cells.append({
+      'Row': row_label,
+      'Road_name': row_data['Road_name'],
+      'Image_reference': row_data['Image_reference'],
+      'Column': valid_keys[col_id]
+    })
 
-  log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Column'])
+  log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column'])
 #  mask = new_df[valid_keys].isna().any(axis=1)
 
   return log_missing 
