@@ -1,3 +1,4 @@
+
 # FORMAT SPECIFIC FIELDS POST DATA COLLECTION INTO ViDA CODES
 
 #############################################################################
@@ -33,6 +34,7 @@
 - V2.3.1 Adds Option '4' to create a CSV with only Rows with Missing Cells
   - Only check for necessary Cols
   - Works with other options EXCEPT for Option '1' Check Spatial for Missing Cells
+
 - V2.3.2 Addresses issues found during first real test with 056-spatial.csv
   - [ ] Might need dummy info for:
     - [ ] Coding Date??? (add Code for "today's" date???)
@@ -45,44 +47,19 @@
         This causes issue with Option 2 'Convert Spatial' as it thinks the Field is Blank.
       [X] FIX 2: Auto-decide a DEFAULT value (ASK ALEX ON THIS) # ANCHOR / WORKING: Need Instruction
         Currently, default is 'Urban' if Field is not 'Rural'
-      [] ASK ALEX ABOUT FIX 2
+      [X] ASK ALEX ABOUT FIX 2
+  - [] SETUP needs REFACTOR into various DEF calls
 '''
 
 #############################################################################
 # USAGE // ANCHOR / WORKING 
 #############################################################################
-
 '''
 1. Use Option 3 to 'clean' the Spatial file. You will use this file when Correcting.
 2. Use Option 1 'Check Spatial' to check the 'cleaned' Spatial file for Missing Cells.
-3. Use Option 2 'Convert Spatial' when all Missing Cells are complete.
+3. Use Option 4 to create a CSV of only Missing Rows (currently only works for 'spatial' format).
+4. Use Option 2 'Convert Spatial' when all Missing Cells are complete.
 '''
-
-#############################################################################
-# NOTES / CONCERNS / COMPLAINTS
-#############################################################################
-
-''' 
-## 06.13.26 -  NEXT TO DO
-  - Option '...' to 'CHECK ViDA for Missing'
-    - will take ViDA .csv with added Cols, ..., and OUTPUT ViDA ready for upload to ViDA site.
-    - if Missing Cells (in necessary Rows), will OUTPUT a 'Missing Cell Log' file + Warning Message (ViDA RPS will fail. Missing Rows. See Log file.)
-  - Remove 'if/else' clauses and References to 'sr4d'
-    - NOTE_: present Functions have if/else concerning `file_format` == 'sr4d'; this is DEPRECATED.
-    - Begins internal work for 2.2.4, testing 
-  - Remove unneeded code
-
-## 05.22.2026
-1. DOES THIS NEED 2 EXTRA COLUMNS ADDED TO WORK?
-
-## 04.30.26 SOLVED
-1. Number_of_lanes -> how to deal with Undivided 3&2, 2&1 ???
-2. Check Column names needed for ViDA
-3. Should option '1' for SR4D output a file WITH or WITHOUT the 2 arcGIS cols, 'Lanes_Total_Number_Driving' and 'Lanes_Number_Cardinarl' ???
-
-...
-'''
-
 #############################################################################
 # IMPORTS
 #############################################################################
@@ -110,9 +87,7 @@ def get_batch():
   print("Type 'q' to quit to exit")
 
   while True:
-    user_choice = input('Salud!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV. \n\n Workflow is usually: 3, 1, then 2:\n')
-#    if user_choice == '1':
-#      file_format = 'sr4d' # ANCHOR / WORKING: NEED TO CHANGE THIS (AND ELSEWHERE) TO 'vida'
+    user_choice = input('Salud!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV. \n\n Workflow is usually: 3, 1, 4*, then 2:\n')
     
     if user_choice == '1':
       file_format = 'check_spatial'
@@ -123,11 +98,9 @@ def get_batch():
     elif user_choice == '3': # Removes unnecessary Cols in Spatial
       file_format = 'clean_spatial'
 
-    elif user_choice == '4': # Creates CSV w/only Missing Rows in 'user_input' format 
+    elif user_choice == '4': # Creates CSV w/ only Missing or Problem Rows in 'user_input' format 
       file_format = 'create_missing_csv'
-      filetype_user_input = input('What format is the input file?\n (1) Spatial,\n (2) ViDA\n ')
-#    elif user_choice == '3':
-#      file_format = 'check_vida'
+      filetype_user_input = input('What format is the input file?\n (1) Spatial\n ')
 
     elif user_choice.lower() == 'q':
       print('Exiting program...')
@@ -136,9 +109,9 @@ def get_batch():
     else:
       print('That is not an option. I quit!')
       sys.exit()
-    
+
     user_input = input('Enter .csv filename: ').strip()
-    
+  
     # Ensure .csv extension
     if not user_input.lower().endswith('.csv'):
       print('Remember the .csv extension')
@@ -202,7 +175,7 @@ def landmark():
     landmark = 'Landmark'
     vida_batch[f'{landmark}'] = 'some landmark'
  
-def area_type(): # ANCHOR / WORKING: Need logic for when `Urban_Area_Census` is something other than `Rural` or `Urban`
+def area_type(): 
   # V: Urban_Area_Census -> gives info. as 'Rural' or 'Urban'
   if file_format == 'vida':
     area = 'Area type'
@@ -768,7 +741,6 @@ def whitelist_cols():
   # This only checks necessary Cols, in Spatial format, as others are either Dummy data or unnecessary for ViDA's purposes
   elif file_format == 'check_spatial' or (file_format == 'create_missing_csv' and filetype_user_input == '1'): 
        whitelist = [
-#      'Area_type',
       'Bicycle_observed_flow',
       'Bicycle_peak_hour_flow',
       'Carriageway',
@@ -854,6 +826,7 @@ def logs(new_df, col_keys):
   # Gets integer coordinates of NaNs
   rows, cols = np.where(new_df[valid_keys].isna())
 
+  # Create a Col for ROWS and a Col for COLUMNS
   missing_cells = [
     {'Row': new_df.index[row], 'Column': valid_keys[col]}
     for row, col in zip(rows, cols) # zip() takes multiple iterables and puts them together into a single object containing pairs of elements
@@ -878,7 +851,12 @@ def create_missing_csv(): # ANCHOR // WORKING // isna() gives True & False only;
                           ## NEED: whitelist/blacklist to filter out unnecessary Cols
   whitelist = whitelist_cols()
   input_df = batch.copy() # copy the 'user_input' CSV
-  mask = input_df[whitelist].notna().all(axis=1) 
+  input_df_keys = input_df.keys()
+
+  valid_keys = [key for key in input_df_keys if key in whitelist]
+
+  # Gathers ROWS (axis=1) where ANY cell is missing (isna)
+  mask = input_df[valid_keys].isna().any(axis=1) 
   
   missing_only_df = input_df[mask] # filters original df ('input_df')
 
@@ -921,7 +899,7 @@ if file_format == 'check_spatial':
   new_df = logs(input_batch, input_batch.keys())
   new_df['Row'] = new_df['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
-  new_df.to_csv(f'OUTPUT-CheckSpatial--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
+  new_df.to_csv(f'checkSpatial--{new_filename}--LOG-MISSING-CELLS.csv', index=False)
 
 # Option '2'; exports 2 files, 1 in ViDA format, 1 a Missing Cell Log
 if file_format == 'convert_spatial':
@@ -929,20 +907,20 @@ if file_format == 'convert_spatial':
   new_df = conversion_csv() # Returns 'new_df' with ViDA or Spatial cols in [0] and 'log_missing' in [1]
   new_df[1]['Row'] = new_df[1]['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
-  new_df[0].to_csv(f'OUTPUT-ConvertSpatial--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
-  new_df[1].to_csv(f'OUTPUT-ConvertSpatial--{new_filename}--MISSING-CELLS-LOG.csv', index=False)
+  new_df[0].to_csv(f'convertSpatial--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
+  new_df[1].to_csv(f'convertSpatial--{new_filename}--LOG-MISSING-CELLS.csv', index=False)
 
 # Option '3'; removes unnecessary Cols for fixing Missed, Errors, etc.
 if file_format == 'clean_spatial':
   print('clean spatial')
   clean_spatial_df = clean_spatial()
-  clean_spatial_df.to_csv(f'OUTPUT-CleanSpatial--{new_filename}--WORK-FILE.csv', index=False)
+  clean_spatial_df.to_csv(f'cleanSpatial--{new_filename}--WORK-FILE.csv', index=False)
 
 # Option '4'; create Missing CSV from Input CSV 'user_input'
 if file_format == 'create_missing_csv':
   print(f'create missing csv from {user_input}')
   missing_only_csv = create_missing_csv() 
-  missing_only_csv.to_csv(f'OUTPUT-CreateMissing--{new_filename}.csv', index=False)
+  missing_only_csv.to_csv(f'createMissing--{new_filename}.csv', index=False)
 
 ## ANCHOR END_OF_FILE
 
