@@ -65,6 +65,26 @@
 3. Use Option 4 to create a CSV of only Missing Rows (currently only works for 'spatial' format).
 4. Use Option 2 'Convert Spatial' when all Missing Cells are complete.
 '''
+
+
+#############################################################################
+# NOTES
+#############################################################################
+'''
+These are the 'spatial' fields from which several 'vida' fields are derived.
+  1. Urban_Area_Census 
+    - Area Type (ViDA)
+  2. Speed_Limit_Posted_MPH 
+    - Speed limit (ViDA)
+  3. Median_Type_of_Roadway
+  4. Lanes_Number_Cardinal
+  5. Lanes_Total_Number_Driving
+  6. Traffic_Last_Count 
+    - Vehicle FLow (AADT) (ViDA)
+
+'''
+
+
 #############################################################################
 # IMPORTS
 #############################################################################
