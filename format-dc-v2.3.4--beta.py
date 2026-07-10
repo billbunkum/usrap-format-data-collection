@@ -2,7 +2,7 @@
 # FORMAT SPECIFIC FIELDS POST DATA COLLECTION INTO ViDA CODES
 
 #############################################################################
-# NOTES v. 2.3.3
+# NOTES v. 2.3.4 BETA
 #############################################################################
 
 '''
@@ -477,7 +477,7 @@ def motorcycle_percentile():
 # EXPORT Function
 # GATHERS needed elements from 'vida_batch' into a Spatial or ViDA formats as dictated by 'file_format' when script is run
   ## ALSO CALLS 'log()' for Missing Cells
-def conversion_csv(): 
+def conversion_csv():  # ANCHOR / WORKING / An error with 'Road_name'
   col_conversion = {}
 
   # Convert Column Names
@@ -820,7 +820,8 @@ def logs(new_df, col_keys):
 #                'Annual Fatality Growth Multiplier', 'Roads that cars can read', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target',
 #                'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target' ] # WORKING // THESE NEED Spatial COLS AS WELL
 
-  if file_format == 'convert_spatial':
+  if file_format == 'convert_spatial': # ANCHOR / WORKING: 'Road_name' error; might need to have 'for...' block in both If blocks
+    
     blacklist = ['Reference ID', 'Comments', 'Landmark', 'Coder name', 'Coding date', 'Road survey date', 'Section',
                 'Annual Fatality Growth Multiplier', 'Roads that cars can read', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target',
                 'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target' ] # WORKING // THESE NEED Spatial COLS AS WELL
@@ -829,30 +830,48 @@ def logs(new_df, col_keys):
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and not in blacklist
     valid_keys = [key for key in col_keys if key in new_df.columns and key not in blacklist]
 
+# Gets integer coordinates of NaNs
+    rows, cols = np.where(new_df[valid_keys].isna())
+
+    # Create a Col for ROWS and a Col for COLUMNS
+    missing_cells = []
+    for row_id, col_id in zip(rows, cols):
+      row_label = new_df.index[row_id]
+      row_data = new_df.iloc[row_id]
+      
+      missing_cells.append({
+        'Row': row_label,
+        'Road_name': row_data['Road name'],
+        'Image_reference': row_data['Image reference'],
+        'Column': valid_keys[col_id]
+      })
+
+    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road name', 'Image reference', 'Column'])
+
   elif file_format == 'check_spatial': 
     whitelist = whitelist_cols()
     ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and in whitelist
     valid_keys = [key for key in col_keys if key in new_df.columns and key in whitelist]
 
-  # Gets integer coordinates of NaNs
-  rows, cols = np.where(new_df[valid_keys].isna())
+    # Gets integer coordinates of NaNs
+    rows, cols = np.where(new_df[valid_keys].isna())
 
-  # Create a Col for ROWS and a Col for COLUMNS
-  missing_cells = []
-  for row_id, col_id in zip(rows, cols):
-    row_label = new_df.index[row_id]
-    row_data = new_df.iloc[row_id]
-    
-    missing_cells.append({
-      'Row': row_label,
-      'Road_name': row_data['Road_name'],
-      'Image_reference': row_data['Image_reference'],
-      'Column': valid_keys[col_id]
-    })
+    # Create a Col for ROWS and a Col for COLUMNS
+    missing_cells = []
+    for row_id, col_id in zip(rows, cols):
+      row_label = new_df.index[row_id]
+      row_data = new_df.iloc[row_id]
+      
+      missing_cells.append({
+        'Row': row_label,
+        'Road_name': row_data['Road_name'],
+        'Image_reference': row_data['Image_reference'],
+        'Column': valid_keys[col_id]
+      })
 
-  log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column'])
-#  mask = new_df[valid_keys].isna().any(axis=1)
+    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column'])
+  #  mask = new_df[valid_keys].isna().any(axis=1)
 
   return log_missing 
 
@@ -917,7 +936,7 @@ if file_format == 'check_spatial':
   new_df = logs(input_batch, input_batch.keys())
   new_df['Row'] = new_df['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
-  new_df.to_csv(f'checkSpatial--{new_filename}--LOG-MISSING-CELLS.csv', index=False)
+  new_df.to_csv(f'OPTION1-checkSpatial--{new_filename}--LOG-MISSING-CELLS.csv', index=False)
 
 # Option '2'; exports 2 files, 1 in ViDA format, 1 a Missing Cell Log
 if file_format == 'convert_spatial':
@@ -925,20 +944,20 @@ if file_format == 'convert_spatial':
   new_df = conversion_csv() # Returns 'new_df' with ViDA or Spatial cols in [0] and 'log_missing' in [1]
   new_df[1]['Row'] = new_df[1]['Row'] + 2 # Offset Index from 0 so Rows show up properly in Log when referencing original Input File
 
-  new_df[0].to_csv(f'convertSpatial--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
-  new_df[1].to_csv(f'convertSpatial--{new_filename}--LOG-MISSING-CELLS.csv', index=False)
+  new_df[0].to_csv(f'OPTION2-convertSpatial--{new_filename}--CODED-FOR-ViDA.csv', index=False) 
+  new_df[1].to_csv(f'OPTION2-convertSpatial--{new_filename}--LOG-MISSING-CELLS.csv', index=False)
 
 # Option '3'; removes unnecessary Cols for fixing Missed, Errors, etc.
 if file_format == 'clean_spatial':
   print('clean spatial')
   clean_spatial_df = clean_spatial()
-  clean_spatial_df.to_csv(f'cleanSpatial--{new_filename}--WORK-FILE.csv', index=False)
+  clean_spatial_df.to_csv(f'OPTION3-cleanSpatial--{new_filename}--WORK-FILE.csv', index=False)
 
 # Option '4'; create Missing CSV from Input CSV 'user_input'
 if file_format == 'create_missing_csv':
   print(f'create missing csv from {user_input}')
   missing_only_csv = create_missing_csv() 
-  missing_only_csv.to_csv(f'createMissing--{new_filename}.csv', index=False)
+  missing_only_csv.to_csv(f'OPTION4-createMissing--{new_filename}.csv', index=False)
 
 ## ANCHOR END_OF_FILE
 
