@@ -814,13 +814,8 @@ def whitelist_cols():
 
 # Creates df for Rows with Missing Data
 def logs(new_df, col_keys):
-  # CREATE 'blacklist' for cols we do NOT want:
-## ORIGINAL
-#    blacklist = ['Reference ID', 'Comments', 'Landmark', 'Coder name', 'Coding date', 'Road survey date', 'Image reference', 'Road name', 'Section',
-#                'Annual Fatality Growth Multiplier', 'Roads that cars can read', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target',
-#                'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target' ] # WORKING // THESE NEED Spatial COLS AS WELL
-
-  if file_format == 'convert_spatial': # ANCHOR / WORKING: 'Road_name' error; might need to have 'for...' block in both If blocks
+  # Option 2 - Cols are already converted to 'vida' at this point, i.e. different results on Missing
+  if file_format == 'convert_spatial':
     
     blacklist = ['Reference ID', 'Comments', 'Landmark', 'Coder name', 'Coding date', 'Road survey date', 'Section',
                 'Annual Fatality Growth Multiplier', 'Roads that cars can read', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target',
@@ -846,7 +841,7 @@ def logs(new_df, col_keys):
         'Column': valid_keys[col_id]
       })
 
-    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road name', 'Image reference', 'Column'])
+    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column'])
 
   elif file_format == 'check_spatial': 
     whitelist = whitelist_cols()
@@ -885,7 +880,8 @@ def clean_spatial():
   return clean_df
 
 # Option '4' def which pulls Missing Rows from a CSV ('user_input') and creates a CSV in that same format
-def create_missing_csv():
+def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? Output has Cols *not* listed in Whitelist...?
+                          ## Maybe cos after Option 3 'Clean spatial', these are the Cols in `input_df` ???
   whitelist = whitelist_cols()
   input_df = batch.copy() # copy the 'user_input' CSV
   input_df_keys = input_df.keys()
