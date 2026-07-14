@@ -59,6 +59,8 @@
   - [X] Fix Col name Errors shown by ViDA
   - [] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
   - [] Add Option 5 'Strip Missing Rows for ViDA'
+    - IDEA 1: read in 'missing-only' CSV as a 2nd batch();  a DEF uses the 'Image reference' to create a Mask; remove these Rows and OUTPUT a 'stripped' CSV
+    - IDEA 2: add onto `whitelist_cols()` with a `file_format` IF/ELSE clause; create a Mask with `.isna()` based on Whitelisted `keys`
 '''
 
 #############################################################################
@@ -948,6 +950,13 @@ def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? 
 
   return missing_only_df
 
+def strip_missing():
+  input_df = batch.copy()
+  mask = input_df[valid_keys].isna().any(axis=1)
+
+  return None
+
+
 #############################################################################
 # FUNCTION CALLS FOR 'convert spatial'
 #############################################################################
@@ -1017,6 +1026,8 @@ if file_format == 'create_missing_csv':
 if file_format == 'strip_missing':
   print(f'strip missing rows from ViDA.')
   print('under construction')
+  stripped_of_missing_csv = strip_missing()
+  stripped_of_missing_csv.to_csv(f'OPTION5-stripMissing--{new_filename}.csv', index=False)
 
 ## ANCHOR END_OF_FILE
 
