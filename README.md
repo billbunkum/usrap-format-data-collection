@@ -4,7 +4,6 @@
 
 ## NOTES
 ...
-Maybe need 'Option 5 - Remove Missing' (for Spatial)???
 
 ## VERSION NOTES
 - Still need to know what file to run against and which Cols/format to export:
@@ -70,6 +69,29 @@ Maybe need 'Option 5 - Remove Missing' (for Spatial)???
   - Open Terminal (or CMD), navigate to the folder with: _format-dc.py_
   - Type: __python format-dc.py__
   - script runs and will export: _coded-file.csv_
+- Script is inteded to take a .CSV in 'spatial' format and to work from there until Option 2 'Convert Spatial (into ViDA)' is used.
+
+## SCRIPT BREAKDOWN
+1. v2.3.4 - There are 4 Options:
+- 1 - check spatial (for missing cells)
+- 2 - convert spatial
+- 3 - clean spatial
+- 4 - create 'missing only' CSV
+
+2. These Options entirely dictate the Script - they determine 1 or 2 global variables used in If/Else clauses throughout.
+- user_choice -> the option number
+- file_format -> `vida` or `spatial`
+- filetype_user_input -> used in Option 4 (create missing)
+  - This is due to current Refactoring, the ability to reuse `whitelist_cols()` 
+- user_input -> used to ensure a .CSV and also to dynamically name OUTPUT files
+
+3. The main function of the Script is to format 'spatial' Column names into 'vida' naming, and also to format values into 'vida code.' This is done with Option 2 'Convert Spatial' and is accomplished by taking a .CSV spreadsheet as `batch`; it then converts values from it to `vida_batch`
+- The other Options are for 'workflow', as Option 2 is the last step before achieving an RPS from the vida website.
+    Of course, there will likely be Errors returned, hence the other Options so the User can investigate/troubleshoot those Errors more easily.
+- To avoid certain Bugs/Errors inherent with Pandas, a function may `.copy()` this `batch` df as needed
+
+### convert spatial
+- runs most of the function calls
 
 ## FUTURE FEATURES
 - Will run with Python package (so user does not need to independently download)

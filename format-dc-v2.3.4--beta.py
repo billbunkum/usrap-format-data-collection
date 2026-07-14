@@ -36,9 +36,9 @@
   - Works with other options EXCEPT for Option '1' Check Spatial for Missing Cells
 
 - V2.3.2 Addresses issues found during first real test with 056-spatial.csv
-  - [ ] Might need dummy info for:
-    - [ ] Coding Date??? (add Code for "today's" date???) --> TBD
-    - [ ] Section??? --> TBD
+  - [X] Might need dummy info for:
+    - [X] Coding Date --> today's date yyyy-mm-dd (as per ViDA req.)
+    - [X] Section --> 'Uncollected State Roads'
   - [X] Ignore certain Fields for Option 1 'Check for Missing' when file_format is 'check_spatial'
     - [X] Area Type => derived from Urban_Area_Census
   - [X] Urban_Area_Census issues
@@ -66,7 +66,6 @@
 4. Use Option 2 'Convert Spatial' when all Missing Cells are complete.
 '''
 
-
 #############################################################################
 # NOTES
 #############################################################################
@@ -84,10 +83,10 @@ These are the 'spatial' fields from which several 'vida' fields are derived.
 
 '''
 
-
 #############################################################################
 # IMPORTS
 #############################################################################
+from datetime import date
 
 import argparse # allows terminal commands, e.g. --test, --help
 import csv
@@ -179,6 +178,19 @@ def coder_name():
     coder = 'Coder_name'
 
   vida_batch[f'{coder}'] = 'ktc_student@uky.edu'
+
+def coding_date(): 
+  today = date.today()
+  if file_format == 'vida':
+    coding_date = 'Coding date'
+  else:
+    coding_date = 'Coding_date'
+  
+  vida_batch[f[{coding_date}]] = today 
+
+def section(): 
+  # Both 'spatial' and 'vida' use 'Section'
+  vida_batch['Section'] = 'Uncollected State Roads'
 
 # DUMMY Data -> can add as Input
 def road_survey_date():
@@ -484,7 +496,7 @@ def intersecting_road_volume():
   # calculate vehicle flow (aadt) / 2 for each cell in intersecting road volume
   vida_batch.loc[mask, f'{vol}'] = batch.loc[mask, f'{flow}'] / 2
 
-def motorcycle_percentile(): 
+def motorcycle_percentile(): # ANCHOR // WORKING // Ask Alex which Code to use.
   # bl: code '0'
   if file_format == 'vida':
     moto = 'Motorcycle %'
@@ -492,7 +504,7 @@ def motorcycle_percentile():
   else:
     moto = 'Motorcycle__'
 
-  vida_batch[f'{moto}'] = 0
+  vida_batch[f'{moto}'] = 2 # code 2 => 0%; code 1 => not recorded
 
 # EXPORT Function
 # GATHERS needed elements from 'vida_batch' into a Spatial or ViDA formats as dictated by 'file_format' when script is run
@@ -922,6 +934,8 @@ def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? 
 if file_format == 'convert_spatial':
   # dummy defs
   coder_name()
+  coding_date()
+  section()
   road_survey_date()
   landmark()
 
