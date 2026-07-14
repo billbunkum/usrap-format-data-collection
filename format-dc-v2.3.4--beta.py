@@ -205,7 +205,7 @@ def coding_date():
   else:
     coding_date = 'Coding_date'
   
-  vida_batch[f[{coding_date}]] = today 
+  vida_batch[f'{coding_date}'] = today 
 
 def section(): 
   # Both 'spatial' and 'vida' use 'Section'
