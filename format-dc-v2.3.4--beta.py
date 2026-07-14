@@ -54,6 +54,11 @@
 - V2.3.3 Fixing MISSING LOG
   - [X] Should include RT_UNIQUE ( Road Name)
   - [X] Should include Image Reference
+
+- V2.3.4
+  - [X] Fix Col name Errors shown by ViDA
+  - [] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
+  - [] Add Option 5 'Strip Missing Rows for ViDA'
 '''
 
 #############################################################################
@@ -64,6 +69,7 @@
 2. Use Option 1 'Check Spatial' to check the 'cleaned' Spatial file for Missing Cells.
 3. Use Option 4 to create a CSV of only Missing Rows (currently only works for 'spatial' format).
 4. Use Option 2 'Convert Spatial' when all Missing Cells are complete.
+5. Use Option 5 'Strip Missing' on 'vida' format for Testing / if Row data cannot be found
 '''
 
 #############################################################################
@@ -111,7 +117,7 @@ def get_batch():
   print("Type 'q' to quit to exit")
 
   while True:
-    user_choice = input('Salud!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA + Missing Log,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV. \n\n Workflow is usually: 3, 1, 4*, then 2:\n')
+    user_choice = input('Salud!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA + Missing Log,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV,\n (5) Strip Missing from ViDA.\n\n Workflow is usually: 3, 1, 4*, then 2.\n Can use 5 to Test \'good\' values:\n')
     
     if user_choice == '1':
       file_format = 'check_spatial'
@@ -125,6 +131,9 @@ def get_batch():
     elif user_choice == '4': # Creates CSV w/ only Missing or Problem Rows in 'user_input' format 
       file_format = 'create_missing_csv'
       filetype_user_input = input('What format is the input file?\n (1) Spatial\n ')
+
+    elif user_choice == '5':
+      file_format = 'strip_missing'
 
     elif user_choice.lower() == 'q':
       print('Exiting program...')
@@ -1003,6 +1012,11 @@ if file_format == 'create_missing_csv':
   print(f'create missing csv from {user_input}')
   missing_only_csv = create_missing_csv() 
   missing_only_csv.to_csv(f'OPTION4-createMissing--{new_filename}.csv', index=False)
+
+# Option '5'; strip Missing rows from ViDA
+if file_format == 'strip_missing':
+  print(f'strip missing rows from ViDA.')
+  print('under construction')
 
 ## ANCHOR END_OF_FILE
 
