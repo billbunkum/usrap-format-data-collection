@@ -169,7 +169,7 @@ vida_batch = batch.copy() # For Option 2 Convert Spatial
   # Letters are the corresponding Columns in the Excel sheets
   # Name is the HIS version of the ViDA name, e.g. Urban_Area_Census (HIS), Area_type (???)
 
-# DUMMY data -> can add as Input
+# DUMMY DATA Defs
 def coder_name():
   if file_format == 'vida':
     coder = 'Coder name'
@@ -179,6 +179,25 @@ def coder_name():
 
   vida_batch[f'{coder}'] = 'ktc_student@uky.edu'
 
+def road_survey_date():
+  if file_format == 'vida':
+    survey = 'Road survey date'
+
+  else:
+    survey = 'Road_survey_date'
+
+  vida_batch[f'{survey}'] = '20260420'
+
+def landmark():
+  if file_format == 'convert_spatial':
+    landmark = 'Landmark'
+    vida_batch[f'{landmark}'] = 'some landmark'
+   
+  else:
+    landmark = 'Landmark'
+    vida_batch[f'{landmark}'] = 'some landmark'
+ 
+# DEFAULT DATA Defs
 def coding_date(): 
   today = date.today()
   if file_format == 'vida':
@@ -192,26 +211,28 @@ def section():
   # Both 'spatial' and 'vida' use 'Section'
   vida_batch['Section'] = 'Uncollected State Roads'
 
-# DUMMY Data -> can add as Input
-def road_survey_date():
+def motorcycle_percentile(): # ANCHOR // WORKING // Ask Alex which Code to use.
+  # bl: code '0'
   if file_format == 'vida':
-    survey = 'Road survey date'
+    moto = 'Motorcycle %'
 
   else:
-    survey = 'Road_survey_date'
+    moto = 'Motorcycle__'
 
-  vida_batch[f'{survey}'] = '20260420'
+  vida_batch[f'{moto}'] = 2 # code 2 => 0%; code 1 => not recorded
 
-# DUMMY Data -> can add as Input
-def landmark():
-  if file_format == 'convert_spatial':
-    landmark = 'Landmark'
-    vida_batch[f'{landmark}'] = 'some landmark'
-   
+def roads_that_cars_can_read():
+  # Data does not seem to be in HIS / flattened.gbd
+  ## code 1 => 'meets specification', code 2 => 'does not meet specification'
+  if file_format == 'vida':
+    cars_read = 'Roads that cars can read'
+    
   else:
-    landmark = 'Landmark'
-    vida_batch[f'{landmark}'] = 'some landmark'
- 
+    cars_read = 'Roads_that_cars_can_read'
+
+  vida_batch[f'{cars_read}'] = 1
+
+# CONVERT FORMAT Defs 
 def area_type(): 
   # V: Urban_Area_Census -> gives info. as 'Rural' or 'Urban'
   if file_format == 'vida':
@@ -496,15 +517,6 @@ def intersecting_road_volume():
   # calculate vehicle flow (aadt) / 2 for each cell in intersecting road volume
   vida_batch.loc[mask, f'{vol}'] = batch.loc[mask, f'{flow}'] / 2
 
-def motorcycle_percentile(): # ANCHOR // WORKING // Ask Alex which Code to use.
-  # bl: code '0'
-  if file_format == 'vida':
-    moto = 'Motorcycle %'
-
-  else:
-    moto = 'Motorcycle__'
-
-  vida_batch[f'{moto}'] = 2 # code 2 => 0%; code 1 => not recorded
 
 # EXPORT Function
 # GATHERS needed elements from 'vida_batch' into a Spatial or ViDA formats as dictated by 'file_format' when script is run
@@ -934,10 +946,14 @@ def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? 
 if file_format == 'convert_spatial':
   # dummy defs
   coder_name()
-  coding_date()
-  section()
   road_survey_date()
   landmark()
+
+  # defaults defs
+  coding_date()
+  section()
+  motorcycle_percentile()
+  roads_that_cars_can_read()
 
   # real defs
   area_type()
@@ -950,7 +966,6 @@ if file_format == 'convert_spatial':
   truck_speed_limit()
   operating_speed_85th()
   operating_speed_mean()
-  motorcycle_percentile()
   number_of_lanes() 
 
 ##############################################################################
