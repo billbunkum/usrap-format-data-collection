@@ -515,7 +515,7 @@ def vehicle_flow(): # a.k.a. aadt
   mask = batch[f'{flow}'].notna()
   vida_batch.loc[mask, f'{flow}'] = batch.loc[mask, f'{flow}'] 
 
-def intersecting_road_volume():  
+def intersecting_road_volume(): # ANCHOR // WORKING // Add convert to ViDA code  
   # al: traffic_last_count / 2 (calculation)
     # in other words: vehicle_flow / 2
   if file_format == 'vida':
@@ -532,8 +532,25 @@ def intersecting_road_volume():
   mask = batch[f'{flow}'].notna()
 
   # calculate vehicle flow (aadt) / 2 for each cell in intersecting road volume
-  vida_batch.loc[mask, f'{vol}'] = batch.loc[mask, f'{flow}'] / 2
+#  vida_batch.loc[mask, f'{vol}'] = batch.loc[mask, f'{flow}'] / 2
+  volume = batch.loc[mask, f'{flow}'] / 2
 
+  volume_code = road_volume_to_code(volume)  
+
+# AUX def for converting Intersecting Road Volume to ViDA code
+def road_volume_to_code(volume):
+
+
+  return volume_code
+  '''
+  1	≥15,000 vehicles
+  2	10,000 to 15,000 vehicles
+  3	5,000 to 10,000 vehicles
+  4	1,000 to 5,000 vehicles
+  5	100 to 1,000 vehicles
+  6	1 to 100 vehciles
+  7	Not applicable
+  '''
 
 # EXPORT Function
 # GATHERS needed elements from 'vida_batch' into a Spatial or ViDA formats as dictated by 'file_format' when script is run
