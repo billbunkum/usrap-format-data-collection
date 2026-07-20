@@ -351,6 +351,7 @@ def operating_speed_mean():
 
 # CONVERT MPH speed etc into ViDA code
 def speed_to_code(col, num):
+  # np will assign NaN as 0's
   vida_batch[col] = np.select(
     [
       num >= 85, # code 45
@@ -989,15 +990,17 @@ def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? 
 def strip_missing(): # // ANCHOR // WORKING
   input_df = batch.copy()
 
-# blacklist unrequired Cols, then any Col with a missing cell is stripped
+# blacklist unrequired Cols (doesn't matter if blank but are needed Rows), then any Col with a missing cell is stripped
   blacklist = [
      'Comments', 'Annual Fatality Growth Multiplier', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target', 'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target'
   ]
   valid_keys = [key for key in input_df if key not in blacklist]
 
-  mask = input_df[valid_keys].notna().any(axis=1)
+  mask1 = input_df[valid_keys].notna().all(axis=1) # drops rows with any missing values
+  mask2 = input_df['Speed limit'] != 0
 
-  new_df = input_df[mask]
+  # combine both masks
+  new_df = input_df[mask1 & mask2].copy()
 
   return new_df
 
