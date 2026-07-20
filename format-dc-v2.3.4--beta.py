@@ -544,11 +544,11 @@ def road_volume_to_code(vol, num):
   vida_batch[vol] = np.select(
     [
       num >= 15000, 
-      num < 15000 & num >= 10000,  # Use bitwise '&' operator to avoid Pandas Error
-      num < 10000 & num >= 5000,
-      num < 5000 & num >= 1000,
-      num < 1000 & num >= 100,
-      num < 100 & num >= 1,
+      num >= 10000,
+      num >= 5000,
+      num >= 1000,
+      num >= 100,
+      num >= 1,
       num < 1,
     ],
     [1, 2, 3, 4, 5, 6, 7]
