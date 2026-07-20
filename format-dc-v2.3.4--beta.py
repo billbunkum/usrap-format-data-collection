@@ -527,30 +527,42 @@ def intersecting_road_volume(): # ANCHOR // WORKING // Add convert to ViDA code
 #    flow = 'Vehicle_flow__AADT_'
     flow = 'Traffic_Last_Count'
 
-  # explain: 'mask' becomes the series, can use .loc for if, or np.where(cond, true, false) for if/else
+  ## explain: 'mask' becomes the series, can use .loc for if, or np.where(cond, true, false) for if/else
     # python if/else  won't work cos these are series' not singular values
+  # Avoid divisions by Zero and NaN
   mask = batch[f'{flow}'].notna()
 
-  # calculate vehicle flow (aadt) / 2 for each cell in intersecting road volume
-#  vida_batch.loc[mask, f'{vol}'] = batch.loc[mask, f'{flow}'] / 2
-  volume = batch.loc[mask, f'{flow}'] / 2
+  # Calculate vehicle flow (aadt) / 2 for each cell in intersecting road volume
+    ## Put into 'vida_batch'
+  vida_batch.loc[mask, f'{vol}'] = batch.loc[mask, f'{flow}'] / 2
+  num = vida_batch[f'{vol}']
 
-  volume_code = road_volume_to_code(volume)  
+  road_volume_to_code(vol, num)
 
 # AUX def for converting Intersecting Road Volume to ViDA code
-def road_volume_to_code(volume):
+def road_volume_to_code(vol, num):
+  vida_batch[vol] = np.select(
+    [
+      num >= 15000, 
+      num < 15000 & num >= 10000,  # Use bitwise '&' operator to avoid Pandas Error
+      num < 10000 & num >= 5000,
+      num < 5000 & num >= 1000,
+      num < 1000 & num >= 100,
+      num < 100 & num >= 1,
+      num < 1,
+    ],
+    [1, 2, 3, 4, 5, 6, 7]
+  )
+'''
+1	≥15,000 vehicles
+2	10,000 to 15,000 vehicles
+3	5,000 to 10,000 vehicles
+4	1,000 to 5,000 vehicles
+5	100 to 1,000 vehicles
+6	1 to 100 vehciles
+7	Not applicable
 
-
-  return volume_code
-  '''
-  1	≥15,000 vehicles
-  2	10,000 to 15,000 vehicles
-  3	5,000 to 10,000 vehicles
-  4	1,000 to 5,000 vehicles
-  5	100 to 1,000 vehicles
-  6	1 to 100 vehciles
-  7	Not applicable
-  '''
+'''
 
 # EXPORT Function
 # GATHERS needed elements from 'vida_batch' into a Spatial or ViDA formats as dictated by 'file_format' when script is run
