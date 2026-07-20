@@ -836,7 +836,7 @@ def whitelist_cols():
     ]
   # This only checks necessary Cols, in Spatial format, as others are either Dummy data or unnecessary for ViDA's purposes
   elif file_format == 'check_spatial' or (file_format == 'create_missing_csv' and filetype_user_input == '1'): 
-       whitelist = [
+    whitelist = [
       'Bicycle_observed_flow',
       'Bicycle_peak_hour_flow',
       'Carriageway',
@@ -892,7 +892,6 @@ def whitelist_cols():
       'Sidewalk___passenger_side',
       'Sight_distance',
       'Skid_resistance___grip',
- #     'Speed_limit',
       'Speed_Limit_Posted_MPH',
       'Speed_management___traffic_calming',
       'Street_lighting',
@@ -901,6 +900,10 @@ def whitelist_cols():
       'Urban_Area_Census',
       'Vehicle_parking',
     ]
+  elif file_format == 'strip_missing' and filetype_user_input == '2': 
+    whitelist = [ # ANCHOR // WORKING // Need ViDA list of Cols, also add 'filetype_user_input' to Options menu above
+
+  ]
 
   return whitelist 
 
@@ -989,9 +992,15 @@ def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? 
 
 def strip_missing(): # // ANCHOR // WORKING
   input_df = batch.copy()
-  mask = input_df[valid_keys].isna().any(axis=1)
 
-  return None
+  whitelist = whitelist_cols()
+  valid_keys = [key for key in input_df if key in whitelist]
+
+  mask = input_df[valid_keys].notna().any(axis=1)
+
+  new_df = input_df[mask]
+
+  return new_df
 
 
 #############################################################################
