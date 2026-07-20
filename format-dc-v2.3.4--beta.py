@@ -900,10 +900,6 @@ def whitelist_cols():
       'Urban_Area_Census',
       'Vehicle_parking',
     ]
-  elif file_format == 'strip_missing' and filetype_user_input == '2': 
-    whitelist = [ # ANCHOR // WORKING // Need ViDA list of Cols, also add 'filetype_user_input' to Options menu above
-
-  ]
 
   return whitelist 
 
@@ -993,8 +989,11 @@ def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? 
 def strip_missing(): # // ANCHOR // WORKING
   input_df = batch.copy()
 
-  whitelist = whitelist_cols()
-  valid_keys = [key for key in input_df if key in whitelist]
+# blacklist unrequired Cols, then any Col with a missing cell is stripped
+  blacklist = [
+     'Comments', 'Annual Fatality Growth Multiplier', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target', 'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target'
+  ]
+  valid_keys = [key for key in input_df if key not in blacklist]
 
   mask = input_df[valid_keys].notna().any(axis=1)
 
