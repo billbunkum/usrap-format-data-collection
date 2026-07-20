@@ -9,11 +9,12 @@
 - V2.3.4
   - [X] Fix Col name Errors shown by ViDA
   - [X] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
-  - [] Correct Col 38 'Intersecting Road Volume' - add ViDA calc (we missed)
+  - [X] Correct Col 38 'Intersecting Road Volume' - add ViDA calc (we missed)
   - [] Add Option 5 'Strip Missing Rows for ViDA'
     - IDEA 1: read in 'missing-only' CSV as a 2nd batch();  a DEF uses the 'Image reference' to create a Mask; remove these Rows and OUTPUT a 'stripped' CSV
     - IDEA 2: add onto `whitelist_cols()` with a `file_format` IF/ELSE clause; create a Mask with `.isna()` based on Whitelisted `keys`
   - [] SETUP needs REFACTOR into various DEF calls --> TBD
+  - [] Option 2 'missing log' does NOT catch anything but Number of Lanes and AADT
 
 - V2.3.3 Fixing MISSING LOG
   - [X] Should include RT_UNIQUE ( Road Name)
@@ -822,7 +823,7 @@ def whitelist_cols():
       'Sidewalk___passenger_side',
       'Sight_distance',
       'Skid_resistance___grip',
-      'Speed_limit',
+#      'Speed_limit',
       'Speed_Limit_Posted_MPH',
       'Speed_management___traffic_calming',
       'Street_lighting',
@@ -891,6 +892,7 @@ def whitelist_cols():
       'Sidewalk___passenger_side',
       'Sight_distance',
       'Skid_resistance___grip',
+ #     'Speed_limit',
       'Speed_Limit_Posted_MPH',
       'Speed_management___traffic_calming',
       'Street_lighting',
@@ -907,9 +909,9 @@ def logs(new_df, col_keys):
   # Option 2 - Cols are already converted to 'vida' at this point, i.e. different results on Missing
   if file_format == 'convert_spatial':
     
-    blacklist = ['Reference ID', 'Comments', 'Landmark', 'Coder name', 'Coding date', 'Road survey date', 'Section',
-                'Annual Fatality Growth Multiplier', 'Roads that cars can read', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target',
-                'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target' ] # WORKING // THESE NEED Spatial COLS AS WELL
+    blacklist = [
+      'Reference ID', 'Comments', 'Landmark', 'Annual Fatality Growth Multiplier', 'Roads that cars can read', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target', 'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target'
+    ] 
 
     ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and not in blacklist
