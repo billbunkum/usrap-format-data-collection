@@ -10,11 +10,13 @@
   - [X] Fix Col name Errors shown by ViDA
   - [X] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
   - [X] Correct Col 38 'Intersecting Road Volume' - add ViDA calc (we missed)
-  - [] Add Option 5 'Strip Missing Rows for ViDA'
+  - [X] Add Option 5 'Strip Missing Rows for ViDA'
     - IDEA 1: read in 'missing-only' CSV as a 2nd batch();  a DEF uses the 'Image reference' to create a Mask; remove these Rows and OUTPUT a 'stripped' CSV
-    - IDEA 2: add onto `whitelist_cols()` with a `file_format` IF/ELSE clause; create a Mask with `.isna()` based on Whitelisted `keys`
+    - [X] IDEA 2: add onto `whitelist_cols()` with a `file_format` IF/ELSE clause; create a Mask with `.isna()` based on Whitelisted `keys`
   - [] SETUP needs REFACTOR into various DEF calls --> TBD
+  - [X] Roads Cars Can Read set to ViDA Code '1' => Meets Specifications
   - [] Option 2 'missing log' does NOT catch anything but Number of Lanes and AADT
+  - [] Option 5 'strip missing' does NOT strip 'Number of Lanes' (maybe others)
 
 - V2.3.3 Fixing MISSING LOG
   - [X] Should include RT_UNIQUE ( Road Name)
@@ -410,7 +412,7 @@ def number_of_lanes():
       print('Exiting program...')
       sys.exit()
 
-  else:
+  else: # file_format == 'spatial'
     col = 'Number_of_lanes'
     cardinal = 'Lanes_Number_Cardinal'
     total_num = 'Lanes_Total_Number_Driving'
@@ -972,8 +974,7 @@ def clean_spatial():
   return clean_df
 
 # Option '4' def which pulls Missing Rows from a CSV ('user_input') and creates a CSV in that same format
-def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? Output has Cols *not* listed in Whitelist...?
-                          ## Maybe cos after Option 3 'Clean spatial', these are the Cols in `input_df` ???
+def create_missing_csv(): 
   whitelist = whitelist_cols()
   input_df = batch.copy() # copy the 'user_input' CSV
   input_df_keys = input_df.keys()
@@ -987,17 +988,19 @@ def create_missing_csv(): # ANCHOR / WORKING // Does this need a `blacklist`??? 
 
   return missing_only_df
 
-def strip_missing(): # // ANCHOR // WORKING
+def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask2' ???
   input_df = batch.copy()
 
-# blacklist unrequired Cols (doesn't matter if blank but are needed Rows), then any Col with a missing cell is stripped
+  # blacklist unrequired Cols (doesn't matter if blank but are needed Rows), then any Col with a missing cell is stripped
   blacklist = [
      'Comments', 'Annual Fatality Growth Multiplier', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target', 'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target'
   ]
   valid_keys = [key for key in input_df if key not in blacklist]
 
   mask1 = input_df[valid_keys].notna().all(axis=1) # drops rows with any missing values
-  mask2 = input_df['Speed limit'] != 0
+
+  # mask2 removes Cells set to 0 by default because they were NaN/Missing
+  mask2 = input_df['Speed limit'] != 0 # drops 'speed limit' if it is 0 ( np.switch defaults to 0 if NaN in 'speed_limit()' )
 
   # combine both masks
   new_df = input_df[mask1 & mask2].copy()
