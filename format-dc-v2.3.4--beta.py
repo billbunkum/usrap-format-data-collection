@@ -11,11 +11,12 @@
   - [X] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
   - [X] Correct Col 38 'Intersecting Road Volume' - add ViDA calc (we missed)
   - [X] Add Option 5 'Strip Missing Rows for ViDA'
-    - IDEA 1: read in 'missing-only' CSV as a 2nd batch();  a DEF uses the 'Image reference' to create a Mask; remove these Rows and OUTPUT a 'stripped' CSV
+    - [-] IDEA 1: read in 'missing-only' CSV as a 2nd batch();  a DEF uses the 'Image reference' to create a Mask; remove these Rows and OUTPUT a 'stripped' CSV
     - [X] IDEA 2: add onto `whitelist_cols()` with a `file_format` IF/ELSE clause; create a Mask with `.isna()` based on Whitelisted `keys`
   - [] SETUP needs REFACTOR into various DEF calls --> TBD
   - [X] Roads Cars Can Read set to ViDA Code '1' => Meets Specifications
-  - [] Option 2 'missing log' does NOT catch anything but Number of Lanes and AADT
+  - [] Make sure that Option 4 'create missing only' matches up with Option 1 'check spatial for missing log' and Option 2 'missing log'
+    - [] Option 2 'missing log' does NOT catch anything but Number of Lanes and AADT
   - [] Option 5 'strip missing' does NOT strip 'Number of Lanes' (maybe others)
 
 - V2.3.3 Fixing MISSING LOG
@@ -29,14 +30,14 @@
   - [X] Ignore certain Fields for Option 1 'Check for Missing' when file_format is 'check_spatial'
     - [X] Area Type => derived from Urban_Area_Census
   - [X] Urban_Area_Census issues
-    - [ ] FIX 1: May need a TEST block which checks for appropriate Data, not just Blank Fields
+    - [-] FIX 1: May need a TEST block which checks for appropriate Data, not just Blank Fields
         Sometimes, HIS uses entry other than 'Rural' and 'Urban', e.g. `Louisville/Jefferson County etc.`
         This causes issue with Option 2 'Convert Spatial' as it thinks the Field is Blank.
         --> TBD
       [X] FIX 2: Auto-decide a DEFAULT value (ASK ALEX ON THIS) # ANCHOR / WORKING: Need Instruction
         Currently, default is 'Urban' if Field is not 'Rural'
       [X] ASK ALEX ABOUT FIX 2
-  - [] _pushed_ SETUP needs REFACTOR into various DEF calls --> TBD
+  - [-] _pushed_ SETUP needs REFACTOR into various DEF calls --> TBD
 
 - V2.3.1 Adds Option '4' to create a CSV with only Rows with Missing Cells
   - Only check for necessary Cols
