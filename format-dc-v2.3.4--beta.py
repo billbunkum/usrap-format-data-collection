@@ -15,8 +15,10 @@
     - [X] IDEA 2: add onto `whitelist_cols()` with a `file_format` IF/ELSE clause; create a Mask with `.isna()` based on Whitelisted `keys`
   - [] SETUP needs REFACTOR into various DEF calls --> TBD
   - [X] Roads Cars Can Read set to ViDA Code '1' => Meets Specifications
-  - [] Make sure that Option 4 'create missing only' matches up with Option 1 'check spatial for missing log' and Option 2 'missing log'
-    - [] Option 2 'missing log' does NOT catch anything but Number of Lanes and AADT
+  - [] TEST - Make sure that Option 4 'create missing only' matches up with Option 1 'check spatial for missing log' and Option 2 'missing log'
+    - RESULT 1 - Option 1 and 4 MATCH; they are both 'spatial' format
+      Option 2 does NOT match and also only shows 'Number of Lanes' and 'AADT' because it is 'vida' format
+      - [] Check to see if Option 2 is catching everything it should
   - [] Option 5 'strip missing' does NOT strip 'Number of Lanes' (maybe others)
 
 - V2.3.3 Fixing MISSING LOG
@@ -355,6 +357,7 @@ def operating_speed_mean():
 # CONVERT MPH speed etc into ViDA code
 def speed_to_code(col, num):
   # np will assign NaN as 0's
+#  mask = vida_batch[col]
   vida_batch[col] = np.select(
     [
       num >= 85, # code 45
@@ -367,6 +370,7 @@ def speed_to_code(col, num):
       num < 20 # code 31
     ],
     [45, 43, 41, 39, 37, 35, 33, 31]
+ #   default = vida_batch.loc[mask, col]
   )
 
 def differential_speed_limits():
