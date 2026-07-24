@@ -234,7 +234,7 @@ def section():
   # Both 'spatial' and 'vida' use 'Section'
   vida_batch['Section'] = 'Uncollected State Roads'
 
-def motorcycle_percentile(): # ANCHOR // WORKING // Ask Alex which Code to use.
+def motorcycle_percentile():
   # bl: code '0'
   if file_format == 'vida':
     moto = 'Motorcycle %'
@@ -305,8 +305,9 @@ def motorcycle_speed_limit():
     moto = 'Motorcycle_speed_limit'
     speed = 'Speed_Limit_Posted_MPH'
 
-  num = batch[f'{speed}']
-  vida_batch[f'{moto}'] = num
+  # Process different from 'speed_limit()' because multiple columns here in play instead of one
+  num = batch[f'{speed}'] # batch "speed" into 'num'; do this so we can pipe into 'speed_to_code()'
+  vida_batch[f'{moto}'] = num # vida_batch "moto" is 'num' aka batch "speed"
   speed_to_code(moto, num)
 
 def truck_speed_limit():
@@ -355,9 +356,9 @@ def operating_speed_mean():
   speed_to_code(mean, num)
 
 # CONVERT MPH speed etc into ViDA code
-def speed_to_code(col, num):
-  # np will assign NaN as 0's
-#  mask = vida_batch[col]
+def speed_to_code(col, num): # ANCHOR // WORKING // default BREAKS, need to set it to 'NaN' / Blank
+  ## 'num' is a pandas.Series; 'col' is a string 'Column name'
+  # np.select() will assign NaN as 0's, unless Default
   vida_batch[col] = np.select(
     [
       num >= 85, # code 45
@@ -369,8 +370,8 @@ def speed_to_code(col, num):
       num >= 20, # code 33, I am including speeds of 20-34 here
       num < 20 # code 31
     ],
-    [45, 43, 41, 39, 37, 35, 33, 31]
- #   default = vida_batch.loc[mask, col]
+    [45, 43, 41, 39, 37, 35, 33, 31],
+    default = np.nan 
   )
 
 def differential_speed_limits():
