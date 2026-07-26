@@ -6,6 +6,7 @@
 #############################################################################
 
 '''
+
 - V2.3.4
   - [X] Fix Col name Errors shown by ViDA
   - [X] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
@@ -18,8 +19,9 @@
   - [] TEST - Make sure that Option 4 'create missing only' matches up with Option 1 'check spatial for missing log' and Option 2 'missing log'
     - RESULT 1 - Option 1 and 4 MATCH; they are both 'spatial' format
       Option 2 does NOT match and also only shows 'Number of Lanes' and 'AADT' because it is 'vida' format
-      - [] Check to see if Option 2 is catching everything it should
+      - [X] Check to see if Option 2 is catching everything it should
   - [] Option 5 'strip missing' does NOT strip 'Number of Lanes' (maybe others)
+  - [] Feature => check 'Median_type' to determine 'Median_Type_of_Roadway' if the latter is Missing.
 
 - V2.3.3 Fixing MISSING LOG
   - [X] Should include RT_UNIQUE ( Road Name)
@@ -356,9 +358,9 @@ def operating_speed_mean():
   speed_to_code(mean, num)
 
 # CONVERT MPH speed etc into ViDA code
-def speed_to_code(col, num): # ANCHOR // WORKING // default BREAKS, need to set it to 'NaN' / Blank
+def speed_to_code(col, num):
   ## 'num' is a pandas.Series; 'col' is a string 'Column name'
-  # np.select() will assign NaN as 0's, unless Default
+  # np.select() will assign NaN as 0's, unless Default to 'np.nan'
   vida_batch[col] = np.select(
     [
       num >= 85, # code 45
@@ -384,7 +386,7 @@ def differential_speed_limits():
     diff = 'Differential_speed_limits'
 
   # EXPLAIN: Replace empty Strings with NaN (Pandas doesn't treat '' as Missing)
-  vida_batch[f'{diff}'] = vida_batch[f'{diff}'].replace('', np.nan)
+  vida_batch[f'{diff}'] = vida_batch[f'{diff}'].replace('', np.nan) ## This ensures it will be either a 0 or 1, thus should never be caught in Option 2 Missing Log
   # EXPLAIN: .notna() -> True if value exists; .astype(int) -> True = 1, False = 0
     # +1 -> 0-1 not present; 1-2 present
   vida_batch[f'{diff}'] = vida_batch[f'{diff}'].notna().astype(int) + 1
@@ -501,7 +503,8 @@ def lane_width_to_code(col, mask):
       mask >= 9.02,
       mask >= 0
     ],
-    [1, 2, 3]
+    [1, 2, 3],
+    default = np.nan
   )
 
 '''
@@ -1013,6 +1016,36 @@ def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask
 
   return new_df
 
+#############################################################################
+# NEW FEATURES
+#############################################################################
+
+def derive_median_type_of_roadway(): # ANCHOR // WORKING 
+  ...
+  # Needs 'Median_type' Code
+  # Check if 'Median_Type_of_Roadway' is Missing
+  # Designate 'Divided' Code 1 or 'Undivided' Code 3
+'''
+    Median type
+      Divided Road if Code:
+        9	  Flexible posts
+        7 	Physical median width 0 to <1m
+        6	  Physical median width 1 to <5m
+        5	  Physical median width 5 to <10m
+        2	  Safety barrier - concrete
+        1	  Safety barrier - metal
+        12	Safety barrier - motorcycle friendly
+        15	Safety barrier - wire rope
+        4	  Physical median width 10 to <20m
+        3	  Physical median width >=20m
+
+      Undivided Road if Code:
+        13	One way
+        11	Centre line
+        14	Wide centre line (0.3m to 1m)
+        10	Central hatching (>1m)
+        8	  Continuous central turning lane
+'''
 
 #############################################################################
 # FUNCTION CALLS FOR 'convert spatial'
