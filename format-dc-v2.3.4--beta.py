@@ -391,7 +391,7 @@ def differential_speed_limits():
     # +1 -> 0-1 not present; 1-2 present
   vida_batch[f'{diff}'] = vida_batch[f'{diff}'].notna().astype(int) + 1
 
-def number_of_lanes(): 
+def number_of_lanes(): # ANCHOR // WORKING // need add derive 'median type of roadway' if Missing
   # AO: 
   #  if Median_Type_of_Roadway = "Divided Highway" -> Lanes_Number_Cardinal
   #  if Median_Type_of_Roadway = "Undivided Highway" -> Lanes_Total_Number_Driving
@@ -425,6 +425,14 @@ def number_of_lanes():
     cardinal = 'Lanes_Number_Cardinal'
     total_num = 'Lanes_Total_Number_Driving'
     median = 'Median_Type_of_Roadway'
+
+# ANCHOR // WORKING
+    # Derive 'median' value from 'Median_type' (in case 'median' is NaN), so "filters" would skip those Cells
+    median_type_of_roadway_col = derive_median_type_of_roadway()
+
+    # Use 'median_type_of_roadway_col' to fill NaN cells
+    batch[f'{median}'] = batch[f'{median}'].fillna(median_type_of_roadway_col)
+
     # Build filters for Divided and Undivided rows
     mask_div = batch[f'{median}'] == 'Divided Highway'
     mask_undiv = batch[f'{median}'] == 'Undivided Highway'
@@ -457,7 +465,7 @@ def number_of_lanes_to_code_undivided(col, mask_undiv):
       series == 1
     ],
     [4, 6, 4, 5, 2, 1],
-    default = vida_batch.loc[mask_undiv, col]
+    default = vida_batch.loc[mask_undiv, col] ## Setting DEFAULT to NaN / Missing
   )
  
 # AUX Function 
@@ -475,7 +483,7 @@ def number_of_lanes_to_code_divided(col, mask_div):
       series == 1
     ],
     [4, 3, 2, 1],
-    default = vida_batch.loc[mask_div, col]
+    default = vida_batch.loc[mask_div, col] ## Setting DEFAULT to NaN / Missing
   )
   
 def lane_width():
@@ -1020,14 +1028,26 @@ def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask
 # NEW FEATURES
 #############################################################################
 
-def derive_median_type_of_roadway(): # ANCHOR // WORKING 
-  ...
-  # Needs 'Median_type' Code
-  # Check if 'Median_Type_of_Roadway' is Missing
-  # Designate 'Divided' Code 1 or 'Undivided' Code 3
+# Would be used to derive 'MToR' from 'Median Type' so 'Number of lanes' can be converted on Option 2 'Convert Spatial'
+def derive_median_type_of_roadway(): # ANCHOR // WORKING //
+  ## This must happen before Option 2 Convert Spatial, as 'vida' format doesn't have 'Median_Type_of_Roadway'
+  ### 'Median_Type_of_Roadway' is used to derive 'Number of Lanes'; but the pattern seems to be,
+  #### if no 'MToR' then both 'Lanes_Number_Cardinal' and 'Lanes_Total_Number_Driving' are Missing
+  df = batch.copy()
+
+  conditions = [
+    df['Median_type'].isin([1, 2, 3, 4, 5, 6, 7, 9, 12, 15]),
+    df['Median_type'].isin([8, 10, 11, 13, 14])  
+  ]
+
+  choices = ['Divided Highway', 'Undivided Highway']
+  
+  df['Median_Type_of_Roadway'] = np.select(conditions, choices, default=df['Median_Type_of_Roadway'])
+  
+  return df['Median_Type_of_Roadway']
 '''
     Median type
-      Divided Road if Code:
+      Divided Highway if Code:
         9	  Flexible posts
         7 	Physical median width 0 to <1m
         6	  Physical median width 1 to <5m
@@ -1039,7 +1059,7 @@ def derive_median_type_of_roadway(): # ANCHOR // WORKING
         4	  Physical median width 10 to <20m
         3	  Physical median width >=20m
 
-      Undivided Road if Code:
+      Undivided Highway if Code:
         13	One way
         11	Centre line
         14	Wide centre line (0.3m to 1m)
