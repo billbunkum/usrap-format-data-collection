@@ -1,4 +1,5 @@
 
+
 # FORMAT SPECIFIC FIELDS POST DATA COLLECTION INTO ViDA CODES
 
 #############################################################################
@@ -436,7 +437,8 @@ def number_of_lanes(): # ANCHOR // WORKING // need add derive 'median type of ro
     # Build filters for Divided and Undivided rows
     mask_div = batch[f'{median}'] == 'Divided Highway'
     mask_undiv = batch[f'{median}'] == 'Undivided Highway'
-  
+    mask_coup = batch[f'{median}'] == 'Couplet' # ANCHOR // WORKING
+ 
   # Using mask1 & mask2 as a kind of if/else for Pandas
   ## to apply correct fields from 'lanes num cardinal' and 'lanes_total_num' in 'batch' to 'Number of lanes' in 'vida_batch'
     vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
@@ -1006,21 +1008,31 @@ def create_missing_csv():
   return missing_only_df
 
 def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask2' ???
+  # CURRENTLY DEALS WITH 'vida' ONLY; 'spatial' will return an Empty df.
+  ## needs a 'whitelist' to work???
   input_df = batch.copy()
 
   # blacklist unrequired Cols (doesn't matter if blank but are needed Rows), then any Col with a missing cell is stripped
   blacklist = [
-     'Comments', 'Annual Fatality Growth Multiplier', 'Vehicle Occupant Star Rating Policy Target', 'Motorcycle Star Rating Policy Target', 'Pedestrian Star Rating Policy Target', 'Bicycle Star Rating Policy Target'
+     'Comments',
+     'Annual Fatality Growth Multiplier',
+     'Vehicle Occupant Star Rating Policy Target',
+     'Motorcycle Star Rating Policy Target',
+     'Pedestrian Star Rating Policy Target',
+     'Bicycle Star Rating Policy Target',
   ]
   valid_keys = [key for key in input_df if key not in blacklist]
 
-  mask1 = input_df[valid_keys].notna().all(axis=1) # drops rows with any missing values
+  mask = input_df[valid_keys].notna().all(axis=1) # drops rows with any missing values
 
+  # SHOULD BE FIXED WITH SETTING NaN WITHIN FUNCTIONS RATHER THAN DEALING WITH 0 AS A VALUE
   # mask2 removes Cells set to 0 by default because they were NaN/Missing
-  mask2 = input_df['Speed limit'] != 0 # drops 'speed limit' if it is 0 ( np.switch defaults to 0 if NaN in 'speed_limit()' )
+#  mask2 = input_df['Speed limit'] != 0 # drops 'speed limit' if it is 0 ( np.switch defaults to 0 if NaN in 'speed_limit()' )
 
   # combine both masks
-  new_df = input_df[mask1 & mask2].copy()
+#  new_df = input_df[mask & mask2].copy()
+
+  new_df = input_df[mask].copy()
 
   return new_df
 
