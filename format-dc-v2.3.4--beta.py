@@ -8,7 +8,8 @@
 
 '''
 
-- V2.3.4
+- V2.3.4 BETA
+  - [] !!!Critical Bug - Option 5 is killing 'Image Reference' somehow!!!
   - [X] Fix Col name Errors shown by ViDA
   - [X] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
   - [X] Correct Col 38 'Intersecting Road Volume' - add ViDA calc (we missed)
@@ -1033,6 +1034,7 @@ def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask
 #  new_df = input_df[mask & mask2].copy()
 
   new_df = input_df[mask].copy()
+#  new_df = input_df[mask]
 
   return new_df
 
