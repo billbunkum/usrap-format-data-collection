@@ -1024,7 +1024,7 @@ def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask
   ]
   valid_keys = [key for key in input_df if key not in blacklist]
 
-  mask = input_df[valid_keys].notna().all(axis=1) # drops rows with any missing values
+  mask = input_df[valid_keys].notna().any(axis=1) # drops rows with any missing values
 
   # SHOULD BE FIXED WITH SETTING NaN WITHIN FUNCTIONS RATHER THAN DEALING WITH 0 AS A VALUE
   # mask2 removes Cells set to 0 by default because they were NaN/Missing
