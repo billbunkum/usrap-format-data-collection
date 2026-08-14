@@ -9,7 +9,7 @@
 '''
 
 - V2.3.4 BETA
-  - [] !!!Critical Bug - Option 5 is killing 'Image Reference' somehow!!!
+  - [X] !!!Critical Bug - Option 5 is killing 'Image Reference' somehow!!!
   - [X] Fix Col name Errors shown by ViDA
   - [X] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
   - [X] Correct Col 38 'Intersecting Road Volume' - add ViDA calc (we missed)
@@ -18,12 +18,12 @@
     - [X] IDEA 2: add onto `whitelist_cols()` with a `file_format` IF/ELSE clause; create a Mask with `.isna()` based on Whitelisted `keys`
   - [] SETUP needs REFACTOR into various DEF calls --> TBD
   - [X] Roads Cars Can Read set to ViDA Code '1' => Meets Specifications
-  - [] TEST - Make sure that Option 4 'create missing only' matches up with Option 1 'check spatial for missing log' and Option 2 'missing log'
+  - [X] TEST - Make sure that Option 4 'create missing only' matches up with Option 1 'check spatial for missing log' and Option 2 'missing log'
     - RESULT 1 - Option 1 and 4 MATCH; they are both 'spatial' format
       Option 2 does NOT match and also only shows 'Number of Lanes' and 'AADT' because it is 'vida' format
       - [X] Check to see if Option 2 is catching everything it should
   - [] Option 5 'strip missing' does NOT strip 'Number of Lanes' (maybe others)
-  - [] Feature => check 'Median_type' to determine 'Median_Type_of_Roadway' if the latter is Missing.
+  - [X] Feature => check 'Median_type' to determine 'Median_Type_of_Roadway' if the latter is Missing.
 
 - V2.3.3 Fixing MISSING LOG
   - [X] Should include RT_UNIQUE ( Road Name)
