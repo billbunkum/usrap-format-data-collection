@@ -54,6 +54,40 @@
 - V2.3.3 Fixing MISSING LOG
   - [X] Should include RT_UNIQUE ( Road Name)
   - [X] Should include Image Reference
+
+- V2.3.4 BETA
+  - [X] !!!Critical Bug - Option 5 is killing 'Image Reference' somehow!!!
+  - [X] Fix Col name Errors shown by ViDA
+  - [X] Deal with Col names ViDA claims need values - might be User error with ViDA site in choosing Dataset
+  - [X] Correct Col 38 'Intersecting Road Volume' - add ViDA calc (we missed)
+  - [X] Add Option 5 'Strip Missing Rows for ViDA'
+    - [-] IDEA 1: read in 'missing-only' CSV as a 2nd batch();  a DEF uses the 'Image reference' to create a Mask; remove these Rows and OUTPUT a 'stripped' CSV
+    - [X] IDEA 2: add onto `whitelist_cols()` with a `file_format` IF/ELSE clause; create a Mask with `.isna()` based on Whitelisted `keys`
+  - [] SETUP needs REFACTOR into various DEF calls --> TBD
+  - [X] Roads Cars Can Read set to ViDA Code '1' => Meets Specifications
+  - [X] TEST - Make sure that Option 4 'create missing only' matches up with Option 1 'check spatial for missing log' and Option 2 'missing log'
+    - RESULT 1 - Option 1 and 4 MATCH; they are both 'spatial' format
+      Option 2 does NOT match and also only shows 'Number of Lanes' and 'AADT' because it is 'vida' format
+      - [X] Check to see if Option 2 is catching everything it should
+  - [] Option 5 'strip missing' does NOT strip 'Number of Lanes' (maybe others)
+  - [X] Feature => check 'Median_type' to determine 'Median_Type_of_Roadway' if the latter is Missing.
+
+- V2.4
+  - [] Default value of 6 for: "...star target" Fields
+  - [] Default value of 1 for 'Annual Fatality...' Field
+  - [] Feature --> extrapolate any missing 'Speed...' Field
+      - Use RT_UNIQUE, if same previous/proceeding
+  - [] Feature --> extrapolate missing 'Lane Width...' Field
+      - Use RT_UNIQUE, if same previous/proceeding
+  - [] Reconfigure --> 'Intersection...' Fields to favor 'Intersection Type'
+      - If 'Intersection Type' is None (12?) then convert 'AADT', 'Intersection Quality', 'Intersection Channelisation' to None (???) as well
+  - [] CHECK --> Option 5 'strip missing' strips
+      - 'Number of Lanes'
+      - 'Lane Width'
+      - 'AADT'
+      - 'Speed limit'
+  - [] CHECK --> Bug in 'Speed limit' value, Validation Report says value '35' needed when it exists; maybe Typer Error? with Pandas?
+
 '''
 
 ## TESTING

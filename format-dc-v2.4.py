@@ -274,6 +274,20 @@ def roads_that_cars_can_read():
 
   vida_batch[f'{cars_read}'] = 1
 
+def star_rating_and_annual_fatality(): # // ANCHOR // WORKING // 
+  columns = {
+    'Vehicle Occupant Star Rating Policy Target': 6,
+    'Motorcycle Star Rating Policy Target': 6,
+    'Pedestrian Star Rating Policy Target': 6,
+    'Bicycle Star Rating Policy Target': 6,
+    'Annual Fatality Growth Multiplier': 1,
+  } 
+  # Assign values
+  vida_batch[list(columns.keys())] = list(columns.values())
+
+## This also works; turns dict into Pandas Series, then matches Series index to DF columns
+#  vida_batch[list(columns.keys())] = pd.Series(columns)
+
 # CONVERT FORMAT Defs 
 def area_type(): 
   # V: Urban_Area_Census -> gives info. as 'Rural' or 'Urban'
@@ -1111,6 +1125,7 @@ if file_format == 'convert_spatial':
   section()
   motorcycle_percentile()
   roads_that_cars_can_read()
+  star_rating_and_annual_fatality()
 
   # real defs
   area_type()
