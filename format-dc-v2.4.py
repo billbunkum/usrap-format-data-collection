@@ -8,14 +8,14 @@
 
 '''
 - V2.4
-  - [] Default value of 6 for: "...star target" Fields
-  - [] Default value of 1 for 'Annual Fatality...' Field
+  - [X] Default value of 6 for: "...star target" Fields
+  - [X] Default value of 1 for 'Annual Fatality...' Field
+  - [] Reconfigure --> 'Intersection...' Fields to favor 'Intersection Type'
+      - If 'Intersection Type' is None (12?) then convert 'AADT', 'Intersection Quality', 'Intersection Channelisation' to None (???) as well
   - [] Feature --> extrapolate any missing 'Speed...' Field
       - Use RT_UNIQUE, if same previous/proceeding
   - [] Feature --> extrapolate missing 'Lane Width...' Field
       - Use RT_UNIQUE, if same previous/proceeding
-  - [] Reconfigure --> 'Intersection...' Fields to favor 'Intersection Type'
-      - If 'Intersection Type' is None (12?) then convert 'AADT', 'Intersection Quality', 'Intersection Channelisation' to None (???) as well
   - [] CHECK --> Option 5 'strip missing' strips
       - 'Number of Lanes'
       - 'Lane Width'
@@ -274,19 +274,19 @@ def roads_that_cars_can_read():
 
   vida_batch[f'{cars_read}'] = 1
 
-def star_rating_and_annual_fatality(): # // ANCHOR // WORKING // 
+def star_rating_and_annual_fatality(): 
   columns = {
-    'Vehicle Occupant Star Rating Policy Target': 6,
-    'Motorcycle Star Rating Policy Target': 6,
-    'Pedestrian Star Rating Policy Target': 6,
-    'Bicycle Star Rating Policy Target': 6,
-    'Annual Fatality Growth Multiplier': 1,
+    'Vehicle_Occupant_Star_Rating_Policy_Target': 6,
+    'Motorcycle_Star_Rating_Policy_Target': 6,
+    'Pedestrian_Star_Rating_Policy_Target': 6,
+    'Bicycle_Star_Rating_Policy_Target': 6,
+    'Annual_Fatality_Growth_Multiplier': 1,
   } 
   # Assign values
-  vida_batch[list(columns.keys())] = list(columns.values())
-
-## This also works; turns dict into Pandas Series, then matches Series index to DF columns
-#  vida_batch[list(columns.keys())] = pd.Series(columns)
+#  vida_batch[list(columns.keys())] = list(columns.values())
+#  vida_batch.loc[:, list(columns.keys())] = columns
+  for col, val in columns.items():
+    vida_batch[col] = val
 
 # CONVERT FORMAT Defs 
 def area_type(): 
