@@ -28,6 +28,7 @@
       - 'AADT'
       - 'Speed limit'
   - [] CHECK --> Bug in 'Speed limit' value, Validation Report says value '35' needed when it exists; maybe Typer Error? with Pandas?
+  - [] CHECK --> Is 'Median Type of Roadway' being derived??? Search 'derive' for def
 
 - V2.3.4 BETA
   - [X] !!!Critical Bug - Option 5 is killing 'Image Reference' somehow!!!
@@ -428,7 +429,7 @@ def differential_speed_limits():
     # +1 -> 0-1 not present; 1-2 present
   vida_batch[f'{diff}'] = vida_batch[f'{diff}'].notna().astype(int) + 1
 
-def number_of_lanes(): # ANCHOR // WORKING // need add derive 'median type of roadway' if Missing
+def number_of_lanes():
   # AO: 
   #  if Median_Type_of_Roadway = "Divided Highway" -> Lanes_Number_Cardinal
   #  if Median_Type_of_Roadway = "Undivided Highway" -> Lanes_Total_Number_Driving
@@ -463,7 +464,6 @@ def number_of_lanes(): # ANCHOR // WORKING // need add derive 'median type of ro
     total_num = 'Lanes_Total_Number_Driving'
     median = 'Median_Type_of_Roadway'
 
-# ANCHOR // WORKING
     # Derive 'median' value from 'Median_type' (in case 'median' is NaN), so "filters" would skip those Cells
     median_type_of_roadway_col = derive_median_type_of_roadway()
 
@@ -1078,8 +1078,8 @@ def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask
 # NEW FEATURES
 #############################################################################
 
-# Would be used to derive 'MToR' from 'Median Type' so 'Number of lanes' can be converted on Option 2 'Convert Spatial'
-def derive_median_type_of_roadway(): # ANCHOR // WORKING //
+# Derive 'MToR' from 'Median Type' so 'Number of lanes' can be converted on Option 2 'Convert Spatial'
+def derive_median_type_of_roadway(): 
   ## This must happen before Option 2 Convert Spatial, as 'vida' format doesn't have 'Median_Type_of_Roadway'
   ### 'Median_Type_of_Roadway' is used to derive 'Number of Lanes'; but the pattern seems to be,
   #### if no 'MToR' then both 'Lanes_Number_Cardinal' and 'Lanes_Total_Number_Driving' are Missing
@@ -1117,16 +1117,17 @@ def derive_median_type_of_roadway(): # ANCHOR // WORKING //
         8	  Continuous central turning lane
 '''
 
+# Guess 'Speed limit', other Speed fields, 'Lane width' based on prev/proc RT_UNIQUE
 def guess_missing(): # ANCHOR / WORKING / NEW FEATURE FOR v2.4
+  ...
 
-  mask_intersecting_type = vida_batch['Intersection type'] == 12 
-
-#If 'Intersection Type' is None (12) then convert: 
-#  'Intersecting Road Volume' Not applicable (7)
-#  'Intersecting Road Volume' Not applicable (7)
-#  'Vehicle flow (AADT)' 0 (0) ???
-#  'Intersection Quality' Not applicable (3)
-#  'Intersection Channelisation' to Not present (1) as well
+# Converts several field values to Not applicable/0 if no 'Intersection type'
+def intersection_checks(): # ANCHOR / WORKING / Need to test; Need to see if AADT should be '0' or something else
+  mask_intersection_type = vida_batch['Intersection type'] == 12 
+  vida_batch.loc[mask_intersection_type, 'Intersecting road volume'] = 7
+  vida_batch.loc[mask_intersection_type, 'Intersection quality'] = 3
+  vida_batch.loc[mask_intersection_type, 'Intersection channelisation'] = 1
+  vida_batch.loc[mask_intersection_type, 'Vehicle flow (AADT)'] = 0
 
 
 #############################################################################
@@ -1160,6 +1161,7 @@ if file_format == 'convert_spatial':
   number_of_lanes() 
 
   # 'guessing' feature defs
+  intersection_checks()
   guess_missing()
   
 ##############################################################################
