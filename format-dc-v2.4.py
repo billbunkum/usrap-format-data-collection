@@ -11,10 +11,16 @@
   - [X] Default value of 6 for: "...star target" Fields
   - [X] Default value of 1 for 'Annual Fatality...' Field
   - [] Reconfigure --> 'Intersection...' Fields to favor 'Intersection Type'
-      - If 'Intersection Type' is None (12?) then convert 'AADT', 'Intersection Quality', 'Intersection Channelisation' to None (???) as well
+      - If 'Intersection Type' is None (12) then convert: 
+        'Intersecting Road Volume' Not applicable (7)
+        'Vehicle flow (AADT)' 0 (0) ???
+        'Intersection Quality' Not applicable (3)
+        'Intersection Channelisation' to Not present (1) as well
   - [] Feature --> extrapolate any missing 'Speed...' Field
       - Use RT_UNIQUE, if same previous/proceeding
   - [] Feature --> extrapolate missing 'Lane Width...' Field
+      - Use RT_UNIQUE, if same previous/proceeding
+  - [] Feature --> extrapolate missing 'Speed limit...' Field
       - Use RT_UNIQUE, if same previous/proceeding
   - [] CHECK --> Option 5 'strip missing' strips
       - 'Number of Lanes'
@@ -568,7 +574,8 @@ def vehicle_flow(): # a.k.a. aadt
   mask = batch[f'{flow}'].notna()
   vida_batch.loc[mask, f'{flow}'] = batch.loc[mask, f'{flow}'] 
 
-def intersecting_road_volume(): # ANCHOR // WORKING // Add convert to ViDA code  
+# Calculate Intersecting road volume from AADT / 2; Covert to ViDA code
+def intersecting_road_volume(): 
   # al: traffic_last_count / 2 (calculation)
     # in other words: vehicle_flow / 2
   if file_format == 'vida':
@@ -1110,6 +1117,18 @@ def derive_median_type_of_roadway(): # ANCHOR // WORKING //
         8	  Continuous central turning lane
 '''
 
+def guess_missing(): # ANCHOR / WORKING / NEW FEATURE FOR v2.4
+
+  mask_intersecting_type = vida_batch['Intersection type'] == 12 
+
+#If 'Intersection Type' is None (12) then convert: 
+#  'Intersecting Road Volume' Not applicable (7)
+#  'Intersecting Road Volume' Not applicable (7)
+#  'Vehicle flow (AADT)' 0 (0) ???
+#  'Intersection Quality' Not applicable (3)
+#  'Intersection Channelisation' to Not present (1) as well
+
+
 #############################################################################
 # FUNCTION CALLS FOR 'convert spatial'
 #############################################################################
@@ -1140,8 +1159,11 @@ if file_format == 'convert_spatial':
   operating_speed_mean()
   number_of_lanes() 
 
+  # 'guessing' feature defs
+  guess_missing()
+  
 ##############################################################################
-# EXPORTS FROM OPTIONS WHEN PROGRAM WAS RUN
+# EXPORT BASED ON 'OPTIONS' AT PROGRAM START
 ##############################################################################
 
 # Create new filename for export 
