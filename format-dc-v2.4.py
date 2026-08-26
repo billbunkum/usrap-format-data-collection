@@ -1,7 +1,16 @@
-
-
-# FORMAT SPECIFIC FIELDS POST DATA COLLECTION INTO ViDA CODES
-
+# 'format-script'
+#
+# CAN DO THE FOLLOWING:
+# 1. convert .csv in 'spatial' format into 'vida' format, i.e. ViDA codes
+## - e.g. speed limit 30mph into ViDA code
+#
+# 2. Options help troubleshoot a .csv hot off Data Collection
+## - identifying and/or stripping out Missing Rows
+## - extrapolates/guesses Missing values, e.g. Speed limit, based on prev/proc RT_UNIQUE
+#
+# 3. Calculate required fields from 'spatial' data, e.g. 'Intersection road volume' from AADT
+#
+#
 #############################################################################
 # NOTES v. 2.4
 #############################################################################
@@ -10,7 +19,7 @@
 - V2.4
   - [X] Default value of 6 for: "...star target" Fields
   - [X] Default value of 1 for 'Annual Fatality...' Field
-  - [] Reconfigure --> 'Intersection...' Fields to favor 'Intersection Type'
+  - [X] Reconfigure --> 'Intersection...' Fields to favor 'Intersection Type'
       - If 'Intersection Type' is None (12) then convert: 
         'Intersecting Road Volume' Not applicable (7)
         'Vehicle flow (AADT)' 0 (0) ???
@@ -142,9 +151,9 @@ import sys # for passing terminal arguments
 # PANDAS Docs: https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html
 import pandas as pd # type: ignore
 
-#############################################################################
-# SETUP
-#############################################################################
+###################################################################################################################
+# SETUP // ANCHOR / SECTION
+###################################################################################################################
 
 file_format = None
 user_input = None
@@ -211,14 +220,16 @@ batch = get_batch()
 input_batch = batch.copy() # For Option 1 Check Spatial
 vida_batch = batch.copy() # For Option 2 Convert Spatial
 
-#############################################################################
+###################################################################################################################
 # FUNCTIONS CONVERT HIS FORMAT INTO ViDA NUMBERICAL CODES
-#############################################################################
+###################################################################################################################
 
   # Letters are the corresponding Columns in the Excel sheets
   # Name is the HIS version of the ViDA name, e.g. Urban_Area_Census (HIS), Area_type (???)
 
-# DUMMY DATA Defs
+###################################################################################################################
+# DUMMY DATA Defs // ANCHOR / SECTION
+###################################################################################################################
 def coder_name():
   if file_format == 'vida':
     coder = 'Coder name'
@@ -245,8 +256,10 @@ def landmark():
   else:
     landmark = 'Landmark'
     vida_batch[f'{landmark}'] = 'some landmark'
- 
-# DEFAULT DATA Defs
+
+################################################################################################################### 
+# DEFAULT DATA Defs // ANCHOR / SECTION
+###################################################################################################################
 def coding_date(): 
   today = date.today()
   if file_format == 'vida':
@@ -295,7 +308,9 @@ def star_rating_and_annual_fatality():
   for col, val in columns.items():
     vida_batch[col] = val
 
-# CONVERT FORMAT Defs 
+###################################################################################################################
+# CONVERT FORMAT Defs  // ANCHOR / SECTION
+###################################################################################################################
 def area_type(): 
   # V: Urban_Area_Census -> gives info. as 'Rural' or 'Urban'
   if file_format == 'vida':
@@ -627,7 +642,7 @@ def road_volume_to_code(vol, num):
 # EXPORT Function
 # GATHERS needed elements from 'vida_batch' into a Spatial or ViDA formats as dictated by 'file_format' when script is run
   ## ALSO CALLS 'log()' for Missing Cells
-def conversion_csv():  # ANCHOR / WORKING / An error with 'Road_name'
+def conversion_csv():
   col_conversion = {}
 
   # Convert Column Names
@@ -1074,9 +1089,9 @@ def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask
 
   return new_df
 
-#############################################################################
-# NEW FEATURES
-#############################################################################
+###################################################################################################################
+# NEW FEATURES // ANCHOR // SECTION
+###################################################################################################################
 
 # Derive 'MToR' from 'Median Type' so 'Number of lanes' can be converted on Option 2 'Convert Spatial'
 def derive_median_type_of_roadway(): 
@@ -1122,17 +1137,17 @@ def guess_missing(): # ANCHOR / WORKING / NEW FEATURE FOR v2.4
   ...
 
 # Converts several field values to Not applicable/0 if no 'Intersection type'
-def intersection_checks(): # ANCHOR / WORKING / Need to test; Need to see if AADT should be '0' or something else
-  mask_intersection_type = vida_batch['Intersection type'] == 12 
-  vida_batch.loc[mask_intersection_type, 'Intersecting road volume'] = 7
-  vida_batch.loc[mask_intersection_type, 'Intersection quality'] = 3
-  vida_batch.loc[mask_intersection_type, 'Intersection channelisation'] = 1
-  vida_batch.loc[mask_intersection_type, 'Vehicle flow (AADT)'] = 0
+def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else
+  mask_intersection_type = vida_batch['Intersection_type'] == 12 
+  vida_batch.loc[mask_intersection_type, 'Intersecting_road_volume'] = 7
+  vida_batch.loc[mask_intersection_type, 'Intersection_quality'] = 3
+  vida_batch.loc[mask_intersection_type, 'Intersection_channelisation'] = 1
+#  vida_batch.loc[mask_intersection_type, 'Vehicle flow (AADT)'] = 0
+  vida_batch.loc[mask_intersection_type, 'Traffic_Last_Count'] = 0 # 'spatial' name for 'Vehicle flow (AADT)'
 
-
-#############################################################################
-# FUNCTION CALLS FOR 'convert spatial'
-#############################################################################
+###################################################################################################################
+# FUNCTION CALLS FOR 'convert spatial' // ANCHOR // SECTION
+###################################################################################################################
 
 if file_format == 'convert_spatial':
   # dummy defs
@@ -1163,10 +1178,10 @@ if file_format == 'convert_spatial':
   # 'guessing' feature defs
   intersection_checks()
   guess_missing()
-  
-##############################################################################
-# EXPORT BASED ON 'OPTIONS' AT PROGRAM START
-##############################################################################
+
+###################################################################################################################  
+# EXPORT BASED ON 'OPTIONS' AT PROGRAM START // ANCHOR // SECTION
+###################################################################################################################
 
 # Create new filename for export 
 new_filename = user_input.split('.')[0]
@@ -1209,9 +1224,9 @@ if file_format == 'strip_missing':
 
 ## ANCHOR END_OF_FILE
 
-#############################################################################
-# PLAYGROUND
-##############################################################################
+###################################################################################################################
+# PLAYGROUND // ANCHOR // SECTION
+###################################################################################################################
 '''
 # trying to setup terminal feature for --test, --help, etc.
 parser = argparse.argumentparser()
