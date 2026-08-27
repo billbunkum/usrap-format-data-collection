@@ -34,9 +34,9 @@
         'Vehicle flow (AADT)' 0 (0) ???
         'Intersection Quality' Not applicable (3)
         'Intersection Channelisation' to Not present (1) as well
-  - [] Add Option 6 'Guess Missing' Feature --> extrapolate any Missing fields from prev/proc RT_UNIQUE
+  - [X] Add Option 6 'Guess Missing' Feature --> extrapolate any Missing fields from prev/proc RT_UNIQUE
     - [X] 'Speed limit' Field (which will propogate to other 'speed...' fields with Option 2 'convert spatial')
-    - [] 'Lane Width...' Field
+    - [X] 'Lane Width...' Field
   - [] CHECK // TEST --> Option 5 'strip missing' strips
       - [] 'Number of lanes'
       - [] 'Vehicle flow (AADT)'
