@@ -1145,8 +1145,26 @@ def derive_median_type_of_roadway():
 '''
 
 # Called with Option 6 'guess missing'; guesses 'Speed limit', 'Lane width' based on prev/proc RT_UNIQUE
-def guess_missing(): # ANCHOR / WORKING / NEW FEATURE FOR v2.4
-  ...
+def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
+  new_df = batch.copy()
+  rt_unique = 'Road_name'
+  image_reference = 'Image_reference'
+  speed = 'Speed_Limit_Posted_MPH'
+  lane_width = 'Lane_Width_Feet'
+
+  guess_speed_limit(new_df, rt_unique, speed)
+
+# AUX def for guess_missing()
+def guess_speed_limit(new_df, rt_unique, speed):
+  # Look to next non-NaN Row above for a value assuming 'rt_unique' is the same
+  ffilled = new_df.groupby(rt_unique)[speed].ffill()
+  
+  # Look to next non-NaN Row below for a value assuming 'rt_unique' is the same
+  bfilled = new_df.groupby(rt_unique)[speed].bfill()
+ 
+  # Place ffilled values in 'speed' col, but where ffill found NaN, instead use bfill 
+  new_df[speed] = ffilled.fillna(bfilled)
+
 
 # Converts several field values to Not applicable/0 if no 'Intersection type'
 def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else
