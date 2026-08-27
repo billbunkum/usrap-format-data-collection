@@ -341,17 +341,17 @@ def classify_area(text):
   else:
     return 1 # If NaN / missing / other, default to 'rural' ViDA code
 
-def speed_limit():
+def speed_limit(): # ANCHOR // CHECK // Do we need to use both 'series1' and 'series2' - are both cols required???
   # W: Speed_Limit_Posted_MPH
   speed = 'Speed_Limit_Posted_MPH'
-  limit = 'Speed_limit'
+#  limit = 'Speed_limit'
 
   # Move 'speed' col in batch into 'limit' col in vida_batch
-  vida_batch[f'{limit}'] = batch[f'{speed}']
+#  vida_batch[f'{limit}'] = batch[f'{speed}']
   # Create 'limit' mask
-  series2 = vida_batch[f'{limit}']
+#  series2 = vida_batch[f'{limit}']
 
-  speed_to_code(limit, series2)
+#  speed_to_code(limit, series2)
 
   # Move 'speed' col in batch into 'speed' col in vida_batch // ANCHOR // CHECK // IS THIS NEEDED???
   vida_batch[f'{speed}'] = batch[f'{speed}'] 
@@ -681,7 +681,8 @@ def conversion_csv():
       'Land use - driver-side': vida_batch['Land_use___driver_side'],
       'Land use - passenger-side': vida_batch['Land_use___passenger_side'],
       'Area type': vida_batch['Urban_Area_Census'],
-      'Speed limit': vida_batch['Speed_limit'],
+      'Speed limit': vida_batch['Speed_Limit_Posted_MPH'], # HERE
+#      'Speed limit': vida_batch['Speed_limit'],
       'Motorcycle speed limit': vida_batch['Motorcycle_speed_limit'],
       'Truck speed limit': vida_batch['Truck_speed_limit'],
       'Differential speed limits': vida_batch['Differential_speed_limits'],
@@ -1143,7 +1144,7 @@ def derive_median_type_of_roadway():
         8	  Continuous central turning lane
 '''
 
-# Guess 'Speed limit', other Speed fields, 'Lane width' based on prev/proc RT_UNIQUE
+# Called with Option 6 'guess missing'; guesses 'Speed limit', 'Lane width' based on prev/proc RT_UNIQUE
 def guess_missing(): # ANCHOR / WORKING / NEW FEATURE FOR v2.4
   ...
 
@@ -1188,7 +1189,6 @@ if file_format == 'convert_spatial':
 
   # 'guessing' feature defs
   intersection_checks()
-  guess_missing()
 
 ###################################################################################################################  
 # EXPORT BASED ON 'OPTIONS' AT PROGRAM START // ANCHOR // SECTION
@@ -1237,7 +1237,7 @@ if file_format == 'guess_missing':
   print(f'guess missing \'speed\' and \'lane width\' fields using prev/proc RT_UNIQUE.')
   print('under construction')
   guess_missing()
-  print('option3 work file should be changed.')
+#  print('option3 work file should be changed.')
 
 ## ANCHOR // END_OF_FILE
 
