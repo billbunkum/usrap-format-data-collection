@@ -1154,9 +1154,11 @@ def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
   lane_width = 'Lane_Width_Feet'
 
   new_df = guess_speed_limit(new_df, rt_unique, speed)
+  new_df = guess_lane_width(new_df, rt_unique, lane_width)
 
   return new_df
 
+# ANCHOR // REFACTOR // could make DRY since logic is so similar
 # AUX def for guess_missing()
 def guess_speed_limit(new_df, rt_unique, speed):
   # Look to next non-NaN Row above for a value assuming 'rt_unique' is the same
@@ -1169,6 +1171,19 @@ def guess_speed_limit(new_df, rt_unique, speed):
   new_df[speed] = ffilled.fillna(bfilled)
 
   return new_df
+
+# AUX def for guess_missing()
+def guess_lane_width(new_df, rt_unique, lane_width):
+  # Look to next non-NaN Row above for a value assuming 'rt_unique' is the same
+  ffilled = new_df.groupby(rt_unique)[lane_width].ffill()
+  
+  # Look to next non-NaN Row below for a value assuming 'rt_unique' is the same
+  bfilled = new_df.groupby(rt_unique)[lane_width].bfill()
+ 
+  # Place ffilled values in 'speed' col, but where ffill found NaN, instead use bfill 
+  new_df[lane_width] = ffilled.fillna(bfilled)
+
+  return new_df 
 
 # Converts several field values to Not applicable/0 if no 'Intersection type'
 def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else
