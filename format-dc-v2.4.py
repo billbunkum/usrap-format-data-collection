@@ -35,13 +35,14 @@
         'Intersection Quality' Not applicable (3)
         'Intersection Channelisation' to Not present (1) as well
   - [] Add Option 6 'Guess Missing' Feature --> extrapolate any Missing fields from prev/proc RT_UNIQUE
-    - [] 'Speed limit' Field (which will propogate to other 'speed...' fields with Option 2 'convert spatial')
+    - [X] 'Speed limit' Field (which will propogate to other 'speed...' fields with Option 2 'convert spatial')
     - [] 'Lane Width...' Field
   - [] CHECK // TEST --> Option 5 'strip missing' strips
-      - 'Number of Lanes'
-      - 'Lane Width'
-      - 'AADT'
-      - 'Speed limit'
+      - [] 'Number of lanes'
+      - [] 'Vehicle flow (AADT)'
+      These should "never" happen with Option 6 'guess missing', but we should check to make sure they are stripped regardless
+      - [] 'Lane width'
+      - [] 'Speed limit'
   - [] CHECK --> Bug in 'Speed limit' value, Validation Report says value '35' needed when it exists; maybe Typer Error? with Pandas?
   - [] CHECK --> Is 'Median Type of Roadway' being derived??? Search 'derive' for def
   - [] REMOVE --> 'if file_format == 'vida' blocks
@@ -1148,11 +1149,13 @@ def derive_median_type_of_roadway():
 def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
   new_df = batch.copy()
   rt_unique = 'Road_name'
-  image_reference = 'Image_reference'
+#  image_reference = 'Image_reference'
   speed = 'Speed_Limit_Posted_MPH'
   lane_width = 'Lane_Width_Feet'
 
-  guess_speed_limit(new_df, rt_unique, speed)
+  new_df = guess_speed_limit(new_df, rt_unique, speed)
+
+  return new_df
 
 # AUX def for guess_missing()
 def guess_speed_limit(new_df, rt_unique, speed):
@@ -1165,6 +1168,7 @@ def guess_speed_limit(new_df, rt_unique, speed):
   # Place ffilled values in 'speed' col, but where ffill found NaN, instead use bfill 
   new_df[speed] = ffilled.fillna(bfilled)
 
+  return new_df
 
 # Converts several field values to Not applicable/0 if no 'Intersection type'
 def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else
@@ -1254,8 +1258,8 @@ if file_format == 'strip_missing':
 if file_format == 'guess_missing':
   print(f'guess missing \'speed\' and \'lane width\' fields using prev/proc RT_UNIQUE.')
   print('under construction')
-  guess_missing()
-#  print('option3 work file should be changed.')
+  guessed_csv = guess_missing()
+  guessed_csv.to_csv(f'OPTION6-guessMissing--{new_filename}.csv', index=False)
 
 ## ANCHOR // END_OF_FILE
 
