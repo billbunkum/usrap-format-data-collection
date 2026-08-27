@@ -9,8 +9,17 @@
 ## - extrapolates/guesses Missing values, e.g. Speed limit, based on prev/proc RT_UNIQUE
 #
 # 3. Calculate required fields from 'spatial' data, e.g. 'Intersection road volume' from AADT
-#
-#
+
+#############################################################################
+# NAVIGATING THIS FILE
+#############################################################################
+# Search for the following terms:
+## ANCHOR - search these for notable points
+## SECTION - section breaks to organize code blocks
+## WORKING - WiP, Bugs, etc.
+## CHECK - Needs check (eventually)
+#############################################################################
+
 #############################################################################
 # NOTES v. 2.4
 #############################################################################
@@ -25,19 +34,17 @@
         'Vehicle flow (AADT)' 0 (0) ???
         'Intersection Quality' Not applicable (3)
         'Intersection Channelisation' to Not present (1) as well
-  - [] Feature --> extrapolate any missing 'Speed...' Field
-      - Use RT_UNIQUE, if same previous/proceeding
-  - [] Feature --> extrapolate missing 'Lane Width...' Field
-      - Use RT_UNIQUE, if same previous/proceeding
-  - [] Feature --> extrapolate missing 'Speed limit...' Field
-      - Use RT_UNIQUE, if same previous/proceeding
-  - [] CHECK --> Option 5 'strip missing' strips
+  - [] Add Option 6 'Guess Missing' Feature --> extrapolate any Missing fields from prev/proc RT_UNIQUE
+    - [] 'Speed limit' Field (which will propogate to other 'speed...' fields with Option 2 'convert spatial')
+    - [] 'Lane Width...' Field
+  - [] CHECK // TEST --> Option 5 'strip missing' strips
       - 'Number of Lanes'
       - 'Lane Width'
       - 'AADT'
       - 'Speed limit'
   - [] CHECK --> Bug in 'Speed limit' value, Validation Report says value '35' needed when it exists; maybe Typer Error? with Pandas?
   - [] CHECK --> Is 'Median Type of Roadway' being derived??? Search 'derive' for def
+  - [] REMOVE --> 'if file_format == 'vida' blocks
 
 - V2.3.4 BETA
   - [X] !!!Critical Bug - Option 5 is killing 'Image Reference' somehow!!!
@@ -166,7 +173,7 @@ def get_batch():
   print("Type 'q' to quit to exit")
 
   while True:
-    user_choice = input('Salud!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA + Missing Log,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV,\n (5) Strip Missing from ViDA.\n\n Workflow is usually: 3, 1, 4*, then 2.\n Can use 5 to Test \'good\' values:\n')
+    user_choice = input('Salud!\n Choose one of the following "post-processing" options:\n (1) Check Spatial for Missing Cells,\n (2) Convert Spatial to ViDA + Missing Log,\n (3) Clean Spatial of Unneeded Cols,\n (4) Create Missing Only CSV,\n (5) Strip Missing from ViDA,\n (6) Guess Missing.\n\n Workflow is usually: 3, 6, 1, 4*, then 2.\n Can use 5 to Test \'good\' values:\n')
     
     if user_choice == '1':
       file_format = 'check_spatial'
@@ -183,6 +190,9 @@ def get_batch():
 
     elif user_choice == '5':
       file_format = 'strip_missing'
+
+    elif user_choice == '6':
+      file_format = 'guess_missing'
 
     elif user_choice.lower() == 'q':
       print('Exiting program...')
@@ -333,18 +343,19 @@ def classify_area(text):
 
 def speed_limit():
   # W: Speed_Limit_Posted_MPH
-  if file_format == 'vida':
-    speed = 'Speed limit'
+  speed = 'Speed_Limit_Posted_MPH'
+  limit = 'Speed_limit'
 
-  else:
-    speed = 'Speed_Limit_Posted_MPH'
-    limit = 'Speed_limit'
-    vida_batch[f'{limit}'] = batch[f'{speed}']
-    series2 = vida_batch[f'{limit}']
+  # Move 'speed' col in batch into 'limit' col in vida_batch
+  vida_batch[f'{limit}'] = batch[f'{speed}']
+  # Create 'limit' mask
+  series2 = vida_batch[f'{limit}']
 
-    speed_to_code(limit, series2)
+  speed_to_code(limit, series2)
 
+  # Move 'speed' col in batch into 'speed' col in vida_batch // ANCHOR // CHECK // IS THIS NEEDED???
   vida_batch[f'{speed}'] = batch[f'{speed}'] 
+  # Create 'speed' mask
   series1 = vida_batch[f'{speed}']
 
   speed_to_code(speed, series1)
@@ -1218,11 +1229,17 @@ if file_format == 'create_missing_csv':
 # Option '5'; strip Missing rows from ViDA
 if file_format == 'strip_missing':
   print(f'strip missing rows from ViDA.')
-  print('under construction')
   stripped_of_missing_csv = strip_missing()
   stripped_of_missing_csv.to_csv(f'OPTION5-stripMissing--{new_filename}.csv', index=False)
 
-## ANCHOR END_OF_FILE
+# Option '6'; guess missing using prev/proc RT_UNIQUE
+if file_format == 'guess_missing':
+  print(f'guess missing \'speed\' and \'lane width\' fields using prev/proc RT_UNIQUE.')
+  print('under construction')
+  guess_missing()
+  print('option3 work file should be changed.')
+
+## ANCHOR // END_OF_FILE
 
 ###################################################################################################################
 # PLAYGROUND // ANCHOR // SECTION
