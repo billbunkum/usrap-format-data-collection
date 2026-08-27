@@ -1153,8 +1153,23 @@ def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
   speed = 'Speed_Limit_Posted_MPH'
   lane_width = 'Lane_Width_Feet'
 
-  new_df = guess_speed_limit(new_df, rt_unique, speed)
-  new_df = guess_lane_width(new_df, rt_unique, lane_width)
+#  new_df = guess_speed_limit(new_df, rt_unique, speed)
+#  new_df = guess_lane_width(new_df, rt_unique, lane_width)
+
+  new_df = guess_field(new_df, rt_unique, speed)
+  new_df = guess_field(new_df, rt_unique, lane_width)
+
+  return new_df
+
+def guess_field(new_df, rt_unique, field):
+  # Look to next non-NaN Row above for a value assuming 'rt_unique' is the same
+  ffilled = new_df.groupby(rt_unique)[field].ffill()
+  
+  # Look to next non-NaN Row below for a value assuming 'rt_unique' is the same
+  bfilled = new_df.groupby(rt_unique)[field].bfill()
+ 
+  # Place ffilled values in 'speed' col, but where ffill found NaN, instead use bfill 
+  new_df[field] = ffilled.fillna(bfilled)
 
   return new_df
 
