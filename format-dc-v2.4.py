@@ -1111,6 +1111,8 @@ def strip_missing(): # // ANCHOR // WORKING // Need add other Req. Cols to 'mask
 ###################################################################################################################
 
 # Derive 'MToR' from 'Median Type' so 'Number of lanes' can be converted on Option 2 'Convert Spatial'
+## Makes sure there is an 'MToR' based on 'Median Type' and that the 'MToR' is standard 'Divided Highway' or 'Undivided Highway'
+## Unless there is no 'Median Type' but HIS has given an 'MToR' of some sort - likely alerted from ViDA Validation Report and needs to be _manually_ coded at that point.
 def derive_median_type_of_roadway(): 
   ## This must happen before Option 2 Convert Spatial, as 'vida' format doesn't have 'Median_Type_of_Roadway'
   ### 'Median_Type_of_Roadway' is used to derive 'Number of Lanes'; but the pattern seems to be,
@@ -1153,16 +1155,11 @@ def derive_median_type_of_roadway():
 def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
   new_df = batch.copy()
   rt_unique = 'Road_name'
-#  image_reference = 'Image_reference'
   speed = 'Speed_Limit_Posted_MPH'
   lane_width = 'Lane_Width_Feet'
-  #intersecting_road_volume = 'Intersection_road_volume'
   traffic_last_count = 'Traffic_Last_Count'
   lanes_number_cardinal = 'Lanes_Number_Cardinal'
   lanes_total_number_driving = 'Lanes_Total_Number_Driving'
-
-#  new_df = guess_speed_limit(new_df, rt_unique, speed)
-#  new_df = guess_lane_width(new_df, rt_unique, lane_width)
 
   new_df = guess_field(new_df, rt_unique, speed)
   new_df = guess_field(new_df, rt_unique, lane_width)
@@ -1197,41 +1194,13 @@ def guess_number_of_lanes(): # ANCHOR // WORKING
     # Build filters for Divided and Undivided rows
     mask_div = batch[f'{median}'] == 'Divided Highway'
     mask_undiv = batch[f'{median}'] == 'Undivided Highway'
-    mask_coup = batch[f'{median}'] == 'Couplet' # ANCHOR // WORKING
+#    mask_coup = batch[f'{median}'] == 'Couplet' # ANCHOR // WORKING
  
   # Using mask1 & mask2 as a kind of if/else for Pandas
   ## to apply correct fields from 'lanes num cardinal' and 'lanes_total_num' in 'batch' to 'Number of lanes' in 'vida_batch'
     vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
     vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{total_num}']
 
-'''
-# ANCHOR // REFACTOR // could make DRY since logic is so similar
-# AUX def for guess_missing()
-def guess_speed_limit(new_df, rt_unique, speed):
-  # Look to next non-NaN Row above for a value assuming 'rt_unique' is the same
-  ffilled = new_df.groupby(rt_unique)[speed].ffill()
-  
-  # Look to next non-NaN Row below for a value assuming 'rt_unique' is the same
-  bfilled = new_df.groupby(rt_unique)[speed].bfill()
- 
-  # Place ffilled values in 'speed' col, but where ffill found NaN, instead use bfill 
-  new_df[speed] = ffilled.fillna(bfilled)
-
-  return new_df
-
-# AUX def for guess_missing()
-def guess_lane_width(new_df, rt_unique, lane_width):
-  # Look to next non-NaN Row above for a value assuming 'rt_unique' is the same
-  ffilled = new_df.groupby(rt_unique)[lane_width].ffill()
-  
-  # Look to next non-NaN Row below for a value assuming 'rt_unique' is the same
-  bfilled = new_df.groupby(rt_unique)[lane_width].bfill()
- 
-  # Place ffilled values in 'speed' col, but where ffill found NaN, instead use bfill 
-  new_df[lane_width] = ffilled.fillna(bfilled)
-
-  return new_df 
-'''
 
 # Converts several field values to Not applicable/0 if no 'Intersection type'
 def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else
