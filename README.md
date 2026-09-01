@@ -4,8 +4,16 @@
 
 ## NOTES
 - Option 6 'Guess Missing' -> does not actually "guess" anything. It finds Missing Fields and looks at the preceeding RT_UNIQUE, if it's the same, it will use that value (or will base a value off the Fields there, e.g. Intersection Type 12 'None' will make Vehicle Flow (AADT) 0). If the preceeding RT_UNIQUE is different, it will look at the proceeding RT_UNIQUE and do it that way. The Option fails if the Row is unique.
+
+### WiP NOTES
   - 'intersection_checks()' bases several things off Intersection Type = 12 'None'. Some will fail (not throw an Error) if there an Intersection Type was coded, i.e. not 12, but HIS had no data for 'Intersecting_road_volume' - that is, the code will work properly but cannot "guess" a value which does not exist. 
   - Working on this logic for Option 6.
+
+- Intersecting road volume: Traffic_Last_Count / 2 (calculation)
+  Should not need this...if I can extrapolate 'Traffic_Last_Count' then 'Intersecting_road_volume' can be calculated.
+
+- Median_Type_of_Roadway: "Divided Highway" -> Lanes_Number_Cardinal
+- Median_Type_of_Roadway: "Undivided Highway" -> Lands_Total_Number_Driving
 
 ## VERSION NOTES
 - Still need to know what file to run against and which Cols/format to export:

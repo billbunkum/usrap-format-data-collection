@@ -1156,7 +1156,8 @@ def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
 #  image_reference = 'Image_reference'
   speed = 'Speed_Limit_Posted_MPH'
   lane_width = 'Lane_Width_Feet'
-  intersecting_road_volume = 'Intersection_road_volume'
+  #intersecting_road_volume = 'Intersection_road_volume'
+  traffic_last_count = 'Traffic_Last_Count'
   lanes_number_cardinal = 'Lanes_Number_Cardinal'
   lanes_total_number_driving = 'Lanes_Total_Number_Driving'
 
@@ -1165,6 +1166,7 @@ def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
 
   new_df = guess_field(new_df, rt_unique, speed)
   new_df = guess_field(new_df, rt_unique, lane_width)
+  new_df = guess_field(new_df, rt_unique, traffic_last_count)
 
   return new_df
 
@@ -1179,6 +1181,28 @@ def guess_field(new_df, rt_unique, field):
   new_df[field] = ffilled.fillna(bfilled)
 
   return new_df
+
+def guess_number_of_lanes(): # ANCHOR // WORKING
+    col = 'Number_of_lanes'
+    cardinal = 'Lanes_Number_Cardinal'
+    total_num = 'Lanes_Total_Number_Driving'
+    median = 'Median_Type_of_Roadway'
+
+    # Derive 'median' value from 'Median_type' (in case 'median' is NaN), so "filters" would skip those Cells
+    median_type_of_roadway_col = derive_median_type_of_roadway()
+
+    # Use 'median_type_of_roadway_col' to fill NaN cells
+    batch[f'{median}'] = batch[f'{median}'].fillna(median_type_of_roadway_col)
+
+    # Build filters for Divided and Undivided rows
+    mask_div = batch[f'{median}'] == 'Divided Highway'
+    mask_undiv = batch[f'{median}'] == 'Undivided Highway'
+    mask_coup = batch[f'{median}'] == 'Couplet' # ANCHOR // WORKING
+ 
+  # Using mask1 & mask2 as a kind of if/else for Pandas
+  ## to apply correct fields from 'lanes num cardinal' and 'lanes_total_num' in 'batch' to 'Number of lanes' in 'vida_batch'
+    vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
+    vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{total_num}']
 
 '''
 # ANCHOR // REFACTOR // could make DRY since logic is so similar
