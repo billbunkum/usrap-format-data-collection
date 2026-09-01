@@ -37,6 +37,10 @@
   - [X] Add Option 6 'Guess Missing' Feature --> extrapolate any Missing fields from prev/proc RT_UNIQUE
     - [X] 'Speed limit' Field (which will propogate to other 'speed...' fields with Option 2 'convert spatial')
     - [X] 'Lane Width...' Field
+    - [] 'Traffic_Last_Count' (AADT) or 'Intersection_road_volume' ???
+    - [] 'Number of Lanes' is slightly more complex as:
+        'Lanes_Number_Cardinal'
+        'Lanes_Total_Number_Driving'
   - [] CHECK // TEST --> Option 5 'strip missing' strips
       - [] 'Number of lanes'
       - [] 'Vehicle flow (AADT)'
@@ -1152,6 +1156,9 @@ def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
 #  image_reference = 'Image_reference'
   speed = 'Speed_Limit_Posted_MPH'
   lane_width = 'Lane_Width_Feet'
+  intersecting_road_volume = 'Intersection_road_volume'
+  lanes_number_cardinal = 'Lanes_Number_Cardinal'
+  lanes_total_number_driving = 'Lanes_Total_Number_Driving'
 
 #  new_df = guess_speed_limit(new_df, rt_unique, speed)
 #  new_df = guess_lane_width(new_df, rt_unique, lane_width)
@@ -1173,6 +1180,7 @@ def guess_field(new_df, rt_unique, field):
 
   return new_df
 
+'''
 # ANCHOR // REFACTOR // could make DRY since logic is so similar
 # AUX def for guess_missing()
 def guess_speed_limit(new_df, rt_unique, speed):
@@ -1199,6 +1207,7 @@ def guess_lane_width(new_df, rt_unique, lane_width):
   new_df[lane_width] = ffilled.fillna(bfilled)
 
   return new_df 
+'''
 
 # Converts several field values to Not applicable/0 if no 'Intersection type'
 def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else

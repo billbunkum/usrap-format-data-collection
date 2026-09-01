@@ -3,7 +3,9 @@
 - Changes Column names into ViDA format.
 
 ## NOTES
-...
+- Option 6 'Guess Missing' -> does not actually "guess" anything. It finds Missing Fields and looks at the preceeding RT_UNIQUE, if it's the same, it will use that value (or will base a value off the Fields there, e.g. Intersection Type 12 'None' will make Vehicle Flow (AADT) 0). If the preceeding RT_UNIQUE is different, it will look at the proceeding RT_UNIQUE and do it that way. The Option fails if the Row is unique.
+  - 'intersection_checks()' bases several things off Intersection Type = 12 'None'. Some will fail (not throw an Error) if there an Intersection Type was coded, i.e. not 12, but HIS had no data for 'Intersecting_road_volume' - that is, the code will work properly but cannot "guess" a value which does not exist. 
+  - Working on this logic for Option 6.
 
 ## VERSION NOTES
 - Still need to know what file to run against and which Cols/format to export:
@@ -73,20 +75,30 @@
   - [X] Feature => check 'Median_type' to determine 'Median_Type_of_Roadway' if the latter is Missing.
 
 - V2.4
-  - [] Default value of 6 for: "...star target" Fields
-  - [] Default value of 1 for 'Annual Fatality...' Field
-  - [] Feature --> extrapolate any missing 'Speed...' Field
-      - Use RT_UNIQUE, if same previous/proceeding
-  - [] Feature --> extrapolate missing 'Lane Width...' Field
-      - Use RT_UNIQUE, if same previous/proceeding
-  - [] Reconfigure --> 'Intersection...' Fields to favor 'Intersection Type'
-      - If 'Intersection Type' is None (12?) then convert 'AADT', 'Intersection Quality', 'Intersection Channelisation' to None (???) as well
-  - [] CHECK --> Option 5 'strip missing' strips
-      - 'Number of Lanes'
-      - 'Lane Width'
-      - 'AADT'
-      - 'Speed limit'
+  - [X] Default value of 6 for: "...star target" Fields
+  - [X] Default value of 1 for 'Annual Fatality...' Field
+  - [X] Reconfigure --> 'Intersection...' Fields to favor 'Intersection Type'
+      - If 'Intersection Type' is None (12) then convert: 
+        'Intersecting Road Volume' Not applicable (7)
+        'Vehicle flow (AADT)' 0 (0) ???
+        'Intersection Quality' Not applicable (3)
+        'Intersection Channelisation' to Not present (1) as well
+  - [X] Add Option 6 'Guess Missing' Feature --> extrapolate any Missing fields from prev/proc RT_UNIQUE
+    - [X] 'Speed limit' Field (which will propogate to other 'speed...' fields with Option 2 'convert spatial')
+    - [X] 'Lane Width...' Field
+    - [] 'Traffic_Last_Count' (AADT)
+    - [] 'Number of Lanes' is slightly more complex as:
+        'Lanes_Number_Cardinal'
+        'Lanes_Total_Number_Driving'
+  - [] CHECK // TEST --> Option 5 'strip missing' strips
+      - [] 'Number of lanes'
+      - [] 'Vehicle flow (AADT)'
+      These should "never" happen with Option 6 'guess missing', but we should check to make sure they are stripped regardless
+      - [] 'Lane width'
+      - [] 'Speed limit'
   - [] CHECK --> Bug in 'Speed limit' value, Validation Report says value '35' needed when it exists; maybe Typer Error? with Pandas?
+  - [] CHECK --> Is 'Median Type of Roadway' being derived??? Search 'derive' for def
+  - [] REMOVE --> 'if file_format == 'vida' blocks
 
 '''
 
