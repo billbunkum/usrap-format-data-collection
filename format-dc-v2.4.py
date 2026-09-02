@@ -460,56 +460,33 @@ def differential_speed_limits():
     # +1 -> 0-1 not present; 1-2 present
   vida_batch[f'{diff}'] = vida_batch[f'{diff}'].notna().astype(int) + 1
 
-def number_of_lanes():
+def number_of_lanes(): # // ANCHOR // WORKING // Need to ALIGN this with Option 6 'guess_number_of_lanes()'
   # AO: 
   #  if Median_Type_of_Roadway = "Divided Highway" -> Lanes_Number_Cardinal
   #  if Median_Type_of_Roadway = "Undivided Highway" -> Lanes_Total_Number_Driving
-  if file_format == 'vida':
-    col = 'Number of lanes'
-    try:
-      cardinal = 'Lanes_Number_Cardinal'# This column needs to be added to Spatial, not a problem with Spatial file input
-      total_num = 'Lanes_Total_Number_Driving' # This column needs to be added to Spatial, not a problem with Spatial input
-      median = 'Median type'
+  col = 'Number_of_lanes'
+  cardinal = 'Lanes_Number_Cardinal'
+  total_num = 'Lanes_Total_Number_Driving'
+  median_type_of_roadway = 'Median_Type_of_Roadway'
 
-      mask_div = batch[f'{median}'] == 'Divided Highway'
-      mask_undiv = batch[f'{median}'] == 'Undivided Highway'
+  # Derive 'median' value from 'Median_type' (in case 'median' is NaN), so "filters" would skip those Cells
+  median_type_of_roadway_col = derive_median_type_of_roadway()
 
-    # Apply correct fields from 'batch' to 'vida_batch'
-      vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
-      vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{total_num}']
+  # Use 'median_type_of_roadway_col' to fill NaN cells
+  batch[f'{median_type_of_roadway}'] = batch[f'{median_type_of_roadway}'].fillna(median_type_of_roadway_col)
 
-    except KeyError:
-      print('**********************************************************************\n')
-      print(f"You must add {cardinal} and {total_num} Columns to ViDA formatted file.") 
-      print('to run code against a file in ViDA format.\n')
-      print('...ATTENTION...\n')
-      print('This feature does not work.\n')
-      print('Must ONLY use Spatial file with this script.\n')
-      print('Make edits and data additions to Spatial file.\n')
-      print('Exiting program...')
-      sys.exit()
+  # Build filters for Divided and Undivided rows
+  mask_div = batch[f'{median_type_of_roadway}'] == 'Divided Highway'
+  mask_undiv = batch[f'{median_type_of_roadway}'] == 'Undivided Highway'
+#  mask_coup = batch[f'{median}'] == 'Couplet' # ANCHOR // WORKING // May or May not need this... ???
 
-  else: # file_format == 'spatial'
-    col = 'Number_of_lanes'
-    cardinal = 'Lanes_Number_Cardinal'
-    total_num = 'Lanes_Total_Number_Driving'
-    median = 'Median_Type_of_Roadway'
+# Using mask1 & mask2 as a kind of if/else for Pandas
+## to apply correct fields from 'lanes num cardinal' and 'lanes_total_num' in 'batch' to 'Number of lanes' in 'vida_batch'
+#  vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
+#  vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{total_num}']
 
-    # Derive 'median' value from 'Median_type' (in case 'median' is NaN), so "filters" would skip those Cells
-    median_type_of_roadway_col = derive_median_type_of_roadway()
-
-    # Use 'median_type_of_roadway_col' to fill NaN cells
-    batch[f'{median}'] = batch[f'{median}'].fillna(median_type_of_roadway_col)
-
-    # Build filters for Divided and Undivided rows
-    mask_div = batch[f'{median}'] == 'Divided Highway'
-    mask_undiv = batch[f'{median}'] == 'Undivided Highway'
-    mask_coup = batch[f'{median}'] == 'Couplet' # ANCHOR // WORKING
- 
-  # Using mask1 & mask2 as a kind of if/else for Pandas
-  ## to apply correct fields from 'lanes num cardinal' and 'lanes_total_num' in 'batch' to 'Number of lanes' in 'vida_batch'
-    vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
-    vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{total_num}']
+  vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{col}']
+  vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{col}']
 
   # Need to call two separate functions because value of '3' and '> 4' works differently for each
   number_of_lanes_to_code_undivided(col, mask_undiv)
@@ -1182,7 +1159,7 @@ def guess_field(new_df, rt_unique, field):
 
   return new_df
 
-def guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardinal, lanes_total_number_driving): # ANCHOR // WORKING
+def guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardinal, lanes_total_number_driving): # ANCHOR // REFACTOR
   conditions = [
     new_df['Median_type'].isin([1, 2, 3, 4, 5, 6, 7, 9, 12, 15]), # Divided
     new_df['Median_type'].isin([8, 10, 11, 13, 14]) # Undivided 
