@@ -1160,10 +1160,13 @@ def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
   traffic_last_count = 'Traffic_Last_Count'
   lanes_number_cardinal = 'Lanes_Number_Cardinal'
   lanes_total_number_driving = 'Lanes_Total_Number_Driving'
+  number_of_lanes = 'Number_of_lanes'
 
   new_df = guess_field(new_df, rt_unique, speed)
   new_df = guess_field(new_df, rt_unique, lane_width)
   new_df = guess_field(new_df, rt_unique, traffic_last_count)
+
+  new_df = guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardinal, lanes_total_number_driving)
 
   return new_df
 
@@ -1179,28 +1182,22 @@ def guess_field(new_df, rt_unique, field):
 
   return new_df
 
-def guess_number_of_lanes(): # ANCHOR // WORKING
-    col = 'Number_of_lanes'
-    cardinal = 'Lanes_Number_Cardinal'
-    total_num = 'Lanes_Total_Number_Driving'
-    median = 'Median_Type_of_Roadway'
+def guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardinal, lanes_total_number_driving): # ANCHOR // WORKING
+  conditions = [
+    new_df['Median_type'].isin([1, 2, 3, 4, 5, 6, 7, 9, 12, 15]), # Divided
+    new_df['Median_type'].isin([8, 10, 11, 13, 14]) # Undivided 
+  ]
 
-    # Derive 'median' value from 'Median_type' (in case 'median' is NaN), so "filters" would skip those Cells
-    median_type_of_roadway_col = derive_median_type_of_roadway()
+  choices = [new_df[lanes_number_cardinal], new_df[lanes_total_number_driving]]
 
-    # Use 'median_type_of_roadway_col' to fill NaN cells
-    batch[f'{median}'] = batch[f'{median}'].fillna(median_type_of_roadway_col)
+  new_df[number_of_lanes] = np.select(conditions, choices, default=np.nan)
 
-    # Build filters for Divided and Undivided rows
-    mask_div = batch[f'{median}'] == 'Divided Highway'
-    mask_undiv = batch[f'{median}'] == 'Undivided Highway'
-#    mask_coup = batch[f'{median}'] == 'Couplet' # ANCHOR // WORKING
- 
-  # Using mask1 & mask2 as a kind of if/else for Pandas
-  ## to apply correct fields from 'lanes num cardinal' and 'lanes_total_num' in 'batch' to 'Number of lanes' in 'vida_batch'
-    vida_batch.loc[mask_div, f'{col}'] = batch.loc[mask_div, f'{cardinal}']
-    vida_batch.loc[mask_undiv, f'{col}'] = batch.loc[mask_undiv, f'{total_num}']
+  ffilled = new_df.groupby(rt_unique)[number_of_lanes].ffill()
+  bfilled = new_df.groupby(rt_unique)[number_of_lanes].bfill()
 
+  new_df[number_of_lanes] = ffilled.fillna(bfilled)
+
+  return new_df
 
 # Converts several field values to Not applicable/0 if no 'Intersection type'
 def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else
