@@ -37,8 +37,8 @@
   - [X] Add Option 6 'Guess Missing' Feature --> extrapolate any Missing fields from prev/proc RT_UNIQUE
     - [X] 'Speed limit' Field (which will propogate to other 'speed...' fields with Option 2 'convert spatial')
     - [X] 'Lane Width...' Field
-    - [] 'Traffic_Last_Count' (AADT) or 'Intersection_road_volume' ???
-    - [] 'Number of Lanes' is slightly more complex as:
+    - [X] 'Traffic_Last_Count' (AADT) or 'Intersection_road_volume' ???
+    - [X] 'Number of Lanes' is slightly more complex as:
         'Lanes_Number_Cardinal'
         'Lanes_Total_Number_Driving'
   - [] CHECK // TEST --> Option 5 'strip missing' strips
