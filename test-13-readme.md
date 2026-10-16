@@ -55,3 +55,34 @@ Changing file to `SHIFT2026NewRutRegional_SpatialJoin_Flatten-withHIS-TESTEFILE.
 5. Option 2 "Convert Spatial to ViDA"
 - TypeError, looks like on `intersecting_road_volume()`
   - "Traffic_Last_Count" has both _blanks_ and `0`s - this may be the issue because there is a division by 2 here.
+  A more likely culprit is the "data type" is something other than a `Float`.
+  - **FIX**. In `intersecting_road_volume()`, I used `.round().astype('Int64')`
+
+- In the "WORK-FILE" generated:
+  - Finding more "pairs of fields" with the same RT_Unique's and missing fields:
+    - Motorcycle__
+    - Median_Width_Feet
+    - Median_Type_of_Roadway
+    - Lane_width (no problem)
+    - Speed_Limit_Posted_MPH
+  ***
+    - The disconcerting thing is, the other "speed limit" fields are filled...which should be based off the Speed_Limit_Posted_MPH???
+
+  - Oddly, a single Row missing:
+    - Lanes_Number_Cardinal
+    - Lanes_Total_Number_Driving
+
+- In the "LOG-MISSING-CELLS" generated:
+  - Speed limit
+  - Motorcycle speed limit
+  - Truck speed limit
+  - Operating Speed (85th percentile)
+  - Operating Speed (mean)
+  - Distance
+  - Lane width
+  - Vehicle flow (AADT) -> mostly same RT_Uniques
+  - Number of lanes -> all the same RT_Uniques
+
+  - QUESTIONS:
+    - Row: 14565 does not have "Vehicle flow (AADT)" yet previous Rows with same RT_Unique do, and they also don't have "Traffic_Last_Count"
+    BUT! It is the _last_ Row before the RT_Unique changes...this points to the way `guess_missing` works. It may be over-riding itself at the proceeding Row.
