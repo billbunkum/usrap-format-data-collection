@@ -153,6 +153,7 @@ These are the 'spatial' fields from which several 'vida' fields are derived.
 #############################################################################
 # IMPORTS
 #############################################################################
+from builtins import print
 from datetime import date
 
 import argparse # allows terminal commands, e.g. --test, --help
@@ -602,7 +603,8 @@ def intersecting_road_volume():
 
   # Calculate vehicle flow (aadt) / 2 for each cell in intersecting road volume
     ## Put into 'vida_batch'
-  vida_batch.loc[mask, f'{vol}'] = batch.loc[mask, f'{flow}'] / 2
+    ### round and cast back to a nullable int type that Pandas supports
+  vida_batch.loc[mask, f'{vol}'] = (batch.loc[mask, f'{flow}'] / 2).round().astype('Int64')
   num = vida_batch[f'{vol}']
 
   road_volume_to_code(vol, num)
