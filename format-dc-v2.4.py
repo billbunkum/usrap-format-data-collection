@@ -21,10 +21,13 @@
 #############################################################################
 
 #############################################################################
-# NOTES v. 2.4
+# NOTES v. 2.5
 #############################################################################
 
 '''
+- V2.5
+  - [X] For Option 1 "check spatial for missing", add 'Latitude' and 'Longitude' columns
+    Idea is to use this .CSV for the actual work and adding missing fields, then easily copy back into the "Option-6...WORKFILE" workflow
 - V2.4
   - [X] Default value of 6 for: "...star target" Fields
   - [X] Default value of 1 for 'Annual Fatality...' Field
