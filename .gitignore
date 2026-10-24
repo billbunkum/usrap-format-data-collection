@@ -3,7 +3,11 @@
 Safe/
 Data/
 Utility-files/
+
+# Data - nothing 'trade secret' but 'data' nonetheless
 *.csv
+*.xls
+*.xlsx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
