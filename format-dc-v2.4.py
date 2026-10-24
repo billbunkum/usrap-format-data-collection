@@ -999,10 +999,12 @@ def logs(new_df, col_keys):
         'Row': row_label,
         'Road_name': row_data['Road name'],
         'Image_reference': row_data['Image reference'],
-        'Column': valid_keys[col_id]
+        'Column': valid_keys[col_id],
+        'Latitude': row_data['Latitude'],
+        'Longitude': row_data['Longitude']
       })
 
-    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column'])
+    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column', 'Latitude', 'Longitude'])
 
   elif file_format == 'check_spatial': 
     whitelist = whitelist_cols()
@@ -1023,10 +1025,12 @@ def logs(new_df, col_keys):
         'Row': row_label,
         'Road_name': row_data['Road_name'],
         'Image_reference': row_data['Image_reference'],
-        'Column': valid_keys[col_id]
+        'Column': valid_keys[col_id],
+        'Latitude': row_data['Latitude'],
+        'Longitude': row_data['Longitude']
       })
 
-    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column'])
+    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column', 'Latitude', 'Longitude'])
   #  mask = new_df[valid_keys].isna().any(axis=1)
 
   return log_missing 
