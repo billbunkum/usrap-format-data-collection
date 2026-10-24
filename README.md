@@ -2,6 +2,32 @@
 - Takes a .csv in 'spatial' format, i.e. exported from ArcGIS (after HIS data is included), converts all Data into ViDA codes.
 - Changes Column names into ViDA format.
 
+# WORKFLOW
+Use the Scrip in the following fashion:
+
+The 
+
+Steps:
+- 3: clean spatial
+- 6: guess missing
+- 1: check spatial for missiing
+- 4: create missing only CSV
+- 2: convert spatial to ViDA format
+- 5*: strip missing -> **under construction**
+
+## MANUAL POSTPROCESSING
+This step is needed, e.g. when HIS does not have Speed data, Number of Lanes, etc.
+Manual edits should be done in the _spatial_ formats and "Work files", then the Option 2 "Convert Spatial to ViDA" will operate correctly.
+If you edit a file in ViDA format, that is okay as well, but _never_ edit the Column names.
+
+Some fields can be _defaulted_ values:
+- Urban_Area_Census: Urban
+- ...
+
+Most "default" fields are handled by script, e.g. Coding Date
+
+Uncertain what to do if there is no GOOGLE STREET VIEW or PHOTOLOG VIEW
+
 ## NOTES
 - Option 5 'Strip Missing' takes care of MISSING Fields (WiP)
 - Option 6 'Guess Missing' -> does not actually "guess" anything. 
