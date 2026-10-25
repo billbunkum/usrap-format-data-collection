@@ -56,7 +56,7 @@ Manual edits should be done in the _spatial_ formats and "Work files", then the 
 If you edit a file in ViDA format, that is okay as well, but _never_ edit the Column names.
 
 Some fields can be _defaulted_ values:
-- Urban_Area_Census: Urban
+- Urban_Area_Census: Rural
 - ...
 
 Most "default" fields are handled by script, e.g. Coding Date

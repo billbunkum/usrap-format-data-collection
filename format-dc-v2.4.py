@@ -329,19 +329,16 @@ def star_rating_and_annual_fatality():
 
 ###################################################################################################################
 # CONVERT FORMAT Defs  // ANCHOR / SECTION
+## These are run on Option 2 "Convert Spatial to ViDA"
 ###################################################################################################################
 def area_type(): 
   # V: Urban_Area_Census -> gives info. as 'Rural' or 'Urban'
-  if file_format == 'vida':
-    area = 'Area type'
-
-  else:
-    area = 'Urban_Area_Census'
+  area = 'Urban_Area_Census'
   
   vida_batch[f'{area}'] = vida_batch[f'{area}'].apply(classify_area) # Pandas provides the 'text' arg with .apply()
 
 # AUX def for area_type()
-def classify_area(text):
+def classify_area(text): # Pandas provides the 'text' arg with .apply()
   text = str(text).lower()
   if 'rural' in text:
     return 1
@@ -855,7 +852,7 @@ def whitelist_cols():
       'Longitude',
       'Median_type',
       'Median_Type_of_Roadway',
-      'Median_Width_Feet',
+      #'Median_Width_Feet', # ANCHOR // CHECK // Do not think I need this at all for any calculations 
       'Motorcycle__',
       'Motorcycle_observed_flow',
       'Motorcycle_speed_limit',
@@ -1013,7 +1010,9 @@ def logs(new_df, col_keys):
     whitelist = whitelist_cols()
     ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and in whitelist
-    valid_keys = [key for key in col_keys if key in new_df.columns and key in whitelist]
+    blacklist = ['Urban_Area_Census']
+    
+    valid_keys = [key for key in col_keys if key in new_df.columns and key in whitelist and key not in blacklist]
 
     # Gets integer coordinates of NaNs
     rows, cols = np.where(new_df[valid_keys].isna())
