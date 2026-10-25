@@ -1138,7 +1138,7 @@ def derive_median_type_of_roadway():
 '''
 
 # Called with Option 6 'guess missing'; guesses 'Speed limit', 'Lane width' based on prev/proc RT_UNIQUE
-def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
+def guess_missing():
   new_df = batch.copy()
   rt_unique = 'Road_name'
   speed = 'Speed_Limit_Posted_MPH'
@@ -1153,6 +1153,8 @@ def guess_missing(): # ANCHOR / WORKING / NEW FEATURE - OPTION 6
   new_df = guess_field(new_df, rt_unique, traffic_last_count)
 
   new_df = guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardinal, lanes_total_number_driving)
+
+  new_df = guess_median_type_of_roadway()
 
   return new_df
 
@@ -1185,6 +1187,17 @@ def guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardi
 
   return new_df
 
+def guess_median_type_of_roadway(): # ANCHOR // WORKING
+  # use Carriageway to choose Median_Type_of_Roadway if it is blank
+  new_df = batch.copy()
+  blanks = new_df['Median_Type_of_Roadway'].isna()
+  carriageway = new_df['Carriageway']
+
+  new_df.loc[blanks & (carriageway >=3), 'Median_Type_of_Roadway'] = 'Undivided'
+  new_df.loc[blanks & (carriageway <3), 'Median_Type_of_Roadway'] = 'Divided'
+
+  return new_df
+  
 # Converts several field values to Not applicable/0 if no 'Intersection type'
 def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else
   mask_intersection_type = vida_batch['Intersection_type'] == 12 
