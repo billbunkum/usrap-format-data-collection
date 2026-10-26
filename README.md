@@ -38,15 +38,19 @@ STEPS:
 - Option 3: clean spatial
 
 - Option 6: guess missing*
+  - Make a COPY of this file and modify that one, e.g. Option-6-whateverBatch-WORKFILE.csv
   - No "guessing" actually occurs, see "NOTES" below.
 
-- Option 1: check spatial for missiing
+- Option 1: check spatial for missing
+  - Make a COPY of this file and modify that one, e.g. Option1-whateverBatch-WORKFILE.csv
   - User can add 'missing data' to this file and then easily copy/paste it to 'Option-6...WORKFILE' before steps 4 and 2.
 
 - Option 4: create missing only CSV
+  - Not entirely needed but good for checking progress.
 
 - Option 2: convert spatial to ViDA format
   - The last step. "Format-dc" only works with files in 'spatial' format.
+  - Once this is done, you cannot go back to 'spatial' format (as of V2.5)
 
 - Option 5*: strip missing -> **under construction**
 
