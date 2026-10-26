@@ -1040,8 +1040,13 @@ def logs(new_df, col_keys):
 # Returns a Spatial file without unnecessary Cols
 ## Called with Option '3'
 def clean_spatial():
+#  rt_unique = 'Road_name'
   whitelist = whitelist_cols()
   dirty_df = batch.copy()
+  
+  # Strip whitespace, convert to string, and handle nulls safely
+#  dirty_df[rt_unique] = dirty_df[rt_unique].astype(str).str.strip()
+
   clean_df = dirty_df[whitelist]
 
   return clean_df
@@ -1138,7 +1143,7 @@ def derive_median_type_of_roadway():
 
 # Called with Option 6 'guess missing'; guesses 'Speed limit', 'Lane width' based on prev/proc RT_UNIQUE
 def guess_missing():
-  new_df = batch.copy()
+  new_df = batch.copy().reset_index(drop=True)
   rt_unique = 'Road_name'
   speed = 'Speed_Limit_Posted_MPH'
   lane_width = 'Lane_Width_Feet'
@@ -1152,17 +1157,39 @@ def guess_missing():
   new_df = guess_field(new_df, rt_unique, traffic_last_count)
 
   new_df = guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardinal, lanes_total_number_driving)
+  new_df = guess_median_type_of_roadway(new_df)
 
+  return new_df
+'''
+  # Explicit Speed Limit Imputation
+  ffilled_speed = new_df.groupby(rt_unique, sort=False)[speed].ffill()
+  bfilled_speed = new_df.groupby(rt_unique, sort=False)[speed].bfill()
+  new_df[speed] = ffilled_speed.fillna(bfilled_speed)
+
+  # Explicit Lane Width Imputation
+  ffilled_width = new_df.groupby(rt_unique, sort=False)[lane_width].ffill()
+  bfilled_width = new_df.groupby(rt_unique, sort=False)[lane_width].bfill()
+  new_df[lane_width] = ffilled_width.fillna(bfilled_width)
+
+  # Explicit Traffic Count Imputation
+  ffilled_traffic = new_df.groupby(rt_unique, sort=False)[traffic_last_count].ffill()
+  bfilled_traffic = new_df.groupby(rt_unique, sort=False)[traffic_last_count].bfill()
+  new_df[traffic_last_count] = ffilled_traffic.fillna(bfilled_traffic)
+
+  new_df = guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardinal, lanes_total_number_driving)
   new_df = guess_median_type_of_roadway()
 
   return new_df
+'''
 
 def guess_field(new_df, rt_unique, field):
+  new_df[field] = pd.to_numeric(new_df[field], errors='coerce')
+
   # Look to next non-NaN Row above for a value assuming 'rt_unique' is the same
-  ffilled = new_df.groupby(rt_unique)[field].ffill()
+  ffilled = new_df.groupby(rt_unique, sort=False)[field].ffill()
   
   # Look to next non-NaN Row below for a value assuming 'rt_unique' is the same
-  bfilled = new_df.groupby(rt_unique)[field].bfill()
+  bfilled = new_df.groupby(rt_unique, sort=False)[field].bfill()
  
   # Place ffilled values in 'speed' col, but where ffill found NaN, instead use bfill 
   new_df[field] = ffilled.fillna(bfilled)
@@ -1179,16 +1206,15 @@ def guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardi
 
   new_df[number_of_lanes] = np.select(conditions, choices, default=np.nan)
 
-  ffilled = new_df.groupby(rt_unique)[number_of_lanes].ffill()
-  bfilled = new_df.groupby(rt_unique)[number_of_lanes].bfill()
+  ffilled = new_df.groupby(rt_unique, sort=False)[number_of_lanes].ffill()
+  bfilled = new_df.groupby(rt_unique, sort=False)[number_of_lanes].bfill()
 
   new_df[number_of_lanes] = ffilled.fillna(bfilled)
 
   return new_df
 
-def guess_median_type_of_roadway(): # ANCHOR // WORKING
+def guess_median_type_of_roadway(new_df): # ANCHOR // WORKING
   # use Carriageway to choose Median_Type_of_Roadway if it is blank
-  new_df = batch.copy()
   blanks = new_df['Median_Type_of_Roadway'].isna()
   carriageway = new_df['Carriageway']
 
