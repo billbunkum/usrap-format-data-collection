@@ -1010,8 +1010,9 @@ def logs(new_df, col_keys):
     whitelist = whitelist_cols()
     ## This is a safety measure in case 'key' doesn't quite appear; stops code from crashing
     ### Give me the KEY for Key in vida_keys only if Key is in new_df.columns and in whitelist
-    blacklist = ['Urban_Area_Census']
-    
+
+    blacklist = ['Urban_Area_Census'] # This is handled during Option 2 'Convert Spatial'
+   
     valid_keys = [key for key in col_keys if key in new_df.columns and key in whitelist and key not in blacklist]
 
     # Gets integer coordinates of NaNs
@@ -1022,17 +1023,29 @@ def logs(new_df, col_keys):
     for row_id, col_id in zip(rows, cols):
       row_label = new_df.index[row_id]
       row_data = new_df.iloc[row_id]
+      col_name = valid_keys[col_id]
+      median = row_data['Median_Type_of_Roadway']
+      
+      # Check for 'Median_Type_of_Roadway' as having 'Divided', 'Divided Highway', 'Undivided', 'Undivided Highway', or 'Couplet'
+      ## To determine if 'Lanes_Number_Cardinal' (divided) or 'Lanes_Total_Number_Driving' (undivided) are included in Log
+ 
+      # Continue onto next iterable with `continue` without adding to .append() if:
+      if col_name == 'Lanes_Total_Number_Driving' and median in ['Divided', 'Divided Highway']:
+        continue
+      if col_name == 'Lanes_Number_Cardinal' and median in ['Undivided', 'Undivided Highway']:
+        continue
       
       missing_cells.append({
         'Row': row_label,
         'Road_name': row_data['Road_name'],
         'Image_reference': row_data['Image_reference'],
-        'Column': valid_keys[col_id],
+        'Column': col_name,
+        'Median': median,
         'Latitude': row_data['Latitude'],
         'Longitude': row_data['Longitude']
       })
 
-    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column', 'Latitude', 'Longitude'])
+    log_missing = pd.DataFrame(missing_cells, columns=['Row', 'Road_name', 'Image_reference', 'Column', 'Median', 'Latitude', 'Longitude'])
   #  mask = new_df[valid_keys].isna().any(axis=1)
 
   return log_missing 
@@ -1213,7 +1226,7 @@ def guess_number_of_lanes(new_df, rt_unique, number_of_lanes, lanes_number_cardi
 
   return new_df
 
-def guess_median_type_of_roadway(new_df): # ANCHOR // WORKING
+def guess_median_type_of_roadway(new_df): 
   # use Carriageway to choose Median_Type_of_Roadway if it is blank
   blanks = new_df['Median_Type_of_Roadway'].isna()
   carriageway = new_df['Carriageway']
