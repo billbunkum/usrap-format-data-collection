@@ -279,14 +279,14 @@ def landmark():
 ################################################################################################################### 
 # DEFAULT DATA Defs // ANCHOR / SECTION
 ###################################################################################################################
-def coding_date(): 
+def coding_date(): # ANCHOR // WORKING // test that ISO format works
   today = date.today()
   if file_format == 'vida':
     coding_date = 'Coding date'
   else:
     coding_date = 'Coding_date'
-  
-  vida_batch[f'{coding_date}'] = today 
+
+  vida_batch[f'{coding_date}'] = f'{today.isoformat()}T00:00:00'
 
 def section(): 
   # Both 'spatial' and 'vida' use 'Section'
