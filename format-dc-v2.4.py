@@ -477,8 +477,8 @@ def number_of_lanes(): # // ANCHOR // WORKING // Need to ALIGN this with Option 
   batch[f'{median_type_of_roadway}'] = batch[f'{median_type_of_roadway}'].fillna(median_type_of_roadway_col)
 
   # Build filters for Divided and Undivided rows
-  mask_div = batch[f'{median_type_of_roadway}'] == 'Divided Highway'
-  mask_undiv = batch[f'{median_type_of_roadway}'] == 'Undivided Highway'
+  mask_div = batch[f'{median_type_of_roadway}'].isin(['Divided Highway', 'Divided'])
+  mask_undiv = batch[f'{median_type_of_roadway}'].isin(['Undivided Highway', 'Undivided'])
 #  mask_coup = batch[f'{median}'] == 'Couplet' # ANCHOR // WORKING // May or May not need this... ???
 
 # Using mask1 & mask2 as a kind of if/else for Pandas
@@ -569,32 +569,32 @@ def lane_width_to_code(col, mask):
 
 '''
 
-def vehicle_flow(): # a.k.a. aadt
+def vehicle_flow(): # a.k.a. aadt and Traffic_Last_Count
   # bk: traffic_last_count
   # the code for this is the number
-  if file_format == 'vida':
-    flow = 'Vehicle flow (AADT)'
+  flow = 'Traffic_Last_Count'
 
-  else:
-#    flow = 'Vehicle_flow__AADT_'
-    #flow = 'Vehicle_flow'
-    flow = 'Traffic_Last_Count'
+  # Change 'Traffic_Last_Count' BLANKS to 0 (which will result in ViDA code 7 for after aadt/2 => 'Intersecting_Road_Volume')
+  mask_aadt_blanks = batch['Traffic_Last_Count'].isna()
+  batch.loc[mask_aadt_blanks, 'Traffic_Last_Count'] = 0
+
+  merge_lane_check()
 
   mask = batch[f'{flow}'].notna()
   vida_batch.loc[mask, f'{flow}'] = batch.loc[mask, f'{flow}'] 
 
+def merge_lane_check():
+  mask_intersection_type = (batch['Intersection_type'] == 1) & (batch['Traffic_Last_Count'].isna() | (batch['Traffic_Last_Count'] == 0)
+                                                                ) # merge lane, if 'Traffic_Last_Count' is BLANK or 0
+  batch.loc[mask_intersection_type, 'Traffic_Last_Count'] = 1 # not 0, lest 'Intersecting Road Volume' is ViDA 7 'n/a', for Merge Lane, we need at least '1' so ViDA code 6 '1 to 100' for those Intersections.
+  
 # Calculate Intersecting road volume from AADT / 2; Covert to ViDA code
 def intersecting_road_volume(): 
   # al: traffic_last_count / 2 (calculation)
     # in other words: vehicle_flow / 2
-  if file_format == 'vida':
-    vol = 'Intersecting road volume'
-    flow = 'Vehicle flow (AADT)'
-
-  else:
-    vol = 'Intersecting_road_volume'
+  vol = 'Intersecting_road_volume'
 #    flow = 'Vehicle_flow__AADT_'
-    flow = 'Traffic_Last_Count'
+  flow = 'Traffic_Last_Count'
 
   ## explain: 'mask' becomes the series, can use .loc for if, or np.where(cond, true, false) for if/else
     # python if/else  won't work cos these are series' not singular values
@@ -604,7 +604,12 @@ def intersecting_road_volume():
   # Calculate vehicle flow (aadt) / 2 for each cell in intersecting road volume
     ## Put into 'vida_batch'
     ### round and cast back to a nullable int type that Pandas supports
-  vida_batch.loc[mask, f'{vol}'] = (batch.loc[mask, f'{flow}'] / 2).round().astype('Int64')
+  half = batch.loc[mask, f'{flow}'] / 2
+  vida_batch.loc[mask, f'{vol}'] = pd.Series(
+    np.copysign(np.floor(np.abs(half) + 0.5), half),
+      index=half.index,
+      ).astype('Int64')  
+  
   num = vida_batch[f'{vol}']
 
   road_volume_to_code(vol, num)
@@ -1236,14 +1241,14 @@ def guess_median_type_of_roadway(new_df):
 
   return new_df
   
-# Converts several field values to Not applicable/0 if no 'Intersection type'
-def intersection_checks(): # ANCHOR / WORKING / Need to CONFIRM if AADT should be '0' or something else
+# Converts several field values to ViDA code for 'Not applicable' if no 'Intersection type'
+def intersection_checks():
   mask_intersection_type = vida_batch['Intersection_type'] == 12 
   vida_batch.loc[mask_intersection_type, 'Intersecting_road_volume'] = 7
   vida_batch.loc[mask_intersection_type, 'Intersection_quality'] = 3
   vida_batch.loc[mask_intersection_type, 'Intersection_channelisation'] = 1
-#  vida_batch.loc[mask_intersection_type, 'Vehicle flow (AADT)'] = 0
-  vida_batch.loc[mask_intersection_type, 'Traffic_Last_Count'] = 0 # 'spatial' name for 'Vehicle flow (AADT)'
+#  vida_batch.loc[mask_intersection_type, 'Traffic_Last_Count'] = 7 # 'spatial' name for 'Vehicle flow (AADT)'
+
 
 ###################################################################################################################
 # FUNCTION CALLS FOR 'convert spatial' // ANCHOR // SECTION
@@ -1275,7 +1280,7 @@ if file_format == 'convert_spatial':
   operating_speed_mean()
   number_of_lanes() 
 
-  # 'guessing' feature defs
+  # shore up loose-ends
   intersection_checks()
 
 ###################################################################################################################  
